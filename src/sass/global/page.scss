@@ -1,0 +1,17 @@
+html {
+  height: 100%;
+  scroll-snap-type: y mandatory;
+}
+
+.page {
+  min-height: 100%;
+  margin: 0;
+  font-family: "Montserrat-Alt1", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  background: $main-bg-color;
+  color: $main-text-color;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  overflow-x: clip;
+}

@@ -1,0 +1,13 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 100px;
+  border: 5px dotted black;
+}
+
+.main-header__link {
+  font-size: 20px;
+  text-decoration: none;
+  color: #000000;
+}
