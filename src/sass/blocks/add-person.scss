@@ -1,0 +1,11 @@
+.add-person {
+  background: #548677;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  width: 40px;
+  transition: $default-menu-transition;
+
+  &:hover {
+    scale: 1.1;
+  }
+}

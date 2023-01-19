@@ -1,0 +1,34 @@
+.periods-menu__item {
+  &:not(:last-child) {
+    margin-right: 32px;
+  }
+}
+
+.periods-menu__button {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  transition: $default-menu-transition;
+
+  &--active {
+    background: #548677;
+    border-radius: 100px;
+    padding: 5px 8px;
+    color: #ffffff;
+  }
+
+  &:hover {
+    scale: 1.1;
+  }
+}
+
+.periods-menu__editor {
+  align-self: flex-end;
+  transition: $default-menu-transition;
+
+  &:hover {
+    scale: 1.1;
+  }
+}

@@ -1,0 +1,8 @@
+.navigation {
+  display: flex;
+  height: 40px;
+}
+
+.navigation__item:not(:last-child) {
+  margin-right: 10px;
+}
