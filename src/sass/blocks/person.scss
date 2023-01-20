@@ -1,0 +1,11 @@
+@media (max-width: $mobile-max-width) {
+  .person {
+    display: flex;
+    align-items: center;
+  }
+
+  .person__text {
+    margin: 0;
+    margin-left: 15px;
+  }
+}

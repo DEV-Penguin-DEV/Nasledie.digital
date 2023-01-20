@@ -1,7 +1,9 @@
 @import "global/visually-hidden.scss";
 @import "global/variables.scss";
 @import "global/impurities.scss";
+@import "global/container.scss";
 @import "global/button.scss";
+@import "global/title.scss";
 @import "global/list.scss";
 @import "global/page.scss";
 @import "global/main-content.scss";
@@ -16,6 +18,14 @@
 @import "blocks/circles-main.scss";
 @import "blocks/circle.scss";
 @import "blocks/filters.scss";
+
+// Mobile
+@import "blocks/content-header.scss";
+@import "blocks/top-menu.scss";
+@import "blocks/down-menu.scss";
+@import "blocks/persons.scss";
+@import "blocks/person.scss";
+@import "blocks/editing-modal.scss";
 
 // Help
 @import "blocks/help.scss";

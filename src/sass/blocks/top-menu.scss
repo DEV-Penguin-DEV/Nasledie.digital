@@ -1,0 +1,21 @@
+@media (max-width: $mobile-max-width) {
+  .top-menu {
+    display: flex;
+    margin-bottom: 36px;
+    justify-content: space-between;
+  }
+
+  .top-menu__title {
+    text-align: center;
+    padding: 4px;
+    color: #326e5b;
+    font-size: 16px;
+    line-height: 16px;
+    width: 42.1vw;
+  }
+
+  .top-menu__save {
+    width: 31.4vw;
+    min-width: 0;
+  }
+}

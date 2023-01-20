@@ -1,0 +1,75 @@
+@media (max-width: $mobile-max-width) {
+  .persons {
+    padding: 34px 15px;
+    background: #ffffff;
+    border: 1px solid #f0f4f7;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+  }
+
+  .persons__title {
+    font-family: "Source Serif Pro";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    /* identical to box height */
+
+    color: #000000;
+    @include margin-bottom(11px);
+  }
+
+  .persons__text {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* or 125% */
+
+    color: #000000;
+  }
+
+  .persons__search-input {
+    background: #ffffff;
+    border: 1px solid rgba(183, 189, 206, 0.3);
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 11.5px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: $default-menu-transition;
+    position: relative;
+    background: url("./../../public/img/search-icon.svg") no-repeat center right;
+    background-size: 24px 24px;
+    background-position: right 10px center;
+    &::placeholder {
+      font-family: "Proxima Nova";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+
+      color: #b7bdce;
+      transition: $default-menu-transition;
+    }
+
+    &:hover {
+      &::placeholder {
+        color: #3f3f3f;
+      }
+    }
+  }
+
+  .persons__search-form {
+    margin-bottom: 20px;
+  }
+
+  .persons__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

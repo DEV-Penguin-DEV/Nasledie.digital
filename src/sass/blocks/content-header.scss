@@ -1,0 +1,27 @@
+@media (max-width: $mobile-max-width) {
+  .content-header {
+    background: #ffffff;
+    margin-bottom: 16px;
+    position: relative;
+    padding: 10px 0;
+
+    &::before {
+      @include defaul-pseudo-element(100%, 1px);
+      bottom: 0;
+      background: #f0f4f7;
+    }
+  }
+
+  .content-header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .content-header__mobile-menu-button {
+    width: 30px;
+    height: 14px;
+    background: url("./../../public/img/mobile-menu-button.svg") no-repeat
+      center center;
+  }
+}

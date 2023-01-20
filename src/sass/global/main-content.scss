@@ -6,4 +6,9 @@
   &--table {
     width: 72.1vw;
   }
+
+  @media (max-width: $mobile-max-width) {
+    margin: 0;
+    width: 100vw;
+  }
 }

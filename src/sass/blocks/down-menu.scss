@@ -1,0 +1,8 @@
+@media (max-width: $mobile-max-width) {
+  .down-menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-bottom: 25px;
+  }
+}

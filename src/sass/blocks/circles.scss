@@ -87,78 +87,8 @@
     }
 
     & .navigation__title {
-      font-family: "Proxima Nova";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 20px;
-
-      color: $help-text-color;
-
-      display: block;
       position: absolute;
       @include centering-pseudo-element;
-      border: 1px dashed #8dbeaf;
-      filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.12));
-      border-radius: 4px;
-      padding: 10px 16px;
-      height: 40px;
-      box-sizing: border-box;
-      margin: 0;
-    }
-
-    & .circles-header__button-white {
-      background: #ffffff;
-      box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
-      width: 40px;
-      height: 40px;
-      position: relative;
-      border-radius: 50%;
-      transition: $default-menu-transition;
-
-      &::before {
-        @include defaul-pseudo-element(100%);
-        background-size: contain;
-        @include centering-pseudo-element;
-      }
-
-      &:hover {
-        scale: 1.1;
-      }
-    }
-
-    & .circles-header__undo {
-      background: url("./../../public/img/undo-icon.svg") no-repeat center
-        center;
-    }
-
-    & .circles-header__cansel {
-      background: url("./../../public/img/Close_icon.svg") no-repeat center
-        center;
-    }
-
-    .circles-header__save {
-      font-family: "Proxima Nova";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 16px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      transition: $default-menu-transition;
-
-      color: #ffffff;
-      background: #326e5b;
-      border-radius: 100px;
-
-      min-width: 162px;
-      display: block;
-      padding: 12px 0;
-
-      &:hover {
-        scale: 1.05;
-      }
     }
   }
 }

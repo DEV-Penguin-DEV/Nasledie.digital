@@ -1,16 +1,16 @@
 .main-header {
   display: flex;
+  flex-wrap: wrap;
   padding: 20px;
   margin-bottom: 100px;
   border: 5px dotted black;
+  width: 100vw;
+  gap: 30px;
+  box-sizing: border-box;
 }
 
 .main-header__link {
   font-size: 20px;
   text-decoration: none;
   color: #000000;
-
-  &:not(:last-child) {
-    margin-right: 30px;
-  }
 }

@@ -2,3 +2,77 @@ button {
   @include button-none;
   cursor: pointer;
 }
+
+.button {
+  &--white {
+    background: #ffffff;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border-radius: 50%;
+    transition: $default-menu-transition;
+
+    &::before {
+      @include defaul-pseudo-element(100%);
+      background-size: contain;
+      @include centering-pseudo-element;
+    }
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+
+  &--undo {
+    background: url("./../../public/img/undo-icon.svg") no-repeat center center;
+  }
+
+  &--cansel {
+    background: url("./../../public/img/Close_icon.svg") no-repeat center center;
+  }
+
+  &--save {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: $default-menu-transition;
+
+    color: #ffffff;
+    background: #326e5b;
+    border-radius: 100px;
+
+    min-width: 162px;
+    display: block;
+    padding: 12px 0;
+
+    &:hover {
+      scale: 1.05;
+    }
+  }
+
+  &--default-mobile-button {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: block;
+    width: 100%;
+    padding: 14.5px 0;
+    border: 1px solid #b7bdce;
+    border-radius: 100px;
+    color: $help-text-color;
+    transition: $slow-menu-transition;
+
+    &:hover {
+      color: #ffffff;
+      background-color: #326e5b;
+    }
+  }
+}

@@ -11,6 +11,8 @@ html {
   font-weight: 400;
   background: $main-bg-color;
   color: $main-text-color;
-  display: grid;
-  grid-template-rows: min-content 1fr min-content;
+
+  @media (max-width: $mobile-max-width) {
+    background: #fafafa;
+  }
 }

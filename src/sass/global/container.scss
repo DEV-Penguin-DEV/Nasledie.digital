@@ -1,0 +1,5 @@
+.container {
+  @media (max-width: $mobile-max-width) {
+    @include wrapper(10px);
+  }
+}

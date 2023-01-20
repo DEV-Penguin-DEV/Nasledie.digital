@@ -1,0 +1,149 @@
+.editing-modal {
+  width: 100vw;
+}
+
+.editing-modal__title-container {
+  position: relative;
+  padding: 22px 20px;
+  box-sizing: border-box;
+  background: #f5f2f3;
+  border: 1px solid #f0f4f7;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.editing-modal__title {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+
+  text-align: center;
+
+  color: $help-text-color;
+  margin: 0;
+}
+
+.editing-modal__closed-button {
+  position: absolute;
+  top: 21px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  background: url("./../../public/img/Close_icon.svg");
+  cursor: pointer;
+  transition: $default-menu-transition;
+
+  &:hover {
+    scale: 1.3;
+  }
+}
+
+.editing-modal__content-container {
+  padding: 17px 15px 28px 15px;
+}
+
+.editing-modal__input-container {
+  &:not(:last-of-type) {
+    margin-bottom: 23px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 60px;
+  }
+}
+
+.editing-modal__person-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 42px;
+}
+
+.editing-modal__person-description {
+  margin: 0;
+  margin-left: 15px;
+}
+
+.editing-modal__input {
+  display: none;
+
+  &:checked + .editing-modal__label {
+    &::before {
+      background: #326e5b;
+    }
+
+    &::after {
+      left: 28px;
+      background: #ffffff;
+    }
+  }
+}
+
+.editing-modal__label {
+  padding-left: 78px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  & p {
+    display: inline-block;
+    margin: 0;
+  }
+  &::before {
+    @include defaul-pseudo-element(60px, 34px);
+    background: #ececec;
+
+    border: 1px solid #b7bdce;
+    border-radius: 100px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: $slow-menu-transition;
+  }
+
+  &::after {
+    @include defaul-pseudo-element(26px);
+    background: #b7bdce;
+    border-radius: 50%;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: $slow-menu-transition;
+  }
+}
+
+.editing-modal__input-title {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+
+  color: #444444;
+}
+
+.editing-modal__input-description {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #444444;
+}
+
+.editing-modal__submit {
+  width: 100%;
+  display: block;
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #ffffff;
+  padding: 17px 0;
+  background: #326e5b;
+  border-radius: 100px;
+}
