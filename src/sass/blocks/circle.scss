@@ -2,47 +2,54 @@
   position: absolute;
   border-radius: 50%;
 
+  &::before {
+    top: 0;
+  }
+
   &--1 {
-    width: 55.1vw;
-    height: 55.1vw;
+    width: 73.5%;
+    padding-top: 73.5%;
     top: 75px;
-    left: 10.4vw;
+    left: 14.8%;
 
     &::before {
-      @include defaul-pseudo-element(55.1vw);
+      @include defaul-pseudo-element(100%);
 
       background: url("./../../public/img/circle--1.svg") no-repeat center top;
       background-size: contain;
     }
 
     & .circle__img {
+      width: 4.4%;
+      height: auto;
+
       &--1 {
-        left: -1.1vw;
+        left: -1.2%;
         top: 300px;
       }
 
       &--2 {
-        left: 2.4vw;
+        left: 5%;
         top: 155px;
       }
 
       &--3 {
-        left: 15.3vw;
+        left: 28.5%;
         top: 13px;
       }
 
       &--4 {
-        right: 18.8vw;
+        right: 35.1%;
         top: -4px;
       }
 
       &--5 {
-        right: 3.6vw;
+        right: 6.5%;
         top: 138px;
       }
 
       &--6 {
-        right: -0.7vw;
+        right: -0.8%;
         top: 262px;
       }
     }
@@ -50,114 +57,120 @@
 
   &--2 {
     top: 153px;
-    left: 16.5vw;
-    width: 43vw;
-    height: 43vw;
+    left: 23%;
+    padding-top: 57.3%;
+    width: 57.3%;
 
     &::before {
-      @include defaul-pseudo-element(43vw);
+      @include defaul-pseudo-element(100%);
       background: url("./../../public/img/circle--2.svg") no-repeat center top;
       background-size: contain;
     }
 
     & .circle__img {
+      width: 5.6%;
+      height: auto;
+
       &--1 {
-        left: -1vw;
+        left: -2.5%;
         top: 275px;
       }
 
       &--2 {
-        left: 1.3vw;
+        left: 4.6%;
         top: 126px;
       }
 
       &--3 {
-        left: 8.3vw;
+        left: 19.45%;
         top: 30px;
       }
 
       &--4 {
-        left: 20vw;
+        left: 46.5%;
         top: -16px;
       }
 
       &--5 {
-        right: 8.6vw;
+        right: 20.1%;
         top: 30px;
       }
 
       &--6 {
-        right: 1.25vw;
+        right: 4%;
         top: 126px;
       }
 
       &--7 {
-        right: -1.25vw;
+        right: -3%;
         top: 275px;
       }
     }
   }
 
   &--3 {
-    width: 31vw;
-    height: 31vw;
+    width: 41.25%;
+    padding-top: 41.25%;
     top: 230px;
-    left: 22.5vw;
+    left: 31%;
 
     &::before {
-      @include defaul-pseudo-element(31vw);
+      @include defaul-pseudo-element(100%);
       background: url("./../../public/img/circle--3.svg") no-repeat center top;
       background-size: contain;
     }
 
     & .circle__img {
+      width: 7.8%;
+      height: auto;
+
       &--1 {
-        left: -1.25vw;
+        left: -4%;
         top: 203px;
       }
 
       &--2 {
-        left: -0.86vw;
+        left: -2.7%;
         top: 149px;
       }
 
       &--3 {
-        left: 0vw;
+        left: 0.5%;
         top: 102px;
       }
 
       &--4 {
-        left: 2.3vw;
-        top: 49px;
+        left: 8.5%;
+        top: 53px;
       }
 
       &--5 {
-        left: 6.25vw;
+        left: 20.2%;
         top: 16px;
       }
 
       &--6 {
-        left: 10.3vw;
+        left: 33.3%;
         top: -8px;
       }
 
       &--7 {
-        right: 13.3vw;
+        right: 43.1%;
         top: -16px;
       }
 
       &--8 {
-        right: 9.1vw;
+        right: 29.5%;
         top: -1px;
       }
 
       &--9 {
-        right: 4.4vw;
+        right: 14.4%;
         top: 30px;
       }
 
       &--10 {
-        right: 1.9vw;
+        right: 6.3%;
         top: 71px;
       }
 
@@ -167,68 +180,70 @@
       }
 
       &--12 {
-        right: -1.25vw;
+        right: -4%;
         top: 172px;
       }
 
       &--13 {
-        right: -1.25vw;
+        right: -4%;
         top: 221px;
       }
     }
   }
 
   &--4 {
-    width: 18.4vw;
-    height: 18.4vw;
+    width: 24.5%;
+    padding-top: 24.5%;
     top: 310px;
-    left: 28.75vw;
+    left: 39.2%;
 
     &::before {
-      @include defaul-pseudo-element(18.4vw);
-
+      @include defaul-pseudo-element(100%);
       background: url("./../../public/img/circle--4.svg") no-repeat center top;
       background-size: contain;
     }
 
     & .circle__img {
+      width: 13.1%;
+      height: auto;
+
       &--1 {
-        left: -0.54vw;
+        left: -2.5%;
         top: 141px;
       }
 
       &--2 {
-        left: -0.86vw;
+        left: -4.6%;
         top: 77px;
       }
 
       &--3 {
-        left: 1.6vw;
+        left: 8.9%;
         top: 22px;
       }
 
       &--4 {
-        left: 6vw;
+        left: 32.2%;
         top: -9px;
       }
 
       &--5 {
-        right: 4.6vw;
+        right: 25.4%;
         top: -4px;
       }
 
       &--6 {
-        right: 0.625vw;
+        right: 3.4%;
         top: 34px;
       }
 
       &--7 {
-        right: -1.2vw;
+        right: -1.7%;
         top: 90px;
       }
 
       &--8 {
-        right: -0.54vw;
+        right: -3%;
         top: 141px;
       }
     }

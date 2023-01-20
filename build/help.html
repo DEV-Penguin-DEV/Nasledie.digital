@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="proximaNova.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Source+Serif+Pro:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="main.css" />
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .preloader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      background-color: #21d4fd;
+      background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+      z-index: 1001;
+      color: #eee;
+    }
+
+    .preloader__image {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      width: 70px;
+      height: 70px;
+      margin-top: -35px;
+      margin-left: -35px;
+      text-align: center;
+      animation: preloader-rotate 2s infinite linear;
+    }
+
+    @keyframes preloader-rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loaded_hiding .preloader {
+      transition: 0.3s opacity;
+      opacity: 0;
+    }
+
+    .loaded .preloader {
+      display: none;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      document.body.classList.add("loaded_hiding");
+      window.setTimeout(function () {
+        document.body.classList.add("loaded");
+        document.body.classList.remove("loaded_hiding");
+      }, 500);
+    };
+  </script>
+  <title>Document</title>
+</head>
+
+<body class="page">
+  <!-- Прелоадер -->
+  <div class="preloader">
+    <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path fill="currentColor"
+        d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+      </path>
+    </svg>
+  </div>
+
+  <!-- Technical Header -->
+  <header class="main-header">
+    <a href="index.html" class="main-header__link">Круги (режим редактирования)</a>
+    <a href="#" class="main-header__link">Помощь</a>
+    <a href="view-table.html" class="main-header__link">Вью таблицей</a>
+  </header>
+
+  <main class="main-content">
+    <section class="help">
+      <ul class="help__list">
+        <li class="help__item help-block">
+          <div class="help-block__top-part">
+            <h2 class="help-block__title">Периоды</h2>
+
+            <button class="help-block__closed-button"><span class="visually-hidden">Closed button</span></button>
+          </div>
+          <div class="help-block__bottom-part">
+            <div class="help-block__text-container">
+              <p class="help-block__text">Здесь расположены периоды вашей жизни.</p>
+              <p class="help-block__text">
+                Вы можете <span class="help-block__text--bold">добавлять/удалять</span> их, а также <span
+                  class="help-block__text--bold">редактировать</span> название
+                периодов
+              </p>
+            </div>
+
+
+            <button class="help-block__button-next">Далее</button>
+          </div>
+        </li>
+        <li class="help__item help-block">
+          <div class="help-block__top-part">
+            <h2 class="help-block__title">Круги общения</h2>
+
+            <button class="help-block__closed-button"><span class="visually-hidden">Closed button</span></button>
+          </div>
+          <div class="help-block__bottom-part">
+
+            <p class="help-block__text">
+              В кругах общения отображены добавленные вами <span class="help-block__text--bold">персоны.</span>
+            </p>
+            <button class="help-block__button-next">Далее</button>
+          </div>
+        </li>
+
+        <li class="help__item help-block">
+          <div class="help-block__top-part">
+            <h2 class="help-block__title">Смена положения в Кругах общения</h2>
+
+            <button class="help-block__closed-button"><span class="visually-hidden">Closed button</span></button>
+          </div>
+          <div class="help-block__bottom-part">
+            <div class="help-block__text-container">
+              <p class="help-block__text">
+                Чтобы изменить положение персоны в кругу общения, просто
+                <span class="help-block__text--bold">перетащите</span> его на нужный круг, как это показано ниже
+              </p>
+            </div>
+
+            <button class="help-block__button-next">Далее</button>
+          </div>
+        </li>
+
+        <li class="help__item help-block">
+          <div class="help-block__top-part">
+            <h2 class="help-block__title">Четвертый круг</h2>
+
+            <button class="help-block__closed-button"><span class="visually-hidden">Closed button</span></button>
+          </div>
+          <div class="help-block__bottom-part">
+            <div class="help-block__text-container">
+              <p class="help-block__text">
+                Четвертый круг -уникальный. В нем могут быть персоны, которые как-то на вас повлияли, но при этом вы с
+                ними были не
+                знакомы и не общались.
+              </p>
+            </div>
+
+
+            <button class="help-block__button-next">Далее</button>
+          </div>
+        </li>
+
+        <li class="help__item help-block">
+          <div class="help-block__top-part">
+            <h2 class="help-block__title">Добавление персоны в Круг общения</h2>
+
+            <button class="help-block__closed-button"><span class="visually-hidden">Closed button</span></button>
+          </div>
+          <div class="help-block__bottom-part">
+            <div class="help-block__text-container">
+              <p class="help-block__text">
+                Чтобы добавить персону в любой из кругов общения просто нажмите на знак <span
+                  class="help-block__text--bold">Плюса</span> в правом нижнем углу.
+              </p>
+            </div>
+
+
+            <button class="help-block__button-next">Далее</button>
+          </div>
+        </li>
+
+        <li class="help__item help-block">
+          <div class="help-block__top-part">
+            <h2 class="help-block__title">Режим отображения</h2>
+
+            <button class="help-block__closed-button"><span class="visually-hidden">Closed button</span></button>
+          </div>
+          <div class="help-block__bottom-part">
+            <div class="help-block__text-container">
+              <p class="help-block__text">
+                Вы можете самостоятельно настраивать режим отображение Кругов общения: <span
+                  class="help-block__text--bold">кругами/списком</span>
+              </p>
+            </div>
+
+
+            <button class="help-block__button-next">Далее</button>
+          </div>
+        </li>
+
+        <li class="help__item help-block">
+          <div class="help-block__top-part">
+            <h2 class="help-block__title">Фильтры</h2>
+
+            <button class="help-block__closed-button"><span class="visually-hidden">Closed button</span></button>
+          </div>
+          <div class="help-block__bottom-part">
+            <div class="help-block__text-container">
+              <p class="help-block__text">
+                В фильтрах имеются категории. Вы можете <span class="help-block__text--bold">включать/выключать</span>
+                определенные категории, чтобы настроить отображение персон в
+                Кругу общения.
+              </p>
+            </div>
+
+
+            <button class="help-block__button-next">Далее</button>
+          </div>
+        </li>
+
+        <li class="help__item help-block">
+          <div class="help-block__top-part">
+            <h2 class="help-block__title">Помощь</h2>
+
+            <button class="help-block__closed-button"><span class="visually-hidden">Closed button</span></button>
+          </div>
+          <div class="help-block__bottom-part">
+            <div class="help-block__text-container">
+              <p class="help-block__text">
+                Если вам ещё раз нужна будет помощь по сайту, просто нажмите на кнопку <span
+                  class="help-block__text--bold">Помощь</span> в правом верхнем углу
+              </p>
+            </div>
+
+            <button class="help-block__button-next">Далее</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <script src="bundle.js"></script>
+</body>
+
+</html>

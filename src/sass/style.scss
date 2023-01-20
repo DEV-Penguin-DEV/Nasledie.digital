@@ -3,10 +3,10 @@
 @import "global/impurities.scss";
 @import "global/button.scss";
 @import "global/list.scss";
-@import "global/title.scss";
 @import "global/page.scss";
-@import "global/text.scss";
+@import "global/main-content.scss";
 
+// Circles styles
 @import "blocks/main-header.scss";
 @import "blocks/circles.scss";
 @import "blocks/navigation.scss";
@@ -15,3 +15,7 @@
 @import "blocks/periods-menu.scss";
 @import "blocks/circles-main.scss";
 @import "blocks/circle.scss";
+@import "blocks/filters.scss";
+
+// Help
+@import "blocks/help.scss";
