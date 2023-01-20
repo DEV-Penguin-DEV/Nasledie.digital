@@ -1,6 +1,7 @@
 .main-content {
   width: 75vw;
   margin-left: auto;
+  overflow: clip;
 
   &--table {
     width: 72.1vw;

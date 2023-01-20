@@ -1,0 +1,2 @@
+(()=>{"use strict";const c=document.querySelectorAll(".circle"),e=(c,e,t)=>{c.forEach(((s,r)=>{s.style.transform=`rotate(${e/(c.length-1)*(r-t)}deg)`,s.querySelector(".circle__img").style.transform=`rotate(${e/(c.length-1)*(r-t)*-1}deg)`}))};c.forEach((c=>{const t=c.querySelectorAll(".circle__img-container");c.classList.contains("circle--3")?e(t,190,.1):c.classList.contains("circle--1")?e(t,220,.7):c.classList.contains("circle--2")?e(t,200,.45):c.classList.contains("circle--4")&&e(t,165,-.3)}))})();
+//# sourceMappingURL=bundle.js.map
