@@ -8,4 +8,26 @@
     top: 11px;
     left: 10px;
   }
+
+  &--editing {
+    max-width: 190px;
+    &::before {
+      @include defaul-pseudo-element(19px);
+      background: url("./../../public/img/editor--table.svg") no-repeat center center;
+      background-size: contain;
+      top: 11px;
+      right: 10px;
+    }
+  }
+}
+
+.filters--editing__input {
+  border: none;
+  background: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  padding-left: 40px;
+  box-sizing: border-box;
+  padding-right: 30px;
 }

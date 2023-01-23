@@ -148,4 +148,55 @@
     background: #326e5b;
     border-radius: 100px;
   }
+
+  .editing-modal__person-info-container {
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .editing-modal__avatar-input-container {
+    position: relative;
+    width: min-content;
+  }
+
+  .editing-modal__avatar-label {
+    background: #ffffff;
+    width: 29px;
+    height: 29px;
+    position: absolute;
+
+    border: 1px solid #b7bdce;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    border-radius: 50%;
+    z-index: 2;
+
+    &::before {
+      @include defaul-pseudo-element(17px);
+      @include centering-pseudo-element;
+      background: url("./../../public/img/editor--table.svg") no-repeat center
+        center;
+      background-size: contain;
+    }
+  }
+
+  .editing-modal__avatar-input {
+    display: none;
+  }
+
+  .editing-modal__filters {
+    width: 60vw;
+    height: 47px;
+    padding-left: 10px;
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #444444;
+  }
 }

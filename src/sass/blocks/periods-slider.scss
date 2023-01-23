@@ -1,0 +1,55 @@
+@media (max-width: $mobile-max-width) {
+  .periods-slider {
+    display: flex;
+    position: relative;
+  }
+
+  .periods-slider__controler {
+    position: absolute;
+    background: url("./../../public/img/select-icon.svg") no-repeat center
+      center;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    top: 50%;
+
+    &--left {
+      transform: translateY(-50%) rotate(90deg);
+      left: 15px;
+    }
+
+    &--right {
+      transform: translateY(-50%) rotate(-90deg);
+      right: 15px;
+    }
+  }
+
+  .periods-slider__item {
+    font-size: 0;
+    line-height: 0;
+    transition: $default-menu-transition;
+    margin: 0 auto;
+    height: 100%;
+    display: block;
+
+    &--active {
+      font-family: "Proxima Nova";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+
+  .periods-slider__list {
+    width: 64vw;
+    background: #ffffff;
+    border: 1px solid rgba(183, 189, 206, 0.3);
+    border-radius: 8px;
+    box-sizing: border-box;
+    min-height: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

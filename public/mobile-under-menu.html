@@ -94,6 +94,9 @@
       <a href="view-circle--editing.html" class="main-header__link"
         >Круги (Редактирование)</a
       >
+      <a href="view-circle--mobile.html" class="main-header__link"
+        >Круги (Мобилка)</a
+      >
       <a href="#" class="main-header__link">Мобилка (Выбор под меню)</a>
     </header>
 
@@ -243,13 +246,23 @@
                   height="93"
                   class="editing-modal__avatar"
                 />
-                <input type="file" class="editing-modal__avatar-input" />
+                <input type="file" class="editing-modal__avatar-input" id="editing-avatar" multiple />
+                <label class="editing-modal__avatar-label" for="editing-avatar"><span class="visually-hidden">Изминить аватар</span></label>
               </div>
 
-              <div class="select-container">
-                <select class="filters__select select">
-                  <option value="all" class="filters__filter option">
-                    Все
+              <div class="editing-modal__select-container select-container">
+                <select class="editing-modal__filters filters__select select">
+                  <option value="1th-circle" class="filters__filter option">
+                    1 круг общения
+                  </option>
+                  <option value="2th-circle" class="filters__filter option">
+                    2 круг общения
+                  </option>
+                  <option value="3th-circle" class="filters__filter option">
+                    3 круг общения
+                  </option>
+                  <option value="4th-circle" class="filters__filter option">
+                    4 круг общения
                   </option>
                 </select>
               </div>

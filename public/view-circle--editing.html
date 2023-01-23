@@ -85,6 +85,9 @@
     <a href="view-table.html" class="main-header__link">Вью таблицей</a>
     <a href="view-circle--2.html" class="main-header__link">Круги</a>
     <a href="#" class="main-header__link">Круги (Редактирование)</a>
+    <a href="view-circle--mobile.html" class="main-header__link"
+        >Круги (Мобилка)</a
+      >
     <a href="mobile-under-menu.html" class="main-header__link">Мобилка (Выбор под меню)</a>
   </header>
 
@@ -121,9 +124,9 @@
               </li>
             </ul>
 
-            <button class="circles-header__filers filters">
-              Группы персон
-            </button>
+            <form class="circles-header__filers filters filters--editing">
+              <input type="text" class="filters--editing__input" placeholder="Группы персон">
+            </form>
           </div>
 
           <h2 class="navigation__title title--green">Режим редактирования</h2>

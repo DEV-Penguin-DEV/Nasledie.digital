@@ -90,17 +90,8 @@
 }
 
 .help-block__button-next {
-  background: #326e5b;
   border-radius: 100px;
   width: 252px;
-  display: block;
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
-  align-items: center;
-  text-align: center;
 
   color: #ffffff;
   padding: 15px 15px;
@@ -109,7 +100,4 @@
   cursor: pointer;
   transition: $default-menu-transition;
 
-  &:hover {
-    // TODO
-  }
 }

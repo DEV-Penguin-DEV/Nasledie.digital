@@ -11,6 +11,7 @@
   font-size: 12px;
   line-height: 15px;
   transition: $default-menu-transition;
+  box-shadow: none;
 
   &--active {
     background: #548677;

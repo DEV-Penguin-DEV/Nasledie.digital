@@ -17,10 +17,15 @@ button {
       @include defaul-pseudo-element(100%);
       background-size: contain;
       @include centering-pseudo-element;
+      background-size: contain;
     }
 
     &:hover {
-      scale: 1.1;
+      border: 1px solid #326E5B !important;
+    }
+
+    &:active {
+      border: 1px solid #326E5B !important;
     }
   }
 
@@ -32,7 +37,7 @@ button {
     background: url("./../../public/img/Close_icon.svg") no-repeat center center;
   }
 
-  &--save {
+  &--green {
     font-family: "Proxima Nova";
     font-style: normal;
     font-weight: 700;
@@ -52,7 +57,19 @@ button {
     padding: 12px 0;
 
     &:hover {
-      scale: 1.05;
+      background: #408c74;
+    }
+
+    &:active {
+      background: #2c6050;
+      /* gray */
+
+      border: 1px solid #b7bdce;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      background: #2C6050;
     }
   }
 
@@ -71,8 +88,27 @@ button {
     transition: $slow-menu-transition;
 
     &:hover {
-      color: #ffffff;
-      background-color: #326e5b;
+      border: 1px solid #326E5B !important;
+    }
+
+    &:active {
+      border: 1px solid #326E5B !important;
+    }
+  }
+
+  &--view {
+    &::before {
+      width: 25px;
+      height: 25px;
+      background-image: url("./../../public/img/circle-view-icon.svg");
+    }
+  }
+
+  &--more {
+    &::before {
+      width: 24px;
+      height: 24px;
+      background-image: url("./../../public/img/more.svg");
     }
   }
 }
