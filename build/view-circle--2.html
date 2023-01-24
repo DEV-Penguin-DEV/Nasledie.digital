@@ -85,9 +85,7 @@
     <a href="view-table.html" class="main-header__link">Вью таблицей</a>
     <a href="#" class="main-header__link">Круги</a>
     <a href="view-circle--editing.html" class="main-header__link">Круги (Редактирование)</a>
-    <a href="view-circle--mobile.html" class="main-header__link"
-        >Круги (Мобилка)</a
-      >
+    <a href="view-circle--mobile.html" class="main-header__link">Круги (Мобилка)</a>
     <a href="mobile-under-menu.html" class="main-header__link">Мобилка (Выбор под меню)</a>
   </header>
 
@@ -124,15 +122,19 @@
               </li>
             </ul>
 
-            <form action="#" class="circles-header__filers filters ">
+            <div action="#" class="circles-header__filers filters">
               <div class="circles-header__filers-container select-container">
-                <select class="filters__select select">
-                  <option value="all" class="filters__filter option">
+                <button type="button" class="filters__select select"></button>
+                <ul class="select-list select-list--closed">
+                  <li class="filters__filter option option--active">
                     Все
-                  </option>
-                </select>
+                  </li>
+                  <li class="filters__filter option option">
+                    Все2
+                  </li>
+                </ul>
               </div>
-            </form>
+            </div>
           </div>
 
           <div class="navigation__container">
