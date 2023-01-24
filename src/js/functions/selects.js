@@ -1,5 +1,3 @@
-const selectsContainers = document.querySelectorAll('.select-container');
-
 const setButtonText = (option, selectButton) => {
   selectButton.textContent = option.textContent;
 };
@@ -10,6 +8,8 @@ const closeSelectList = (selectList) => {
 };
 
 export const startSelects = () => {
+  const selectsContainers = document.querySelectorAll('.select-container');
+
   selectsContainers.forEach((selectContainer) => {
     const selectButton = selectContainer.querySelector('.select');
     const selectList = selectContainer.querySelector('.select-list');
@@ -21,7 +21,8 @@ export const startSelects = () => {
       }
     });
 
-    selectButton.addEventListener('click', () => {
+    selectButton.addEventListener('click', (evt) => {
+      evt.preventDefault();
       if (selectList.classList.contains('select-list--opened')) {
         closeSelectList(selectList);
       } else {

@@ -85,12 +85,16 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    cursor: pointer;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     & p {
       display: inline-block;
       margin: 0;
     }
+
     &::before {
       @include defaul-pseudo-element(60px, 34px);
       background: #ececec;

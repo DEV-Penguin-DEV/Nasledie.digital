@@ -1,4 +1,3 @@
-const circles = document.querySelectorAll('.circle');
 const mobile = window.matchMedia('(max-width: 750px)');
 
 const TOTAL_DEG_1 = 220;
@@ -16,6 +15,7 @@ const imgContainersFor = (imgContainers, deg, firstObjectCoefficient) => {
 };
 
 export const startPositions = () => {
+  const circles = document.querySelectorAll('.circle');
   circles.forEach((circle) => {
     const imgContainers = circle.querySelectorAll('.circle__img-container');
     if (!mobile.matchMedia) {
