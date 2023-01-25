@@ -8,6 +8,7 @@ import { View } from '../const';
 import CircleTableView from '../view/circle-table-view';
 import { findAncestor } from '../utils';
 import HeaderEditingView from '../view/header-editing-view';
+import { startDropDrag } from '../functions/drop-drag.js';
 
 export default class CirclePresenter {
   selectedView = View.CIRCLES;
@@ -92,8 +93,11 @@ export default class CirclePresenter {
   renderCircleBlock = (container) => {
     if(this.selectedView === View.CIRCLES) {
       this.#renderCircle(container);
+      startDropDrag(true);
+      console.log('1');
     } else {
       this.#renderCircleTable(container);
+      startDropDrag();
     }
   };
 }

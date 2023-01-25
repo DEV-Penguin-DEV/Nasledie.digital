@@ -1,6 +1,7 @@
 .circle {
   position: absolute;
   border-radius: 50%;
+  z-index: 2;
 
   &::before {
     top: 0;
@@ -11,6 +12,7 @@
     padding-top: 73.5%;
     top: 75px;
     left: 14.8%;
+    z-index: 2;
 
     &::before {
       @include defaul-pseudo-element(100%);
@@ -40,6 +42,7 @@
     left: 23%;
     padding-top: 57.3%;
     width: 57.3%;
+    z-index: 3;
 
     &::before {
       @include defaul-pseudo-element(100%);
@@ -68,6 +71,7 @@
     padding-top: 41.25%;
     top: 230px;
     left: 31%;
+    z-index: 4;
 
     &::before {
       @include defaul-pseudo-element(100%);
@@ -96,6 +100,7 @@
     padding-top: 24.5%;
     top: 310px;
     left: 39.2%;
+    z-index: 5;
 
     &::before {
       @include defaul-pseudo-element(100%);

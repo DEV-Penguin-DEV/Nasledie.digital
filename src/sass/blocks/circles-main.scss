@@ -39,6 +39,7 @@
 
     & .circles-main__ceil {
       display: flex;
+      flex-grow: 1;
       flex-wrap: wrap;
       padding: 22px 20px;
       gap: 6px 14px;
@@ -52,13 +53,14 @@
 
       &--title {
         width: 142px;
+        flex-grow: 0;
       }
     }
 
     & .circles-main__user-avatar {
       position: static;
-      width: 50px;
-      height: 50px;
+      width: 43%;
+      padding: 0;
     }
 
     & .circles-main__circle {
@@ -94,7 +96,6 @@
 
     & .circles-main__circles-container {
       width: 100%;
-      padding-top: 100%;
       position: absolute;
     }
 
@@ -192,9 +193,22 @@
   display: block;
   left: 46.35%;
   position: absolute;
-  top: 378px;
+  padding-top: 32%;
   width: 10.41%;
   height: auto;
+  z-index: 0;
+
+  @media (min-width: 1400px) {
+    padding-top: 28%;
+  }
+
+  @media (min-width: 1600px) {
+    padding-top: 25%;
+  }
+
+  @media (min-width: 2000px) {
+    padding-top: 22%;
+  }
 }
 
 .circles-main__title {

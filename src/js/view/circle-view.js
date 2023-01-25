@@ -18,7 +18,7 @@ const circleTemplate = () => (`
   </ul>
 
   <div class="circles-main__circles-container">
-    <div class="circles-main__circle circle circle--4">
+    <div class="circles-main__circle circle circle--4 circles-main__ceil--content">
       <div class="circle__img-container">
         <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1">
       </div>
@@ -39,7 +39,7 @@ const circleTemplate = () => (`
       </div>
     </div>
 
-    <div class="circles-main__circle circle circle--3">
+    <div class="circles-main__circle circle circle--3 circles-main__ceil--content">
       <div class="circle__img-container">
         <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1">
       </div>
@@ -63,7 +63,7 @@ const circleTemplate = () => (`
       </div>
     </div>
 
-    <div class="circles-main__circle circle circle--2">
+    <div class="circles-main__circle circle circle--2 circles-main__ceil--content">
       <div class="circle__img-container">
         <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1">
       </div>
@@ -105,7 +105,7 @@ const circleTemplate = () => (`
       </div>
     </div>
 
-    <div class="circles-main__circle circle circle--1">
+    <div class="circles-main__circle circle circle--1 circles-main__ceil--content">
       <div class="circle__img-container">
         <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1">
       </div>
