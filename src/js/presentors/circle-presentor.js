@@ -94,7 +94,6 @@ export default class CirclePresenter {
     if(this.selectedView === View.CIRCLES) {
       this.#renderCircle(container);
       startDropDrag(true);
-      console.log('1');
     } else {
       this.#renderCircleTable(container);
       startDropDrag();

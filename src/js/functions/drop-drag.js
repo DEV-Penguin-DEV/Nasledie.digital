@@ -10,14 +10,11 @@ export const startDropDrag = (isCircleView = false) => {
       evt.preventDefault();
 
     };
-    console.log(isCircleView);
     container.ondrop = (evt) => {
       const elementId = evt.dataTransfer.getData('id');
       evt.target.append(imgContainers[elementId]);
 
-      console.log(isCircleView);
       if (isCircleView) {
-        console.log('sp');
         startPositions();
       }
     };
