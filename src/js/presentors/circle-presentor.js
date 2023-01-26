@@ -9,6 +9,7 @@ import CircleTableView from '../view/circle-table-view';
 import { findAncestor } from '../utils';
 import HeaderEditingView from '../view/header-editing-view';
 import { startDropDrag } from '../functions/drop-drag.js';
+const mediaQueryMobile = window.matchMedia('(max-width: 750px)');
 
 export default class CirclePresenter {
   selectedView = View.CIRCLES;
@@ -17,7 +18,7 @@ export default class CirclePresenter {
   #headerView = new HeaderView();
   #headerEditingView = new HeaderEditingView();
   #circleContainer = new CircleContainerView();
-  #circleTableView = new CircleTableView;
+  #circleTableView = new CircleTableView();
   #circleMainContainer = null;
 
   constructor(circleMainContainer) {
@@ -37,7 +38,9 @@ export default class CirclePresenter {
   // Render Circle view
   #renderCircle(container) {
     render(this.#circleView, container);
-    startPositions();
+    if (!mediaQueryMobile.matches) {
+      startPositions();
+    }
   }
 
   // Render table view
@@ -48,21 +51,26 @@ export default class CirclePresenter {
 
   //Render Header
   #renderHeader(container) {
-    if (!this.isEditing) {
-      render(this.#headerView, container, RenderPosition.AFTERBEGIN);
-      const editorButton = document.querySelector('.circles-header__editor');
-      editorButton.addEventListener('click', this.#onEditorClick);
-      startSelects();
-    } else {
-      render(this.#headerEditingView, container, RenderPosition.AFTERBEGIN);
-      const saveButton = document.querySelector('.circles-header__save');
-      saveButton.addEventListener('click', this.#onEditorClick);
+    if (!mediaQueryMobile.matches) {
+      if (!this.isEditing) {
+        render(this.#headerView, container, RenderPosition.AFTERBEGIN);
+        const editorButton = document.querySelector('.circles-header__editor');
+        editorButton.addEventListener('click', this.#onEditorClick);
+        startSelects();
+      } else {
+        render(this.#headerEditingView, container, RenderPosition.AFTERBEGIN);
+        const saveButton = document.querySelector('.circles-header__save');
+        saveButton.addEventListener('click', this.#onEditorClick);
 
-      const closedButton = document.querySelector('.circles-header__cansel');
-      closedButton.addEventListener('click', this.#onEditorClick);
+        const closedButton = document.querySelector('.circles-header__cansel');
+        closedButton.addEventListener('click', this.#onEditorClick);
+      }
+      const viewList = document.querySelector('.circles-header__view-list');
+      viewList.addEventListener('click', this.#onViewClick);
+    } else {
+      render(this.#headerView, container, RenderPosition.AFTERBEGIN);
     }
-    const viewList = document.querySelector('.circles-header__view-list');
-    viewList.addEventListener('click', this.#onViewClick);
+
   }
 
   //On view change
@@ -84,19 +92,32 @@ export default class CirclePresenter {
   // Editing mode
   #onEditorClick = () => {
     this.isEditing = !this.isEditing;
+    if (this.isEditing) {
+      this.selectedView = View.CIRCLES;
+    }
     const circleContainerElement = document.querySelector('.circles');
     document.querySelector('.circles-header').remove();
+    document.querySelector('.circles-main').remove();
     this.#renderHeader(circleContainerElement);
+    this.#circleView = new CircleView();
+    this.#circleTableView = new CircleTableView();
+    this.renderCircleBlock(circleContainerElement);
   };
 
   // Render main content
   renderCircleBlock = (container) => {
     if(this.selectedView === View.CIRCLES) {
       this.#renderCircle(container);
-      startDropDrag(true);
     } else {
       this.#renderCircleTable(container);
-      startDropDrag();
+    }
+
+    if (this.isEditing) {
+      if(this.selectedView === View.CIRCLES) {
+        startDropDrag(true);
+      } else {
+        startDropDrag();
+      }
     }
   };
 }

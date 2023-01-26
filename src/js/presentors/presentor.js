@@ -1,11 +1,7 @@
-import { render } from '../render';
-import { startPositions } from '../functions/circles';
-import CircleBaseView from '../view/circle-base-view';
 import CirclePresenter from './circle-presentor';
 
 export default class AppPresenter {
   // #model = null;
-  #circleBaseView = new CircleBaseView();
   #circlePresentor = null;
   #circleMainContainer = null;
 
@@ -56,11 +52,6 @@ export default class AppPresenter {
 
   clearPoints = () => {
   };
-
-  #renderCircleBase() {
-    render(this.#circleBaseView, this.#circleMainContainer);
-    startPositions();
-  }
 
   #renderBoard() {
     this.#circlePresentor.init();

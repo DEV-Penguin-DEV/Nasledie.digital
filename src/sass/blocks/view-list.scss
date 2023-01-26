@@ -7,6 +7,9 @@
 .view-list__button {
   transition: $default-menu-transition;
   &:hover {
-    // TODO
+    & svg circle,
+    & svg path {
+      stroke: #548677;
+    }
   }
 }

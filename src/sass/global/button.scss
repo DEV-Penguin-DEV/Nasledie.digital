@@ -12,6 +12,9 @@ button {
     position: relative;
     border-radius: 50%;
     transition: $default-menu-transition;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &::before {
       @include defaul-pseudo-element(100%);
@@ -21,20 +24,27 @@ button {
     }
 
     &:hover {
-      border: 1px solid #326E5B !important;
+      border: 1px solid #326e5b !important;
     }
 
     &:active {
-      border: 1px solid #326E5B !important;
+      border: 1px solid #326e5b !important;
     }
-  }
 
-  &--undo {
-    background: url("./../../public/img/undo-icon.svg") no-repeat center center;
-  }
+    &--icon {
+      transition: $default-menu-transition;
+      & svg path {
+        transition: $default-menu-transition;
+      }
 
-  &--cansel {
-    background: url("./../../public/img/Close_icon.svg") no-repeat center center;
+      &:hover {
+        background-color: #326e5b !important;
+
+        & svg path {
+          fill: #ffffff;
+        }
+      }
+    }
   }
 
   &--green {
@@ -47,29 +57,37 @@ button {
     align-items: center;
     text-align: center;
     transition: $default-menu-transition;
-
     color: #ffffff;
     background: #326e5b;
     border-radius: 100px;
-
     min-width: 162px;
     display: block;
     padding: 12px 0;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
 
     &:hover {
-      background: #408c74;
-    }
-
-    &:active {
-      background: #2c6050;
-      /* gray */
-
-      border: 1px solid #b7bdce;
+      color: #326e5b;
+      background-color: #ffffff;
     }
 
     &:disabled {
       opacity: 0.5;
-      background: #2C6050;
+      background: #2c6050;
+    }
+
+    & svg rect {
+      transition: $default-menu-transition;
+    }
+
+    &--icon {
+      transition: $default-menu-transition;
+      &:hover {
+        background-color: #ffffff;
+
+        & svg rect {
+          fill: #326e5b;
+        }
+      }
     }
   }
 
@@ -88,11 +106,11 @@ button {
     transition: $slow-menu-transition;
 
     &:hover {
-      border: 1px solid #326E5B !important;
+      border: 1px solid #326e5b !important;
     }
 
     &:active {
-      border: 1px solid #326E5B !important;
+      border: 1px solid #326e5b !important;
     }
   }
 

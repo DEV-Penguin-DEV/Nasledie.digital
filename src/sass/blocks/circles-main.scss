@@ -10,6 +10,7 @@
     border: 1px solid #f0f4f7;
     box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
+    overflow-x: scroll;
 
     & .circles-main__row {
       min-height: 120px;
@@ -46,6 +47,7 @@
       width: 260px;
       justify-content: center;
       align-items: center;
+      min-width: 170px;
 
       &:not(:first-child) {
         border-left: 1px solid rgba(183, 189, 206, 0.3);
@@ -54,6 +56,7 @@
       &--title {
         width: 142px;
         flex-grow: 0;
+        min-width: 142px;
       }
     }
 
@@ -157,14 +160,21 @@
         background-size: contain;
         @include centering-pseudo-element;
       }
-
-      &:hover {
-        // TODO
-      }
     }
 
     .periods-menu {
       margin: 0;
+    }
+  }
+
+  @media (max-width: $mobile-max-width) {
+    overflow: visible;
+    padding: 76px 15px 34px 15px;
+    box-sizing: border-box;
+    overflow-x: clip;
+
+    & .circles-main__circles-container {
+      position: relative;
     }
   }
 }
@@ -184,7 +194,6 @@
   transition: $default-menu-transition;
 
   &:hover {
-    // TODO
     background-color: #7ee8c8;
   }
 }
@@ -193,10 +202,18 @@
   display: block;
   left: 46.35%;
   position: absolute;
-  padding-top: 32%;
+  padding-top: 40%;
   width: 10.41%;
   height: auto;
   z-index: 0;
+
+  @media (min-width: 1000px) {
+    padding-top: 36%;
+  }
+
+  @media (min-width: 1200px) {
+    padding-top: 32%;
+  }
 
   @media (min-width: 1400px) {
     padding-top: 28%;
@@ -208,6 +225,33 @@
 
   @media (min-width: 2000px) {
     padding-top: 22%;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    left: 0;
+    position: static;
+    margin: 0 auto;
+    margin-top: 35px;
+    padding-top: 0;
+    width: 28.24%;
+    height: auto;
+    z-index: 0;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .circles-main__user-avatar-container {
+    position: relative;
+  }
+
+  .circles-main__user-avatar-plus {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    min-width: 0;
+    bottom: -20px;
   }
 }
 
