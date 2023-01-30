@@ -2,6 +2,8 @@
   .periods-slider {
     display: flex;
     position: relative;
+    flex-grow: 1;
+    max-width: 85%;
   }
 
   .periods-slider__controler {
@@ -42,7 +44,7 @@
   }
 
   .periods-slider__list {
-    width: 64vw;
+    width: 100%;
     background: #ffffff;
     border: 1px solid rgba(183, 189, 206, 0.3);
     border-radius: 8px;

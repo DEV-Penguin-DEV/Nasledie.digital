@@ -9,6 +9,7 @@ import CircleTableView from '../view/circle-table-view';
 import { findAncestor } from '../utils';
 import HeaderEditingView from '../view/header-editing-view';
 import { startDropDrag } from '../functions/drop-drag.js';
+import CircleMobileEditorView from '../view/circle-mobile-editor-view';
 const mediaQueryMobile = window.matchMedia('(max-width: 750px)');
 
 export default class CirclePresenter {
@@ -69,6 +70,9 @@ export default class CirclePresenter {
       viewList.addEventListener('click', this.#onViewClick);
     } else {
       render(this.#headerView, container, RenderPosition.AFTERBEGIN);
+
+      const viewList = document.querySelector('.top-menu__button-editor');
+      viewList.addEventListener('click', this.#onMobileEditorClick);
     }
 
   }
@@ -102,6 +106,33 @@ export default class CirclePresenter {
     this.#circleView = new CircleView();
     this.#circleTableView = new CircleTableView();
     this.renderCircleBlock(circleContainerElement);
+  };
+
+  #onMobileEditorClick = () => {
+    const circleContainerElement = document.querySelector('.circles');
+    document.querySelector('.top-menu').remove();
+    document.querySelector('.circles-main').remove();
+    render(new CircleMobileEditorView(), circleContainerElement);
+
+    // on cansek button click
+    const canselButton = document.querySelector('.top-menu__cansel-button');
+    canselButton.addEventListener('click', () => {
+      circleContainerElement.innerHTML = '';
+
+      // render no editing version of view
+      this.#renderHeader(circleContainerElement);
+      this.renderCircleBlock(circleContainerElement);
+    });
+
+    // on Save button click
+    const saveButton = document.querySelector('.top-menu__save');
+    saveButton.addEventListener('click', () => {
+      circleContainerElement.innerHTML = '';
+
+      // render no editing version of view
+      this.#renderHeader(circleContainerElement);
+      this.renderCircleBlock(circleContainerElement);
+    });
   };
 
   // Render main content

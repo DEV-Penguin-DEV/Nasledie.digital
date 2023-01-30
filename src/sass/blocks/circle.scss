@@ -35,6 +35,13 @@
       bottom: 34.625vw;
       left: -14px;
     }
+    @media (max-width: $mobile-max-width) {
+      order: 4;
+
+      &::before {
+        background-image: url("./../../public/img/circle-line--mobile.svg") !important;
+      }
+    }
   }
 
   &--3 {
@@ -63,6 +70,10 @@
       position: absolute;
       bottom: 26.7vw;
       left: -17px;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      order: 3;
     }
   }
 
@@ -93,6 +104,10 @@
       bottom: 19vw;
       left: -13px;
     }
+
+    @media (max-width: $mobile-max-width) {
+      order: 2;
+    }
   }
 
   &--1 {
@@ -121,6 +136,10 @@
       position: absolute;
       bottom: 11.6vw;
       left: -13px;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      order: 1;
     }
   }
 

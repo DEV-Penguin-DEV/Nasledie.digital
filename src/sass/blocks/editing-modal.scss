@@ -34,10 +34,6 @@
     background: url("./../../public/img/Close_icon.svg");
     cursor: pointer;
     transition: $default-menu-transition;
-
-    &:hover {
-      // TODO
-    }
   }
 
   .editing-modal__content-container {

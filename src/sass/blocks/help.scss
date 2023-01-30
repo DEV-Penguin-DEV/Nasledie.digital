@@ -51,10 +51,6 @@
   background: url("./../../public/img/Close_icon.svg");
   cursor: pointer;
   transition: $default-menu-transition;
-
-  &:hover {
-    // TODO
-  }
 }
 
 .help-block__bottom-part {
@@ -99,5 +95,4 @@
   margin: 0 auto;
   cursor: pointer;
   transition: $default-menu-transition;
-
 }
