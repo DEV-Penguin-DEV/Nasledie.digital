@@ -1,29 +1,23 @@
-import AbstractView from './abstract-view';
+import AbstractView from "./abstract-view";
 
-const headerEditingTemplate = () => (`
+const headerEditingTemplate = () => `
 <header class="circles-header circles-header--table circles-header--editing">
   <nav class="circles-header__navigation navigation">
     <div class="navigation__container">
       <ul class="circles-header__view-list view-list circles-header__list navigation__item">
         <li class="view-list__item">
           <button class="view-list__button view-list__button--circle">
-            <svg class="view-list__icon" width="26" height="26" viewBox="0 0 26 26" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <circle cx="13" cy="13" r="8.5" stroke="#808080" />
-              <circle cx="13" cy="13" r="12.5" stroke="#808080" />
+            <svg class="view-list__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="4.25" stroke="#B7BDCE" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="8.25" stroke="#B7BDCE" stroke-width="1.5"/>
             </svg>
           </button>
         </li>
 
         <li class="view-list__item">
           <button class="view-list__button view-list__button--table">
-            <svg class="view-list__icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7 16H4C3.44772 16 3 15.5523 3 15V12C3 11.4477 3.44772 11 4 11H7C7.55228 11 8 11.4477 8 12V15C8 15.5523 7.55229 16 7 16Z" stroke="#808080"/>
-              <path d="M7 23H4C3.44772 23 3 22.5523 3 22V19C3 18.4477 3.44772 18 4 18H7C7.55228 18 8 18.4477 8 19V22C8 22.5523 7.55229 23 7 23Z" stroke="#808080"/>
-              <path d="M7 9H4C3.44772 9 3 8.55229 3 8V5C3 4.44772 3.44772 4 4 4H7C7.55228 4 8 4.44772 8 5V8C8 8.55228 7.55229 9 7 9Z" stroke="#808080"/>
-              <path d="M22 16H12C11.4477 16 11 15.5523 11 15V12C11 11.4477 11.4477 11 12 11H22C22.5523 11 23 11.4477 23 12V15C23 15.5523 22.5523 16 22 16Z" stroke="#808080"/>
-              <path d="M22 23H12C11.4477 23 11 22.5523 11 22V19C11 18.4477 11.4477 18 12 18H22C22.5523 18 23 18.4477 23 19V22C23 22.5523 22.5523 23 22 23Z" stroke="#808080"/>
-              <path d="M22 9H12C11.4477 9 11 8.55229 11 8V5C11 4.44772 11.4477 4 12 4H22C22.5523 4 23 4.44772 23 5V8C23 8.55228 22.5523 9 22 9Z" stroke="#808080"/>
+            <svg class="view-list__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.2308 4H2.76923C2.56522 4 2.36956 4.08429 2.2253 4.23431C2.08104 4.38434 2 4.58783 2 4.8V18.4C2 18.8243 2.16209 19.2313 2.4506 19.5314C2.73912 19.8314 3.13044 20 3.53846 20H20.4615C20.8696 20 21.2609 19.8314 21.5494 19.5314C21.8379 19.2313 22 18.8243 22 18.4V4.8C22 4.58783 21.919 4.38434 21.7747 4.23431C21.6304 4.08429 21.4348 4 21.2308 4ZM3.53846 10.4H7.38462V13.6H3.53846V10.4ZM8.92308 10.4H20.4615V13.6H8.92308V10.4ZM20.4615 5.6V8.8H3.53846V5.6H20.4615ZM3.53846 15.2H7.38462V18.4H3.53846V15.2ZM20.4615 18.4H8.92308V15.2H20.4615V18.4Z" fill="#B7BDCE"/>
             </svg>
           </button>
         </li>
@@ -37,12 +31,6 @@ const headerEditingTemplate = () => (`
     <h2 class="navigation__title title--green">Режим редактирования</h2>
 
     <div class="navigation__container">
-      <button class="circles-header__undo button--white button--undo button--white--icon navigation__item">
-        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.4864 6.4864C8.87693 6.09588 8.87693 5.46271 8.4864 5.07219C8.09588 4.68167 7.46271 4.68167 7.07219 5.07219L8.4864 6.4864ZM4.7793 8.7793L4.07219 8.07219C3.68167 8.46271 3.68167 9.09588 4.07219 9.4864L4.7793 8.7793ZM7.07219 12.4864C7.46271 12.8769 8.09588 12.8769 8.4864 12.4864C8.87693 12.0959 8.87693 11.4627 8.4864 11.0722L7.07219 12.4864ZM4.7793 15.7793C4.22701 15.7793 3.7793 16.227 3.7793 16.7793C3.7793 17.3316 4.22701 17.7793 4.7793 17.7793V15.7793ZM7.07219 5.07219L4.07219 8.07219L5.4864 9.4864L8.4864 6.4864L7.07219 5.07219ZM4.07219 9.4864L7.07219 12.4864L8.4864 11.0722L5.4864 8.07219L4.07219 9.4864ZM4.7793 9.7793H15.7793V7.7793H4.7793V9.7793ZM18.7793 12.7793C18.7793 14.4362 17.4362 15.7793 15.7793 15.7793V17.7793C18.5407 17.7793 20.7793 15.5407 20.7793 12.7793H18.7793ZM15.7793 9.7793C17.4362 9.7793 18.7793 11.1224 18.7793 12.7793H20.7793C20.7793 10.0179 18.5407 7.7793 15.7793 7.7793V9.7793ZM4.7793 17.7793H15.7793V15.7793H4.7793V17.7793Z" fill="#B7BDCE"/>
-        </svg>
-      </button>
-
       <button class="circles-header__cansel button--white button--cansel button--white--icon navigation__item">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
@@ -57,7 +45,7 @@ const headerEditingTemplate = () => (`
     </div>
   </nav>
 </header>
-`);
+`;
 
 export default class HeaderEditingView extends AbstractView {
   constructor() {

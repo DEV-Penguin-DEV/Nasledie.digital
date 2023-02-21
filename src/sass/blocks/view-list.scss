@@ -6,10 +6,27 @@
 
 .view-list__button {
   transition: $default-menu-transition;
+  display: flex;
+  align-items: center;
   &:hover {
     & svg circle,
     & svg path {
+      transition: $default-menu-transition;
       stroke: #548677;
+    }
+  }
+
+  & svg circle,
+  & svg path {
+    transition: $default-menu-transition;
+  }
+
+  &--table {
+    &:hover {
+      & svg path {
+        transition: $default-menu-transition;
+        fill: #548677;
+      }
     }
   }
 }

@@ -73,8 +73,9 @@
     }
 
     & .navigation__title {
-      position: absolute;
-      @include centering-pseudo-element;
+      display: block;
+      margin-left: auto;
+      margin-right: 30px;
     }
   }
 }
