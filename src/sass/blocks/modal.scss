@@ -1,0 +1,114 @@
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.modal {
+  width: 44.14vw;
+  background: #ffffff;
+  border: 1px solid #f0f4f7;
+  border-radius: 15px;
+  padding: 0 0 30px 0;
+  box-sizing: border-box;
+  position: absolute;
+  left: 40vw;
+  top: 11.5vh;
+}
+
+.modal__top-content {
+  padding: 22px 0;
+  background: $modal-top-bg;
+  width: 100%;
+  text-align: center;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.modal__main-content {
+  padding: 35px 8.28vw 0 8.28vw;
+}
+
+.modal__title {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  /* identical to box height */
+
+  text-align: center;
+
+  /* Black */
+
+  color: #444444;
+}
+
+.modal__save-button {
+  margin: 0 auto;
+}
+
+.modal__content-title {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  /* identical to box height, or 125% */
+
+  color: $help-text-color;
+  margin-bottom: 12px;
+}
+
+.modal__add-input {
+  background: #ffffff;
+  border: 1px solid rgba(183, 189, 206, 0.3);
+  border-radius: 8px 0px 0px 8px;
+  padding: 14px 10px;
+  box-sizing: border-box;
+  width: 24.6vw;
+  transition: $default-menu-transition;
+
+  &::placeholder {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #b7bdce;
+  }
+
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: $help-text-color;
+
+  &:hover {
+    transition: $default-menu-transition;
+    border-color: #000000;
+  }
+}
+
+.modal__add-button {
+  width: 40px;
+  min-height: 100%;
+  min-width: 0;
+  background-image: url("./../../public/img/arrow-good.svg");
+  border: 1px solid rgba(183, 189, 206, 0.3);
+  border-radius: 0px 8px 8px 0px;
+
+  &:hover {
+    background-image: url("./../../public/img/arrow-good--hover.svg");
+  }
+}
+
+.modal__add-form {
+  display: flex;
+  margin-bottom: 21px;
+}

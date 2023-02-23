@@ -25,17 +25,6 @@
     margin: 0;
   }
 
-  .editing-modal__closed-button {
-    position: absolute;
-    top: 21px;
-    right: 10px;
-    width: 32px;
-    height: 32px;
-    background: url("./../../public/img/Close_icon.svg");
-    cursor: pointer;
-    transition: $default-menu-transition;
-  }
-
   .editing-modal__content-container {
     padding: 17px 15px 28px 15px;
   }

@@ -47,18 +47,31 @@ button {
     }
   }
 
+  &--icon {
+    transition: $default-menu-transition;
+    background-position: center center;
+    background-repeat: no-repeat;
+    & svg path {
+      transition: $default-menu-transition;
+    }
+
+    &:hover {
+      & svg path {
+        fill: $hover-button-color;
+      }
+    }
+  }
+
   &--green {
     font-family: "Proxima Nova";
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 16px;
-    display: flex;
-    align-items: center;
     text-align: center;
     transition: $default-menu-transition;
     color: #ffffff;
-    background: #326e5b;
+    background-color: #326e5b;
     border-radius: 100px;
     min-width: 162px;
     display: block;
@@ -129,6 +142,22 @@ button {
       width: 24px;
       height: 24px;
       background-image: url("./../../public/img/more.svg");
+    }
+  }
+
+  &--closed-button {
+    position: absolute;
+    top: 21px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    background: url("./../../public/img/Close_icon.svg");
+    cursor: pointer;
+    transition: $default-menu-transition;
+
+    &:hover {
+      transition: $default-menu-transition;
+      background: url("./../../public/img/Close_icon--hover.svg");
     }
   }
 }

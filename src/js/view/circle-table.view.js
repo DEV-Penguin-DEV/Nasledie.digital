@@ -1,4 +1,4 @@
-import AbstractView from './abstract-view';
+import AbstractView from './abstract.view.js';
 
 const circleTemplate = () => (`
 <main class="circles-main circles-main--table">

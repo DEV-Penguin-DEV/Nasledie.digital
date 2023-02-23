@@ -1,0 +1,65 @@
+.added-group__count {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: $added-group-text-color;
+}
+
+.added-groups__title {
+  color: $added-group-text-color;
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 12px;
+}
+
+.added-groups__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 90px;
+}
+
+.added-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.added-group__container {
+  display: flex;
+  padding: 6px 12px;
+  box-sizing: border-box;
+  background: #ffffff;
+  width: fit-content;
+  align-items: center;
+  /* gray */
+
+  border: 1px solid $added-group-text-color;
+  border-radius: 100px;
+}
+
+.added-group__title {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: #444444;
+  margin-right: 13px;
+}
+
+.added-group__button-container {
+  display: flex;
+  gap: 15px;
+}
+
+.added-group__button {
+  height: 24px;
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="proximaNova.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Source+Serif+Pro:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="main.css" />
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .preloader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      background-color: #21d4fd;
+      background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+      z-index: 1001;
+      color: #eee;
+    }
+
+    .preloader__image {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      width: 70px;
+      height: 70px;
+      margin-top: -35px;
+      margin-left: -35px;
+      text-align: center;
+      animation: preloader-rotate 2s infinite linear;
+    }
+
+    @keyframes preloader-rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loaded_hiding .preloader {
+      transition: 0.3s opacity;
+      opacity: 0;
+    }
+
+    .loaded .preloader {
+      display: none;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      document.body.classList.add("loaded_hiding");
+      window.setTimeout(function () {
+        document.body.classList.add("loaded");
+        document.body.classList.remove("loaded_hiding");
+      }, 500);
+    };
+  </script>
+  <title>Document</title>
+</head>
+
+<body class="page">
+  <!-- Прелоадер -->
+  <div class="preloader">
+    <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path fill="currentColor"
+        d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+      </path>
+    </svg>
+  </div>
+
+
+  <main class="main-content">
+    <div class="modal-container">
+      <div class="modal persone-group">
+        <div class="persone-group__top-content modal__top-content">
+          <p class="persone-group__title modal__title">Группы персон</p>
+          <button class="persone-group__button button--closed-button"><span
+              class="visually-hidden">Закрыть</span></button>
+        </div>
+
+        <div class="persone-group__main-content modal__main-content">
+          <p class="persone-group__content-title modal__content-title">Добавьте группу</p>
+          <form class=" add-new-group-form modal__add-form" action="#" method="post">
+            <input type="text" class="add-new-group-form__input modal__add-input" placeholder="Название группы">
+            <button type="submit"
+              class="add-new-group-form__button modal__add-button  button button--icon button--green">
+              <span class="visually-hidden">Добавить нcовую группу</span>
+            </button>
+          </form>
+
+          <div class="added-groups">
+            <p class="added-groups__title">Добавленные</p>
+
+            <ul class="added-groups__list">
+              <li class="added-group">
+                <div class="added-group__container">
+                  <p class="added-group__title">Родственники</p>
+                  <div class="added-group__button-container">
+                    <button class="added-group__edit added-group__button button button--icon">
+                      <span class="visually-hidden">Изменить группу</span>
+                      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M20.0848 5.73218C19.6697 5.31707 18.9966 5.31707 18.5815 5.73218L6.47444 17.8393L5.91256 20.0868L8.16007 19.5249L20.2671 7.41781C20.6823 7.0027 20.6823 6.32967 20.2671 5.91456L20.0848 5.73218ZM17.0783 4.22893C18.3236 2.98359 20.3427 2.98359 21.588 4.22893L21.7704 4.4113C23.0157 5.65664 23.0157 7.67573 21.7704 8.92107L9.45514 21.2363C9.31891 21.3726 9.14822 21.4692 8.96131 21.5159L4.70946 22.5789C4.34723 22.6695 3.96405 22.5633 3.70003 22.2993C3.43601 22.0353 3.32987 21.6521 3.42043 21.2899L4.48339 17.038C4.53012 16.8511 4.62676 16.6804 4.76299 16.5442L17.0783 4.22893Z"
+                          fill="#B7BDCE" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M15.3914 5.91485C15.8065 5.49974 16.4796 5.49974 16.8947 5.91485L20.0836 9.10374C20.4987 9.51885 20.4987 10.1919 20.0836 10.607C19.6684 11.0221 18.9954 11.0221 18.5803 10.607L15.3914 7.41811C14.9763 7.00299 14.9763 6.32996 15.3914 5.91485Z"
+                          fill="#B7BDCE" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.9551 21.5493C12.9551 20.9622 13.431 20.4863 14.018 20.4863H22.5217C23.1088 20.4863 23.5847 20.9622 23.5847 21.5493C23.5847 22.1363 23.1088 22.6123 22.5217 22.6123H14.018C13.431 22.6123 12.9551 22.1363 12.9551 21.5493Z"
+                          fill="#B7BDCE" />
+                      </svg>
+
+                    </button>
+                    <button class="added-group__delete added-group__button button button--icon">
+                      <span class="visually-hidden">Удалить группу</span>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.2473 22.0001C10.8923 22.0001 9.57133 21.9852 8.26433 21.9581C6.59233 21.9251 5.43533 20.8411 5.24633 19.1291C4.93133 16.2891 4.39233 9.59515 4.38733 9.52815C4.35333 9.11515 4.66133 8.75315 5.07433 8.72015C5.48133 8.70915 5.84933 8.99515 5.88233 9.40715C5.88733 9.47515 6.42533 16.1461 6.73733 18.9641C6.84433 19.9371 7.36933 20.4391 8.29533 20.4581C10.7953 20.5112 13.3463 20.5141 16.0963 20.4641C17.0803 20.4451 17.6123 19.9531 17.7223 18.9571C18.0323 16.1631 18.5723 9.47515 18.5783 9.40715C18.6113 8.99515 18.9763 8.70715 19.3853 8.72015C19.7983 8.75415 20.1063 9.11515 20.0733 9.52815C20.0673 9.59615 19.5253 16.3071 19.2133 19.1221C19.0193 20.8691 17.8653 21.9321 16.1233 21.9641C14.7903 21.9871 13.5043 22.0001 12.2473 22.0001Z"
+                          fill="#B7BDCE" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M20.708 6.98926H3.75C3.336 6.98926 3 6.65326 3 6.23926C3 5.82526 3.336 5.48926 3.75 5.48926H20.708C21.122 5.48926 21.458 5.82526 21.458 6.23926C21.458 6.65326 21.122 6.98926 20.708 6.98926Z"
+                          fill="#B7BDCE" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M17.4406 6.989C16.3026 6.989 15.3146 6.178 15.0906 5.062L14.8476 3.846C14.7966 3.661 14.5856 3.5 14.3456 3.5H10.1126C9.87258 3.5 9.66158 3.661 9.60058 3.892L9.36758 5.062C9.14458 6.178 8.15558 6.989 7.01758 6.989C6.60358 6.989 6.26758 6.653 6.26758 6.239C6.26758 5.825 6.60358 5.489 7.01758 5.489C7.44358 5.489 7.81358 5.185 7.89758 4.767L8.14058 3.551C8.38758 2.619 9.19458 2 10.1126 2H14.3456C15.2636 2 16.0706 2.619 16.3076 3.506L16.5616 4.767C16.6446 5.185 17.0146 5.489 17.4406 5.489C17.8546 5.489 18.1906 5.825 18.1906 6.239C18.1906 6.653 17.8546 6.989 17.4406 6.989Z"
+                          fill="#B7BDCE" />
+                      </svg>
+
+                    </button>
+                  </div>
+                </div>
+                <p class="added-group__count">Кол-во персон: <span class="added-group__count-span">3</span></p>
+              </li>
+
+              <li class="added-group">
+                <div class="added-group__container">
+                  <p class="added-group__title">Тренеры</p>
+                  <div class="added-group__button-container">
+                    <button class="added-group__edit added-group__button button button--icon">
+                      <span class="visually-hidden">Изменить группу</span>
+                      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M20.0848 5.73218C19.6697 5.31707 18.9966 5.31707 18.5815 5.73218L6.47444 17.8393L5.91256 20.0868L8.16007 19.5249L20.2671 7.41781C20.6823 7.0027 20.6823 6.32967 20.2671 5.91456L20.0848 5.73218ZM17.0783 4.22893C18.3236 2.98359 20.3427 2.98359 21.588 4.22893L21.7704 4.4113C23.0157 5.65664 23.0157 7.67573 21.7704 8.92107L9.45514 21.2363C9.31891 21.3726 9.14822 21.4692 8.96131 21.5159L4.70946 22.5789C4.34723 22.6695 3.96405 22.5633 3.70003 22.2993C3.43601 22.0353 3.32987 21.6521 3.42043 21.2899L4.48339 17.038C4.53012 16.8511 4.62676 16.6804 4.76299 16.5442L17.0783 4.22893Z"
+                          fill="#B7BDCE" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M15.3914 5.91485C15.8065 5.49974 16.4796 5.49974 16.8947 5.91485L20.0836 9.10374C20.4987 9.51885 20.4987 10.1919 20.0836 10.607C19.6684 11.0221 18.9954 11.0221 18.5803 10.607L15.3914 7.41811C14.9763 7.00299 14.9763 6.32996 15.3914 5.91485Z"
+                          fill="#B7BDCE" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.9551 21.5493C12.9551 20.9622 13.431 20.4863 14.018 20.4863H22.5217C23.1088 20.4863 23.5847 20.9622 23.5847 21.5493C23.5847 22.1363 23.1088 22.6123 22.5217 22.6123H14.018C13.431 22.6123 12.9551 22.1363 12.9551 21.5493Z"
+                          fill="#B7BDCE" />
+                      </svg>
+
+                    </button>
+                    <button class="added-group__delete added-group__button button button--icon">
+                      <span class="visually-hidden">Удалить группу</span>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.2473 22.0001C10.8923 22.0001 9.57133 21.9852 8.26433 21.9581C6.59233 21.9251 5.43533 20.8411 5.24633 19.1291C4.93133 16.2891 4.39233 9.59515 4.38733 9.52815C4.35333 9.11515 4.66133 8.75315 5.07433 8.72015C5.48133 8.70915 5.84933 8.99515 5.88233 9.40715C5.88733 9.47515 6.42533 16.1461 6.73733 18.9641C6.84433 19.9371 7.36933 20.4391 8.29533 20.4581C10.7953 20.5112 13.3463 20.5141 16.0963 20.4641C17.0803 20.4451 17.6123 19.9531 17.7223 18.9571C18.0323 16.1631 18.5723 9.47515 18.5783 9.40715C18.6113 8.99515 18.9763 8.70715 19.3853 8.72015C19.7983 8.75415 20.1063 9.11515 20.0733 9.52815C20.0673 9.59615 19.5253 16.3071 19.2133 19.1221C19.0193 20.8691 17.8653 21.9321 16.1233 21.9641C14.7903 21.9871 13.5043 22.0001 12.2473 22.0001Z"
+                          fill="#B7BDCE" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M20.708 6.98926H3.75C3.336 6.98926 3 6.65326 3 6.23926C3 5.82526 3.336 5.48926 3.75 5.48926H20.708C21.122 5.48926 21.458 5.82526 21.458 6.23926C21.458 6.65326 21.122 6.98926 20.708 6.98926Z"
+                          fill="#B7BDCE" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M17.4406 6.989C16.3026 6.989 15.3146 6.178 15.0906 5.062L14.8476 3.846C14.7966 3.661 14.5856 3.5 14.3456 3.5H10.1126C9.87258 3.5 9.66158 3.661 9.60058 3.892L9.36758 5.062C9.14458 6.178 8.15558 6.989 7.01758 6.989C6.60358 6.989 6.26758 6.653 6.26758 6.239C6.26758 5.825 6.60358 5.489 7.01758 5.489C7.44358 5.489 7.81358 5.185 7.89758 4.767L8.14058 3.551C8.38758 2.619 9.19458 2 10.1126 2H14.3456C15.2636 2 16.0706 2.619 16.3076 3.506L16.5616 4.767C16.6446 5.185 17.0146 5.489 17.4406 5.489C17.8546 5.489 18.1906 5.825 18.1906 6.239C18.1906 6.653 17.8546 6.989 17.4406 6.989Z"
+                          fill="#B7BDCE" />
+                      </svg>
+
+                    </button>
+                  </div>
+                </div>
+                <p class="added-group__count">Кол-во персон: <span class="added-group__count-span">3</span></p>
+              </li>
+
+              <li class="added-group">
+                <div class="added-group__container">
+                  <p class="added-group__title">Братья</p>
+                  <div class="added-group__button-container">
+                    <button class="added-group__edit added-group__button button button--icon">
+                      <span class="visually-hidden">Изменить группу</span>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M20.0848 5.73218C19.6697 5.31707 18.9966 5.31707 18.5815 5.73218L6.47444 17.8393L5.91256 20.0868L8.16007 19.5249L20.2671 7.41781C20.6823 7.0027 20.6823 6.32967 20.2671 5.91456L20.0848 5.73218ZM17.0783 4.22893C18.3236 2.98359 20.3427 2.98359 21.588 4.22893L21.7704 4.4113C23.0157 5.65664 23.0157 7.67573 21.7704 8.92107L9.45514 21.2363C9.31891 21.3726 9.14822 21.4692 8.96131 21.5159L4.70946 22.5789C4.34723 22.6695 3.96405 22.5633 3.70003 22.2993C3.43601 22.0353 3.32987 21.6521 3.42043 21.2899L4.48339 17.038C4.53012 16.8511 4.62676 16.6804 4.76299 16.5442L17.0783 4.22893Z"
+                          fill="#B7BDCE" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M15.3914 5.91485C15.8065 5.49974 16.4796 5.49974 16.8947 5.91485L20.0836 9.10374C20.4987 9.51885 20.4987 10.1919 20.0836 10.607C19.6684 11.0221 18.9954 11.0221 18.5803 10.607L15.3914 7.41811C14.9763 7.00299 14.9763 6.32996 15.3914 5.91485Z"
+                          fill="#B7BDCE" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.9551 21.5493C12.9551 20.9622 13.431 20.4863 14.018 20.4863H22.5217C23.1088 20.4863 23.5847 20.9622 23.5847 21.5493C23.5847 22.1363 23.1088 22.6123 22.5217 22.6123H14.018C13.431 22.6123 12.9551 22.1363 12.9551 21.5493Z"
+                          fill="#B7BDCE" />
+                      </svg>
+
+                    </button>
+                    <button class="added-group__delete added-group__button button button--icon">
+                      <span class="visually-hidden">Удалить группу</span>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.2473 22.0001C10.8923 22.0001 9.57133 21.9852 8.26433 21.9581C6.59233 21.9251 5.43533 20.8411 5.24633 19.1291C4.93133 16.2891 4.39233 9.59515 4.38733 9.52815C4.35333 9.11515 4.66133 8.75315 5.07433 8.72015C5.48133 8.70915 5.84933 8.99515 5.88233 9.40715C5.88733 9.47515 6.42533 16.1461 6.73733 18.9641C6.84433 19.9371 7.36933 20.4391 8.29533 20.4581C10.7953 20.5112 13.3463 20.5141 16.0963 20.4641C17.0803 20.4451 17.6123 19.9531 17.7223 18.9571C18.0323 16.1631 18.5723 9.47515 18.5783 9.40715C18.6113 8.99515 18.9763 8.70715 19.3853 8.72015C19.7983 8.75415 20.1063 9.11515 20.0733 9.52815C20.0673 9.59615 19.5253 16.3071 19.2133 19.1221C19.0193 20.8691 17.8653 21.9321 16.1233 21.9641C14.7903 21.9871 13.5043 22.0001 12.2473 22.0001Z"
+                          fill="#B7BDCE" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M20.708 6.98926H3.75C3.336 6.98926 3 6.65326 3 6.23926C3 5.82526 3.336 5.48926 3.75 5.48926H20.708C21.122 5.48926 21.458 5.82526 21.458 6.23926C21.458 6.65326 21.122 6.98926 20.708 6.98926Z"
+                          fill="#B7BDCE" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M17.4406 6.989C16.3026 6.989 15.3146 6.178 15.0906 5.062L14.8476 3.846C14.7966 3.661 14.5856 3.5 14.3456 3.5H10.1126C9.87258 3.5 9.66158 3.661 9.60058 3.892L9.36758 5.062C9.14458 6.178 8.15558 6.989 7.01758 6.989C6.60358 6.989 6.26758 6.653 6.26758 6.239C6.26758 5.825 6.60358 5.489 7.01758 5.489C7.44358 5.489 7.81358 5.185 7.89758 4.767L8.14058 3.551C8.38758 2.619 9.19458 2 10.1126 2H14.3456C15.2636 2 16.0706 2.619 16.3076 3.506L16.5616 4.767C16.6446 5.185 17.0146 5.489 17.4406 5.489C17.8546 5.489 18.1906 5.825 18.1906 6.239C18.1906 6.653 17.8546 6.989 17.4406 6.989Z"
+                          fill="#B7BDCE" />
+                      </svg>
+
+                    </button>
+                  </div>
+                </div>
+                <p class="added-group__count">Кол-во персон: <span class="added-group__count-span">3</span></p>
+              </li>
+            </ul>
+
+            <button class="persone-group__button modal__save-button button button--green">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="bundle.js"></script>
+</body>
+
+</html>

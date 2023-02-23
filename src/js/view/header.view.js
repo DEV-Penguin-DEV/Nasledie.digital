@@ -1,4 +1,4 @@
-import AbstractView from './abstract-view';
+import AbstractView from './abstract.view.js';
 const mediaQueryMobile = window.matchMedia('(max-width: 750px)');
 
 const headerTemplate = () => !mediaQueryMobile.matches ? `

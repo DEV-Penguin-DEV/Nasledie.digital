@@ -1,4 +1,4 @@
-import AbstractView from './abstract-view';
+import AbstractView from './abstract.view.js';
 
 const circleMobileEditorTemplate = () => (`
 <div>
@@ -81,7 +81,7 @@ const circleMobileEditorTemplate = () => (`
   <div class="editing-modal editing-modal--open">
     <div class="editing-modal__title-container">
       <h2 class="editing-modal__title">Редактирование</h2>
-      <button class="editing-modal__closed-button">
+      <button class="button--closed-button">
         <span class="visually-hidden">Закрыть</span>
       </button>
     </div>

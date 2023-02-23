@@ -1,4 +1,4 @@
-import AbstractView from './abstract-view';
+import AbstractView from './abstract.view.js';
 
 const circleContainerTemplate = () => (`
 <section class="circles">

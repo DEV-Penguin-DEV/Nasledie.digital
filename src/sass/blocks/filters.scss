@@ -11,14 +11,21 @@
 
   &--editing {
     max-width: 190px;
-    &::before {
-      @include defaul-pseudo-element(19px);
-      background: url("./../../public/img/editor--table.svg") no-repeat center center;
-      background-size: contain;
-      top: 11px;
-      right: 10px;
+    display: flex;
+
+    & .select {
+      &::before {
+        content: none;
+      }
     }
   }
+}
+
+.filters--editing__button--icon {
+  position: absolute;
+  right: 10px;
+  @include centering-hight-pseudo-element();
+  height: 24px;
 }
 
 .filters--editing__input {
