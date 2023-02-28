@@ -151,13 +151,32 @@ button {
     right: 10px;
     width: 32px;
     height: 32px;
-    background: url("./../../public/img/Close_icon.svg");
+    background-image: url("./../../public/img/Close_icon.svg");
+    background-size: contain;
     cursor: pointer;
     transition: $default-menu-transition;
 
     &:hover {
       transition: $default-menu-transition;
-      background: url("./../../public/img/Close_icon--hover.svg");
+      background-image: url("./../../public/img/Close_icon--hover.svg");
+    }
+  }
+
+  &--back-button {
+    position: absolute;
+    top: 21px;
+    left: 10px;
+    width: 32px;
+    height: 32px;
+    background-image: url("./../../public/img/back-button_icon.svg");
+    background-size: contain;
+    cursor: pointer;
+    transition: $default-menu-transition;
+
+    &:hover {
+      transition: $default-menu-transition;
+      background-image: url("./../../public/img/back-button_icon--hover.svg");
+      background-size: contain;
     }
   }
 }

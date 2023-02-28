@@ -22,11 +22,11 @@ export default class CirclePresenter {
   #circleTableView = new CircleTableView();
   #circleMainContainer = null;
   #periodsPresenter = null;
-  #modalPresenter = null;
+  #personeGroupPresenter = null;
 
 
-  constructor(circleMainContainer, modalPresenter) {
-    this.#modalPresenter = modalPresenter;
+  constructor(circleMainContainer, personeGroupPresenter) {
+    this.#personeGroupPresenter = personeGroupPresenter;
     this.#circleMainContainer = circleMainContainer;
     this.#periodsPresenter = new PeriodsPresenter(this.currentPeriodId, this.renderCircle);
   }
@@ -75,7 +75,7 @@ export default class CirclePresenter {
         closedButton.addEventListener('click', this.#onEditorClick);
 
         const personeGroupEditElement = document.querySelector('.filters--editing__button--icon');
-        personeGroupEditElement.addEventListener('click', this.#modalPresenter.onPersoneGroupClick);
+        personeGroupEditElement.addEventListener('click', this.#personeGroupPresenter.onPersoneGroupClick);
       }
       const viewList = document.querySelector('.circles-header__view-list');
       viewList.addEventListener('click', this.#onViewClick);
@@ -112,7 +112,7 @@ export default class CirclePresenter {
     } else {
       const personeGroupEditElement = document.querySelector('.filters--editing__button--icon');
       if (personeGroupEditElement !== undefined) {
-        personeGroupEditElement.removeEventListener('click', this.#modalPresenter.onPersoneGroupClick);
+        personeGroupEditElement.removeEventListener('click', this.#personeGroupPresenter.onPersoneGroupClick);
       }
     }
     const circleContainerElement = document.querySelector('.circles');
@@ -152,14 +152,14 @@ export default class CirclePresenter {
 
   // Render main content
   renderCircleBlock = (container) => {
-    if(this.selectedView === View.CIRCLES) {
+    if (this.selectedView === View.CIRCLES) {
       this.renderCircle(container);
     } else {
       this.#renderCircleTable(container);
     }
 
     if (this.isEditing) {
-      if(this.selectedView === View.CIRCLES) {
+      if (this.selectedView === View.CIRCLES) {
         startDropDrag(true);
       } else {
         startDropDrag();

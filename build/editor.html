@@ -81,48 +81,37 @@
 
   <main class="main-content">
     <div class="modal-container">
-      <div class="modal persone-group">
-        <div class="persone-group__top-content modal__top-content">
-          <p class="persone-group__title modal__title">Группы персон</p>
-          <button class="persone-group__button button--closed-button"><span
-              class="visually-hidden">Закрыть</span></button>
-        </div>
+      <div class="modal persone-group-edit">
+        <div class="modal__inner-wrapper">
+          <div class="persone-group-edit__top-content modal__top-content">
+            <p class="persone-group-edit__title modal__title">Периоды</p>
+            <button class="persone-group-edit__button button--closed-button"><span
+                class="visually-hidden">Закрыть</span></button>
+          </div>
 
-        <div class="persone-group__main-content modal__main-content">
-          <p class="persone-group__content-title modal__content-title">Добавьте группу</p>
-          <form class=" add-new-group-form modal__add-form" action="#" method="post">
-            <input type="text" class="add-new-group-form__input modal__add-input" placeholder="Название группы">
-            <button type="submit"
-              class="add-new-group-form__button modal__add-button  button button--icon button--green">
-              <span class="visually-hidden">Добавить нcовую группу</span>
-            </button>
-          </form>
+          <div class="persone-group-edit__main-content modal__main-content">
+            <p class="persone-group-edit__content-title modal__content-title">Добавьте период</p>
+            <form class=" edit-periods-form modal__add-form" action="#" method="post">
+              <input id="edit-periods-form__group-name" type="text"
+                class="edit-periods-form__input edit-periods-form__input--with-value modal__add-input"
+                placeholder="Название периода">
+              <button type="submit"
+                class="edit-periods-form__button modal__add-button  button button--icon button--green">
+                <span class="visually-hidden">Добавить новый период</span>
+              </button>
+            </form>
 
-          <div class="added-groups">
-            <p class="added-groups__title">Добавленные</p>
+            <div class="added-periods">
+              <p class="added-periods__title">Добавленные</p>
 
-            <ul class="added-groups__list">
-              <li class="added-group">
-                <div class="added-group__container">
-                  <p class="added-group__title">Родственники</p>
-                  <div class="added-group__button-container">
-                    <button class="added-group__edit added-group__button button button--icon">
-                      <span class="visually-hidden">Изменить группу</span>
-                      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M20.0848 5.73218C19.6697 5.31707 18.9966 5.31707 18.5815 5.73218L6.47444 17.8393L5.91256 20.0868L8.16007 19.5249L20.2671 7.41781C20.6823 7.0027 20.6823 6.32967 20.2671 5.91456L20.0848 5.73218ZM17.0783 4.22893C18.3236 2.98359 20.3427 2.98359 21.588 4.22893L21.7704 4.4113C23.0157 5.65664 23.0157 7.67573 21.7704 8.92107L9.45514 21.2363C9.31891 21.3726 9.14822 21.4692 8.96131 21.5159L4.70946 22.5789C4.34723 22.6695 3.96405 22.5633 3.70003 22.2993C3.43601 22.0353 3.32987 21.6521 3.42043 21.2899L4.48339 17.038C4.53012 16.8511 4.62676 16.6804 4.76299 16.5442L17.0783 4.22893Z"
-                          fill="#B7BDCE" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M15.3914 5.91485C15.8065 5.49974 16.4796 5.49974 16.8947 5.91485L20.0836 9.10374C20.4987 9.51885 20.4987 10.1919 20.0836 10.607C19.6684 11.0221 18.9954 11.0221 18.5803 10.607L15.3914 7.41811C14.9763 7.00299 14.9763 6.32996 15.3914 5.91485Z"
-                          fill="#B7BDCE" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M12.9551 21.5493C12.9551 20.9622 13.431 20.4863 14.018 20.4863H22.5217C23.1088 20.4863 23.5847 20.9622 23.5847 21.5493C23.5847 22.1363 23.1088 22.6123 22.5217 22.6123H14.018C13.431 22.6123 12.9551 22.1363 12.9551 21.5493Z"
-                          fill="#B7BDCE" />
-                      </svg>
-
-                    </button>
-                    <button class="added-group__delete added-group__button button button--icon">
-                      <span class="visually-hidden">Удалить группу</span>
+              <ul class="added-periods__list">
+                <li class="added-period">
+                  <div class="added-period__main-content">
+                    <div class="added-period__container">
+                      <p class="added-period__title">Период 1</p>
+                    </div>
+                    <button class="added-period__delete added-period__button button button--icon">
+                      <span class="visually-hidden">Удалить период</span>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                           d="M12.2473 22.0001C10.8923 22.0001 9.57133 21.9852 8.26433 21.9581C6.59233 21.9251 5.43533 20.8411 5.24633 19.1291C4.93133 16.2891 4.39233 9.59515 4.38733 9.52815C4.35333 9.11515 4.66133 8.75315 5.07433 8.72015C5.48133 8.70915 5.84933 8.99515 5.88233 9.40715C5.88733 9.47515 6.42533 16.1461 6.73733 18.9641C6.84433 19.9371 7.36933 20.4391 8.29533 20.4581C10.7953 20.5112 13.3463 20.5141 16.0963 20.4641C17.0803 20.4451 17.6123 19.9531 17.7223 18.9571C18.0323 16.1631 18.5723 9.47515 18.5783 9.40715C18.6113 8.99515 18.9763 8.70715 19.3853 8.72015C19.7983 8.75415 20.1063 9.11515 20.0733 9.52815C20.0673 9.59615 19.5253 16.3071 19.2133 19.1221C19.0193 20.8691 17.8653 21.9321 16.1233 21.9641C14.7903 21.9871 13.5043 22.0001 12.2473 22.0001Z"
@@ -137,31 +126,16 @@
 
                     </button>
                   </div>
-                </div>
-                <p class="added-group__count">Кол-во персон: <span class="added-group__count-span">3</span></p>
-              </li>
+                  <p class="added-period__count">Кол-во персон: <span class="added-period__count-span">3</span></p>
+                </li>
 
-              <li class="added-group">
-                <div class="added-group__container">
-                  <p class="added-group__title">Тренеры</p>
-                  <div class="added-group__button-container">
-                    <button class="added-group__edit added-group__button button button--icon">
-                      <span class="visually-hidden">Изменить группу</span>
-                      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M20.0848 5.73218C19.6697 5.31707 18.9966 5.31707 18.5815 5.73218L6.47444 17.8393L5.91256 20.0868L8.16007 19.5249L20.2671 7.41781C20.6823 7.0027 20.6823 6.32967 20.2671 5.91456L20.0848 5.73218ZM17.0783 4.22893C18.3236 2.98359 20.3427 2.98359 21.588 4.22893L21.7704 4.4113C23.0157 5.65664 23.0157 7.67573 21.7704 8.92107L9.45514 21.2363C9.31891 21.3726 9.14822 21.4692 8.96131 21.5159L4.70946 22.5789C4.34723 22.6695 3.96405 22.5633 3.70003 22.2993C3.43601 22.0353 3.32987 21.6521 3.42043 21.2899L4.48339 17.038C4.53012 16.8511 4.62676 16.6804 4.76299 16.5442L17.0783 4.22893Z"
-                          fill="#B7BDCE" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M15.3914 5.91485C15.8065 5.49974 16.4796 5.49974 16.8947 5.91485L20.0836 9.10374C20.4987 9.51885 20.4987 10.1919 20.0836 10.607C19.6684 11.0221 18.9954 11.0221 18.5803 10.607L15.3914 7.41811C14.9763 7.00299 14.9763 6.32996 15.3914 5.91485Z"
-                          fill="#B7BDCE" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M12.9551 21.5493C12.9551 20.9622 13.431 20.4863 14.018 20.4863H22.5217C23.1088 20.4863 23.5847 20.9622 23.5847 21.5493C23.5847 22.1363 23.1088 22.6123 22.5217 22.6123H14.018C13.431 22.6123 12.9551 22.1363 12.9551 21.5493Z"
-                          fill="#B7BDCE" />
-                      </svg>
-
-                    </button>
-                    <button class="added-group__delete added-group__button button button--icon">
-                      <span class="visually-hidden">Удалить группу</span>
+                <li class="added-period">
+                  <div class="added-period__main-content">
+                    <div class="added-period__container">
+                      <p class="added-period__title">Юность</p>
+                    </div>
+                    <button class="added-period__delete added-period__button button button--icon">
+                      <span class="visually-hidden">Удалить период</span>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                           d="M12.2473 22.0001C10.8923 22.0001 9.57133 21.9852 8.26433 21.9581C6.59233 21.9251 5.43533 20.8411 5.24633 19.1291C4.93133 16.2891 4.39233 9.59515 4.38733 9.52815C4.35333 9.11515 4.66133 8.75315 5.07433 8.72015C5.48133 8.70915 5.84933 8.99515 5.88233 9.40715C5.88733 9.47515 6.42533 16.1461 6.73733 18.9641C6.84433 19.9371 7.36933 20.4391 8.29533 20.4581C10.7953 20.5112 13.3463 20.5141 16.0963 20.4641C17.0803 20.4451 17.6123 19.9531 17.7223 18.9571C18.0323 16.1631 18.5723 9.47515 18.5783 9.40715C18.6113 8.99515 18.9763 8.70715 19.3853 8.72015C19.7983 8.75415 20.1063 9.11515 20.0733 9.52815C20.0673 9.59615 19.5253 16.3071 19.2133 19.1221C19.0193 20.8691 17.8653 21.9321 16.1233 21.9641C14.7903 21.9871 13.5043 22.0001 12.2473 22.0001Z"
@@ -176,31 +150,17 @@
 
                     </button>
                   </div>
-                </div>
-                <p class="added-group__count">Кол-во персон: <span class="added-group__count-span">3</span></p>
-              </li>
 
-              <li class="added-group">
-                <div class="added-group__container">
-                  <p class="added-group__title">Братья</p>
-                  <div class="added-group__button-container">
-                    <button class="added-group__edit added-group__button button button--icon">
-                      <span class="visually-hidden">Изменить группу</span>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M20.0848 5.73218C19.6697 5.31707 18.9966 5.31707 18.5815 5.73218L6.47444 17.8393L5.91256 20.0868L8.16007 19.5249L20.2671 7.41781C20.6823 7.0027 20.6823 6.32967 20.2671 5.91456L20.0848 5.73218ZM17.0783 4.22893C18.3236 2.98359 20.3427 2.98359 21.588 4.22893L21.7704 4.4113C23.0157 5.65664 23.0157 7.67573 21.7704 8.92107L9.45514 21.2363C9.31891 21.3726 9.14822 21.4692 8.96131 21.5159L4.70946 22.5789C4.34723 22.6695 3.96405 22.5633 3.70003 22.2993C3.43601 22.0353 3.32987 21.6521 3.42043 21.2899L4.48339 17.038C4.53012 16.8511 4.62676 16.6804 4.76299 16.5442L17.0783 4.22893Z"
-                          fill="#B7BDCE" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M15.3914 5.91485C15.8065 5.49974 16.4796 5.49974 16.8947 5.91485L20.0836 9.10374C20.4987 9.51885 20.4987 10.1919 20.0836 10.607C19.6684 11.0221 18.9954 11.0221 18.5803 10.607L15.3914 7.41811C14.9763 7.00299 14.9763 6.32996 15.3914 5.91485Z"
-                          fill="#B7BDCE" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M12.9551 21.5493C12.9551 20.9622 13.431 20.4863 14.018 20.4863H22.5217C23.1088 20.4863 23.5847 20.9622 23.5847 21.5493C23.5847 22.1363 23.1088 22.6123 22.5217 22.6123H14.018C13.431 22.6123 12.9551 22.1363 12.9551 21.5493Z"
-                          fill="#B7BDCE" />
-                      </svg>
+                  <p class="added-period__count">Кол-во персон: <span class="added-period__count-span">3</span></p>
+                </li>
 
-                    </button>
-                    <button class="added-group__delete added-group__button button button--icon">
-                      <span class="visually-hidden">Удалить группу</span>
+                <li class="added-period">
+                  <div class="added-period__main-content">
+                    <div class="added-period__container">
+                      <p class="added-period__title">Зрелость</p>
+                    </div>
+                    <button class="added-period__delete added-period__button button button--icon">
+                      <span class="visually-hidden">Удалить период</span>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                           d="M12.2473 22.0001C10.8923 22.0001 9.57133 21.9852 8.26433 21.9581C6.59233 21.9251 5.43533 20.8411 5.24633 19.1291C4.93133 16.2891 4.39233 9.59515 4.38733 9.52815C4.35333 9.11515 4.66133 8.75315 5.07433 8.72015C5.48133 8.70915 5.84933 8.99515 5.88233 9.40715C5.88733 9.47515 6.42533 16.1461 6.73733 18.9641C6.84433 19.9371 7.36933 20.4391 8.29533 20.4581C10.7953 20.5112 13.3463 20.5141 16.0963 20.4641C17.0803 20.4451 17.6123 19.9531 17.7223 18.9571C18.0323 16.1631 18.5723 9.47515 18.5783 9.40715C18.6113 8.99515 18.9763 8.70715 19.3853 8.72015C19.7983 8.75415 20.1063 9.11515 20.0733 9.52815C20.0673 9.59615 19.5253 16.3071 19.2133 19.1221C19.0193 20.8691 17.8653 21.9321 16.1233 21.9641C14.7903 21.9871 13.5043 22.0001 12.2473 22.0001Z"
@@ -215,14 +175,14 @@
 
                     </button>
                   </div>
-                </div>
-                <p class="added-group__count">Кол-во персон: <span class="added-group__count-span">3</span></p>
-              </li>
-            </ul>
-
-            <button class="persone-group__button modal__save-button button button--green">Сохранить</button>
+                  <p class="added-period__count">Кол-во персон: <span class="added-period__count-span">3</span></p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
+
+        <button class="modal__save-button button button--green">Сохранить</button>
       </div>
     </div>
   </main>

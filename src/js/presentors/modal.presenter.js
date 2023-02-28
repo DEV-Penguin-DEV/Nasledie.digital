@@ -1,5 +1,4 @@
 import { render, RenderPosition } from '../render';
-import AddPersoneGroupView from '../view/add-persone-group.view';
 
 export default class ModalPresenter {
   #circleMainContainer = null;
@@ -9,7 +8,7 @@ export default class ModalPresenter {
   }
 
   init() {
-
+    this.#modalDefaultListener();
   }
 
   #openModalWindow(modalView) {
@@ -18,8 +17,18 @@ export default class ModalPresenter {
 
   #closeModalWindow(evt) {
     evt.preventDefault();
-    document.querySelector('.modal-container').remove();
+    document.querySelectorAll('.modal-container').forEach((container) => {
+      container.remove();
+    });
   }
+
+  closeModalWindowStep = (removeElement) => {
+    const backButtonElement = this.#circleMainContainer.querySelector('.modal__back-button');
+    backButtonElement.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      document.querySelector(removeElement).remove();
+    });
+  };
 
   #saveModalWindow = (evt) => {
     //TODO SEND UPDATE TO SERVER
@@ -27,17 +36,22 @@ export default class ModalPresenter {
   };
 
   #modalDefaultListener = () => {
-    const closeButtonElement = this.#circleMainContainer.querySelector('.modal__closed-button');
-    const saveButtonElement = this.#circleMainContainer.querySelector('.modal__save-button');
+    const closeButtonElements = this.#circleMainContainer.querySelectorAll('.modal__closed-button');
+    const saveButtonElements = this.#circleMainContainer.querySelectorAll('.modal__save-button');
 
-    closeButtonElement.addEventListener('click', this.#closeModalWindow);
-    saveButtonElement.addEventListener('click', this.#saveModalWindow);
+    closeButtonElements.forEach((closeButtonElement) => {
+      closeButtonElement.addEventListener('click', this.#closeModalWindow);
+    });
+
+    saveButtonElements.forEach((saveButtonElement) => {
+      saveButtonElement.addEventListener('click', this.#saveModalWindow);
+    });
   };
 
 
-  onPersoneGroupClick = (evt) => {
+  onPersoneGroupClick = (evt, ModalView) => {
     evt.preventDefault();
-    this.#openModalWindow(new AddPersoneGroupView());
+    this.#openModalWindow(new ModalView());
 
     this.#modalDefaultListener();
   };

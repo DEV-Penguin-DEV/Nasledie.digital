@@ -1,15 +1,15 @@
-.added-group__count {
+.added-period__count {
   font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
 
-  color: $added-group-text-color;
+  color: $added-period-text-color;
 }
 
-.added-groups__title {
-  color: $added-group-text-color;
+.added-periods__title {
+  color: $added-period-text-color;
   font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 400;
@@ -18,32 +18,32 @@
   margin-bottom: 12px;
 }
 
-.added-groups__list {
+.added-periods__list {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.added-group {
+.added-period {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.added-group__container {
+.added-period__container {
   display: flex;
-  padding: 6px 12px;
+  padding: 20px 10px 8px 10px;
   box-sizing: border-box;
   background: #ffffff;
-  width: fit-content;
+  width: 100%;
   align-items: center;
   /* gray */
 
-  border: 1px solid $added-group-text-color;
-  border-radius: 100px;
+  border: 1px solid $added-period-text-color;
+  border-radius: 8px;
 }
 
-.added-group__title {
+.added-period__title {
   font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 400;
@@ -54,11 +54,17 @@
   margin-right: 13px;
 }
 
-.added-group__button-container {
+.added-period__button-container {
   display: flex;
   gap: 15px;
 }
 
-.added-group__button {
+.added-period__button {
   height: 24px;
+}
+
+.added-period__main-content {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }

@@ -1,16 +1,17 @@
 import CirclePresenter from './circle.presenter.js';
-import ModalPresenter from './modal.presenter.js';
+import PersoneGroupPresenter from './group-pesone.presenter.js';
 
 export default class AppPresenter {
   // #model = null;
   #circlePresenter = null;
   #modalPresenter = null;
+  #personeGroupPresenter = null;
   #circleMainContainer = null;
 
   constructor(circleMainContainer) {
     this.#circleMainContainer = circleMainContainer;
-    this.#modalPresenter = new ModalPresenter(circleMainContainer);
-    this.#circlePresenter = new CirclePresenter(circleMainContainer, this.#modalPresenter);
+    this.#personeGroupPresenter = new PersoneGroupPresenter(circleMainContainer);
+    this.#circlePresenter = new CirclePresenter(this.#circleMainContainer, this.#personeGroupPresenter);
     // this.#model = model;
     // model.addObserver(this.#handleModelEvent);
   }
@@ -53,10 +54,9 @@ export default class AppPresenter {
   //   }
   // };
 
-  clearPoints = () => {};
+  clearPoints = () => { };
 
   #renderBoard() {
     this.#circlePresenter.init();
-    this.#modalPresenter.init();
   }
 }

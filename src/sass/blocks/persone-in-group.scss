@@ -1,0 +1,37 @@
+.persone-in-group__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.persone-in-group__item {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height, or 117% */
+
+  /* Black */
+
+  color: #444444;
+  padding: 8px 8px 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  width: fit-content;
+  background: #ffffff;
+  /* gray */
+
+  border: 1px solid #b7bdce;
+  border-radius: 100px;
+  position: relative;
+}
+
+.persone-in-group__button {
+  position: static;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+}

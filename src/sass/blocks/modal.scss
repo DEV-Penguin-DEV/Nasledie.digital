@@ -18,6 +18,11 @@
   position: absolute;
   left: 40vw;
   top: 11.5vh;
+  min-height: 609px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .modal__top-content {
@@ -88,6 +93,7 @@
   font-size: 16px;
   line-height: 19px;
   color: $help-text-color;
+  flex-grow: 1;
 
   &:hover {
     transition: $default-menu-transition;
@@ -109,6 +115,7 @@
 }
 
 .modal__add-form {
+  position: relative;
   display: flex;
   margin-bottom: 21px;
 }
