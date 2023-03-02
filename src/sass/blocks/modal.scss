@@ -13,7 +13,6 @@
   background: #ffffff;
   border: 1px solid #f0f4f7;
   border-radius: 15px;
-  padding: 0 0 30px 0;
   box-sizing: border-box;
   position: absolute;
   left: 40vw;
@@ -26,6 +25,7 @@
 }
 
 .modal__top-content {
+  position: relative;
   padding: 22px 0;
   background: $modal-top-bg;
   width: 100%;
@@ -54,6 +54,7 @@
 
 .modal__save-button {
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .modal__content-title {
@@ -99,6 +100,18 @@
     transition: $default-menu-transition;
     border-color: #000000;
   }
+
+  &:not(:invalid) {
+    padding-top: 20px;
+    padding-bottom: 8px;
+
+    & + .modal__add-label {
+      font-size: 12px;
+      line-height: 15px;
+      top: 12px;
+      transition: $default-menu-transition;
+    }
+  }
 }
 
 .modal__add-button {
@@ -118,4 +131,41 @@
   position: relative;
   display: flex;
   margin-bottom: 21px;
+}
+
+.modal__label {
+  position: absolute;
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  /* gray */
+
+  color: #b7bdce;
+  left: 10px;
+  top: 4px;
+}
+
+.modal__add-label {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+
+  position: absolute;
+
+  /* gray */
+
+  color: #b7bdce;
+  @include centering-hight-pseudo-element;
+  left: 10px;
+  transition: $default-menu-transition;
+}
+
+.modal__input-container {
+  position: relative;
 }

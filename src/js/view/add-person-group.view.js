@@ -2,16 +2,16 @@ import AbstractView from './abstract.view.js';
 
 const addPersoneGroupTemplate = () => (`
 <div class="modal-container">
-  <div class="modal persone-group">
+  <div class="modal person-group">
     <div class="modal__inner-wrapper">
-      <div class="persone-group__top-content modal__top-content">
-        <p class="persone-group__title modal__title">Группы персон</p>
-        <button class="persone-group__button modal__closed-button button--closed-button"><span
+      <div class="person-group__top-content modal__top-content">
+        <p class="person-group__title modal__title">Группы персон</p>
+        <button class="person-group__button modal__closed-button button--closed-button"><span
             class="visually-hidden">Закрыть</span></button>
       </div>
 
-      <div class="persone-group__main-content modal__main-content">
-        <p class="persone-group__content-title modal__content-title">Добавьте группу</p>
+      <div class="person-group__main-content modal__main-content">
+        <p class="person-group__content-title modal__content-title">Добавьте группу</p>
         <form class=" add-new-group-form modal__add-form" action="#" method="post">
           <input type="text" class="add-new-group-form__input modal__add-input" placeholder="Название группы">
           <button type="submit"
@@ -145,7 +145,7 @@ const addPersoneGroupTemplate = () => (`
       </div>
     </div>
 
-    <button class="persone-group__button modal__save-button button button--green">Сохранить</button>
+    <button class="person-group__button modal__save-button button button--green">Сохранить</button>
 
   </div>
 </div>

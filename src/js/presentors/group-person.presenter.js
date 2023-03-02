@@ -1,6 +1,6 @@
 import ModalPresenter from './modal.presenter.js';
-import AddPersoneGroupView from '../view/add-persone-group.view.js';
-import EditPersoneGroupView from '../view/edit-persone-group.view.js';
+import AddPersoneGroupView from '../view/add-person-group.view.js';
+import EditPersoneGroupView from '../view/edit-person-group.view.js';
 
 export default class PersoneGroupPresenter {
   #modalPresenter = null;
@@ -15,13 +15,13 @@ export default class PersoneGroupPresenter {
 
   onPersoneGroupElementClick = (evt) => {
     evt.preventDefault();
-    this.#modalPresenter.onPersoneGroupClick(evt, EditPersoneGroupView);
+    this.#modalPresenter.onModalClick(evt, EditPersoneGroupView);
     this.#modalPresenter.init();
-    this.#modalPresenter.closeModalWindowStep('.modal-container-persone-group-edit');
+    this.#modalPresenter.closeModalWindowStep('.modal-container-person-group-edit');
   };
 
   onPersoneGroupClick = (evt) => {
-    this.#modalPresenter.onPersoneGroupClick(evt, AddPersoneGroupView);
+    this.#modalPresenter.onModalClick(evt, AddPersoneGroupView);
     const editPersoneGroupButtons = document.querySelectorAll('.added-group__edit');
 
     editPersoneGroupButtons.forEach((editPersoneGroupButton) => {

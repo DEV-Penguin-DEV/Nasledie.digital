@@ -23,34 +23,34 @@ const circleTemplate = () => (`
     </div>
     <div class="circles-main__ceil circles-main__ceil--content">
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3" />
       </div>
       <div class="circle__img-container" draggable="true">
-         <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--4" />
+         <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--4" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--5" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--5" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--6" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--6" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--7" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--7" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--8" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--8" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--9" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--9" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--10" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--10" />
       </div>
     </div>
     <div class="circles-main__ceil circles-main__ceil--content"></div>
@@ -64,13 +64,13 @@ const circleTemplate = () => (`
     <div class="circles-main__ceil circles-main__ceil--content"></div>
     <div class="circles-main__ceil circles-main__ceil--content">
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3" />
       </div>
     </div>
     <div class="circles-main__ceil circles-main__ceil--content"></div>
@@ -82,13 +82,13 @@ const circleTemplate = () => (`
     </div>
     <div class="circles-main__ceil circles-main__ceil--content">
        <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3" />
       </div>
     </div>
     <div class="circles-main__ceil circles-main__ceil--content"></div>
@@ -103,13 +103,13 @@ const circleTemplate = () => (`
     <div class="circles-main__ceil circles-main__ceil--content"></div>
     <div class="circles-main__ceil circles-main__ceil--content">
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2" />
       </div>
       <div class="circle__img-container" draggable="true">
-        <img src="img/persone-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3" />
+        <img src="img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3" />
       </div>
     </div>
   </div>

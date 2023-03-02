@@ -12,6 +12,7 @@ import { startDropDrag } from '../functions/drop-drag.js';
 import CircleMobileEditorView from '../view/circle-mobile-editor.view.js';
 import { MEDIA_MOBILE_SIZE } from '../const';
 import PeriodsPresenter from './periods.presenter.js';
+import AddPersonPresenter from './add-person.presenter';
 
 export default class CirclePresenter {
   selectedView = View.CIRCLES;
@@ -22,13 +23,15 @@ export default class CirclePresenter {
   #circleTableView = new CircleTableView();
   #circleMainContainer = null;
   #periodsPresenter = null;
-  #personeGroupPresenter = null;
+  #personGroupPresenter = null;
+  #addPersonPresenter = null;
 
 
-  constructor(circleMainContainer, personeGroupPresenter) {
-    this.#personeGroupPresenter = personeGroupPresenter;
+  constructor(circleMainContainer, personGroupPresenter) {
+    this.#personGroupPresenter = personGroupPresenter;
     this.#circleMainContainer = circleMainContainer;
-    this.#periodsPresenter = new PeriodsPresenter(this.currentPeriodId, this.renderCircle);
+    this.#periodsPresenter = new PeriodsPresenter(this.currentPeriodId, this.renderCircle, this.#circleMainContainer);
+    this.#addPersonPresenter = new AddPersonPresenter(this.#circleMainContainer);
   }
 
 
@@ -46,9 +49,15 @@ export default class CirclePresenter {
     this.currentPeriodId = currentPeriodId;
     this.circleView = new CircleView(this.isEditing, currentPeriodId);
     render(this.circleView, container);
+
     this.#periodsPresenter.init();
     if (!MEDIA_MOBILE_SIZE.matches) {
       startPositions();
+
+      if (this.isEditing) {
+        const periodsEditElement = document.querySelector('.periods-menu__button--edit');
+        periodsEditElement.addEventListener('click', this.#periodsPresenter.onEditPeriodsClick);
+      }
     }
   };
 
@@ -66,16 +75,24 @@ export default class CirclePresenter {
         const editorButton = document.querySelector('.circles-header__editor');
         editorButton.addEventListener('click', this.#onEditorClick);
         startSelects();
+
+        // Add person button
+        const addPersonElement = document.querySelector('.add-person-header');
+        addPersonElement.addEventListener('click', this.#addPersonPresenter.onAddPersonClick);
       } else {
         render(new HeaderEditingView(), container, RenderPosition.AFTERBEGIN);
+
+        // Save edits
         const saveButton = document.querySelector('.circles-header__save');
         saveButton.addEventListener('click', this.#onEditorClick);
 
+        // Close editing mode
         const closedButton = document.querySelector('.circles-header__cansel');
         closedButton.addEventListener('click', this.#onEditorClick);
 
-        const personeGroupEditElement = document.querySelector('.filters--editing__button--icon');
-        personeGroupEditElement.addEventListener('click', this.#personeGroupPresenter.onPersoneGroupClick);
+        // Person group button
+        const personGroupEditElement = document.querySelector('.filters--editing__button--icon');
+        personGroupEditElement.addEventListener('click', this.#personGroupPresenter.onPersoneGroupClick);
       }
       const viewList = document.querySelector('.circles-header__view-list');
       viewList.addEventListener('click', this.#onViewClick);
@@ -110,9 +127,9 @@ export default class CirclePresenter {
     if (this.isEditing) {
       this.selectedView = View.CIRCLES;
     } else {
-      const personeGroupEditElement = document.querySelector('.filters--editing__button--icon');
-      if (personeGroupEditElement !== undefined) {
-        personeGroupEditElement.removeEventListener('click', this.#personeGroupPresenter.onPersoneGroupClick);
+      const personGroupEditElement = document.querySelector('.filters--editing__button--icon');
+      if (personGroupEditElement !== undefined) {
+        personGroupEditElement.removeEventListener('click', this.#personGroupPresenter.onPersoneGroupClick);
       }
     }
     const circleContainerElement = document.querySelector('.circles');

@@ -1,8 +1,270 @@
-.add-person {
+.add-person-header {
   background: #548677;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
   transition: $default-menu-transition;
+}
+
+.add-person {
+  width: 73.2vw;
+  left: 25.625vw;
+
+  & .modal__add-input {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+.add-person__part {
+  &--left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.add-person__main-content {
+  padding: 16px 65px 22px 65px;
+}
+
+.add-person__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.male-and-avatar {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.add-person__male-container {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.add-person__life-description-label {
+  margin-bottom: 12px;
+}
+
+.add-person__life-description {
+  padding: 14px 10px;
+  box-sizing: border-box;
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+  margin-bottom: 30px;
+  height: 149px;
+  background: #ffffff;
+  border: 1px solid rgba(183, 189, 206, 0.3);
+  border-radius: 8px;
+  width: 100%;
+  transition: $default-menu-transition;
+
+  &::placeholder {
+    color: #b7bdce;
+  }
+
+  &:hover {
+    transition: $default-menu-transition;
+    border-color: #000000;
+  }
+}
+
+.add-person__steps-list {
+  display: flex;
+  gap: 8px;
+}
+
+.add-person__steps-item {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  border-radius: 50%;
+  border: 1px solid #b7bdce;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+
+  /* Black */
+
+  color: #444444;
+  position: relative;
+
+  &::before {
+    @include defaul-pseudo-element(8px, 1px);
+    @include centering-hight-pseudo-element;
+    background: #b7bdce;
+    right: -9px;
+  }
+
+  &--active {
+    background: #8dbeaf;
+    /* green */
+
+    border: 1px solid #326e5b;
+    color: #ffffff;
+    &::before {
+      background: #326e5b;
+    }
+  }
+
+  &--finish {
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.male-and-avatar {
+  margin-bottom: 50px;
+}
+
+.add-person__title {
+  margin-bottom: 21px;
+}
+
+.add-person__right-top-part__input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-person__general-info {
+  margin-bottom: 26px;
+}
+
+.add-person__title {
+  margin-bottom: 12px;
+}
+
+.add-person__button-next {
+  width: 191px;
+  margin-left: auto;
+  height: 50px;
+}
+
+.add-person__avatar-input {
+  display: none;
+}
+
+.add-person__avatar-label {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gray */
+
+  border: 1px solid #b7bdce;
+  border-radius: 50%;
+  cursor: pointer;
+  bottom: -21.5px;
+  @include centering-width-pseudo-element;
+
+  & path {
+    transition: $default-menu-transition;
+  }
+
+  &:hover {
+    & path {
+      transition: $default-menu-transition;
+      fill: $hover-button-color;
+    }
+  }
+
+  & .active-svg {
+    display: none;
+  }
+
+  &--active {
+    & svg {
+      display: none;
+    }
+
+    & .active-svg {
+      display: block;
+    }
+  }
+}
+
+.add-person__avatar-container {
+  position: relative;
+  height: 180px;
+  width: 180px;
+}
+
+.add-person__avatar-img {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+}
+
+.add-person__male-input {
+  display: none;
+
+  &:checked + .add-person__male-label {
+    &::before {
+      border: 2px solid #326e5b;
+    }
+
+    &::after {
+      @include defaul-pseudo-element(10px);
+      background: #326e5b;
+      border-radius: 50%;
+      @include centering-hight-pseudo-element;
+      left: 5px;
+    }
+  }
+}
+
+.add-person__male-label {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  /* identical to box height */
+
+  /* Black */
+
+  color: #444444;
+  padding-left: 32px;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    @include defaul-pseudo-element(16px);
+    border: 2px solid #444444;
+    border-radius: 50%;
+    @include centering-hight-pseudo-element;
+    left: 0;
+  }
+}
+
+.add-person__button {
+  right: 26px;
+  @include centering-hight-pseudo-element;
 }

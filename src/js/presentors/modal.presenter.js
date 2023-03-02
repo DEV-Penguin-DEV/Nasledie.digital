@@ -49,7 +49,7 @@ export default class ModalPresenter {
   };
 
 
-  onPersoneGroupClick = (evt, ModalView) => {
+  onModalClick = (evt, ModalView) => {
     evt.preventDefault();
     this.#openModalWindow(new ModalView());
 

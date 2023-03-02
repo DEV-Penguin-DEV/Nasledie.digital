@@ -1,7 +1,13 @@
+import ModalPresenter from './modal.presenter.js';
+import EditPeriodsView from '../view/edit-periods.view.js';
+
 export default class PeriodsPresenter {
-  constructor(currentPeriodId, renderCircle) {
+  #modalPresenter = null;
+
+  constructor(currentPeriodId, renderCircle, circleMainContainer) {
     this.currentPeriodId = currentPeriodId;
     this.renderCircle = renderCircle;
+    this.#modalPresenter = new ModalPresenter(circleMainContainer);
   }
 
   init() {
@@ -21,6 +27,10 @@ export default class PeriodsPresenter {
         }
       });
     });
+  };
+
+  onEditPeriodsClick = (evt) => {
+    this.#modalPresenter.onModalClick(evt, EditPeriodsView);
   };
 }
 

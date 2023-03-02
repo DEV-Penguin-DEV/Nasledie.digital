@@ -1,17 +1,17 @@
 import CirclePresenter from './circle.presenter.js';
-import PersoneGroupPresenter from './group-pesone.presenter.js';
+import PersoneGroupPresenter from './group-person.presenter.js';
 
 export default class AppPresenter {
   // #model = null;
   #circlePresenter = null;
   #modalPresenter = null;
-  #personeGroupPresenter = null;
+  #personGroupPresenter = null;
   #circleMainContainer = null;
 
   constructor(circleMainContainer) {
     this.#circleMainContainer = circleMainContainer;
-    this.#personeGroupPresenter = new PersoneGroupPresenter(circleMainContainer);
-    this.#circlePresenter = new CirclePresenter(this.#circleMainContainer, this.#personeGroupPresenter);
+    this.#personGroupPresenter = new PersoneGroupPresenter(circleMainContainer);
+    this.#circlePresenter = new CirclePresenter(this.#circleMainContainer, this.#personGroupPresenter);
     // this.#model = model;
     // model.addObserver(this.#handleModelEvent);
   }

@@ -54,7 +54,7 @@ const headerTemplate = () => !mediaQueryMobile.matches ? `
         </svg>
       </button>
 
-      <button class="circles-header__add-person button--green--icon add-person navigation__item">
+      <button class="circles-header__add-person button--green--icon add-person-header navigation__item">
         <svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="12" y="5" width="2" height="12" rx="1" transform="rotate(90 12 5)" fill="white" />
           <rect x="12" y="5" width="2" height="12" rx="1" transform="rotate(90 12 5)" fill="white" />
