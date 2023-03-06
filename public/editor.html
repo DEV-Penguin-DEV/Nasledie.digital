@@ -81,7 +81,7 @@
 
   <main class="main-content">
     <div class="modal-container">
-      <div class="modal add-person">
+      <div class="modal add-person add-person--step-2">
         <div class="add-person__top-content modal__top-content">
           <p class="add-person__title modal__title">Добавление персоны</p>
           <button class="add-person__button button--closed-button modal__closed-button"><span
@@ -89,9 +89,47 @@
         </div>
 
         <div class="modal__main-content add-person__main-content">
-          <form action="" class="add-person__form" method="post">
+          <form action="#" class="add-person__form add-person--step-2__form" method="post">
             <!-- Add person left part -->
             <div class="add-person__part add-person__part--left">
+              <!-- Person circle 302 -->
+              <div class="add-person__circle">
+                <p class="add-person__circle-title modal__content-title">Выберите круг общения</p>
+
+                <div class="add-person__circle-container">
+                  <img src="" alt="Аватар" class="add-person__circle-img">
+
+                  <div class="add-person__circle-input-flex">
+                    <div class="add-person__circle-input-container add-person__circle-input-container--1">
+                      <input id="add-person__circle-input-1-id" name="person_circle" type="radio"
+                        class="add-person__circle-input" value="circle-1">
+                      <label for="add-person__circle-input-1-id" class="add-person__circle-label">1 круг</label>
+                    </div>
+
+                    <div class="add-person__circle-input-container add-person__circle-input-container--2">
+                      <input id="add-person__circle-input-2-id" name="person_circle" type="radio"
+                        class="add-person__circle-input" value="circle-2">
+                      <label for="add-person__circle-input-2-id" class="add-person__circle-label">2 круг</label>
+                    </div>
+
+                    <div class="add-person__circle-input-container add-person__circle-input-container--3">
+                      <input id="add-person__circle-input-3-id" name="person_circle" type="radio"
+                        class="add-person__circle-input" value="circle-3">
+                      <label for="add-person__circle-input-3-id" class="add-person__circle-label">3 круг</label>
+                    </div>
+
+                    <div class="add-person__circle-input-container add-person__circle-input-container--4">
+                      <input id="add-person__circle-input-4-id" name="person_circle" type="radio"
+                        class="add-person__circle-input" value="circle-4">
+                      <label for="add-person__circle-input-4-id" class="add-person__circle-label">4 круг</label>
+                    </div>
+                  </div>
+                  <p class="add-persone-circle-input-error">Выберите круг общения</p>
+                </div>
+
+
+              </div>
+
               <!-- Add person steps -->
               <ul class="add-person__steps-list">
                 <li class="add-person__steps-item add-person__steps-item--active">1</li>
@@ -109,7 +147,34 @@
 
             <!-- Add person right part -->
             <div class="add-person__part add-person__part--right">
-              <button class="add-person__button-next modal__next button button--green">Далее</button>
+              <div class="add-person__period-choose period-choose">
+                <p class="period-choose__title modal__content-title">Выберите период</p>
+
+                <div class="period-choose__content-container">
+                  <div class="period-choose-input-container">
+                    <input id="period-choose-input-2-id" name="person_period" type="radio"
+                      class="period-choose-input modal__radio-button" value="childHood" checked>
+                    <label for="period-choose-input-2-id"
+                      class="period-choose-label modal__radio-button-label">Детство</label>
+                  </div>
+
+                  <div class="period-choose-input-container">
+                    <input id="period-choose-input-3-id" name="person_period" type="radio"
+                      class="period-choose-input modal__radio-button" value="youth">
+                    <label for="period-choose-input-3-id"
+                      class="period-choose-label modal__radio-button-label">Юность</label>
+                  </div>
+
+                  <div class="period-choose-input-container">
+                    <input id="period-choose-input-4-id" name="person_period" type="radio"
+                      class="period-choose-input modal__radio-button" value="maturity">
+                    <label for="period-choose-input-4-id"
+                      class="period-choose-label modal__radio-button-label">Зрелость</label>
+                  </div>
+                </div>
+              </div>
+              <button type="submit"
+                class="add-person__button-next add-person__button-next--2 modal__next button button--green">Далее</button>
             </div>
           </form>
         </div>

@@ -10,7 +10,7 @@ const addPersonTemplate = () => (`
     </div>
 
     <div class="modal__main-content add-person__main-content">
-      <form action="" class="add-person__form" method="post">
+      <form action="" class="add-person__form add-person--step-1__form modal__form" method="post">
         <!-- Add person left part -->
         <div class="add-person__part add-person__part--left">
           <!-- Male and Avatar -->
@@ -52,12 +52,12 @@ const addPersonTemplate = () => (`
 
             <!-- Male -->
             <div class="add-person__male-container">
-              <input id="add-person__male--men" type="radio" class="add-person__male-input" name="person__male"
+              <input id="add-person__male--men" type="radio" class="add-person__male-input modal__radio-button" name="person__male" value="men"
                 checked>
-              <label for="add-person__male--men" class="add-person__male-label">Мужчина</label>
+              <label for="add-person__male--men" class="add-person__male-label modal__radio-button-label">Мужчина</label>
 
-              <input id="add-person__male--women" type="radio" class="add-person__male-input" name="person__male">
-              <label for="add-person__male--women" class="add-person__male-label">Женщина</label>
+              <input id="add-person__male--women" type="radio" class="add-person__male-input modal__radio-button" name="person__male" value="women">
+              <label for="add-person__male--women" class="add-person__male-label modal__radio-button-label">Женщина</label>
             </div>
           </div>
 

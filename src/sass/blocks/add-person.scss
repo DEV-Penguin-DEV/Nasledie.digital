@@ -15,6 +15,25 @@
     width: 100%;
     border-radius: 8px;
   }
+
+  &--step-2 {
+    z-index: 100;
+    & .add-person__main-content {
+      display: flex;
+      flex-grow: 1;
+    }
+
+    & .add-person__form {
+      width: 100%;
+    }
+
+    & .add-person__part--left {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
 }
 
 .add-person__part {
@@ -161,6 +180,7 @@
 .add-person__button-next {
   width: 191px;
   margin-left: auto;
+  margin-top: auto;
   height: 50px;
 }
 
@@ -222,49 +242,202 @@
   border-radius: 50%;
 }
 
-.add-person__male-input {
-  display: none;
-
-  &:checked + .add-person__male-label {
-    &::before {
-      border: 2px solid #326e5b;
-    }
-
-    &::after {
-      @include defaul-pseudo-element(10px);
-      background: #326e5b;
-      border-radius: 50%;
-      @include centering-hight-pseudo-element;
-      left: 5px;
-    }
-  }
-}
-
-.add-person__male-label {
-  font-family: "Source Serif Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 23px;
-  /* identical to box height */
-
-  /* Black */
-
-  color: #444444;
-  padding-left: 32px;
-  position: relative;
-  cursor: pointer;
-
-  &::before {
-    @include defaul-pseudo-element(16px);
-    border: 2px solid #444444;
-    border-radius: 50%;
-    @include centering-hight-pseudo-element;
-    left: 0;
-  }
-}
-
 .add-person__button {
   right: 26px;
   @include centering-hight-pseudo-element;
+}
+
+.add-person__circle-title {
+  margin-bottom: 30px;
+}
+
+.add-person__circle-container {
+  width: 302px;
+  height: 302px;
+  position: relative;
+  padding-top: 84px;
+
+  &--required {
+    & .add-persone-circle-input-error {
+      display: block !important;
+    }
+
+    & .add-person__circle-label {
+      color: #f23434;
+
+      &::before {
+        border-color: #f23434;
+      }
+    }
+  }
+}
+
+.add-person__circle-input-container {
+  position: relative;
+  left: -20px;
+  top: -20px;
+  height: 31px;
+  width: 167px;
+  &::before {
+    @include defaul-pseudo-element(167px);
+    background: url(./../../public/img/add-person-circle.svg) no-repeat bottom
+      left;
+    background-size: contain;
+    bottom: -27px;
+  }
+
+  & .add-person__circle-label {
+    right: 48px;
+    bottom: -9px;
+  }
+
+  &--2 {
+    width: 212px;
+    &::before {
+      @include defaul-pseudo-element(212px);
+      bottom: -40px;
+    }
+
+    & .add-person__circle-label {
+      right: 60px;
+    }
+  }
+
+  &--3 {
+    width: 257px;
+    &::before {
+      @include defaul-pseudo-element(257px);
+      bottom: -53px;
+    }
+
+    & .add-person__circle-label {
+      right: 60px;
+    }
+
+    & .add-person__circle-input-mini-avatar {
+      left: 78%;
+    }
+  }
+
+  &--4 {
+    width: 302px;
+    &::before {
+      @include defaul-pseudo-element(302px);
+      bottom: -66px;
+      background-image: url(./../../public/img/add-person-circle-4.svg);
+    }
+
+    & .add-person__circle-label {
+      right: 74px;
+      bottom: -2px;
+    }
+
+    & .add-person__circle-input-mini-avatar {
+      left: 76%;
+      top: -2px;
+    }
+  }
+}
+
+.add-person__circle-img {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.add-person__circle-input-container {
+  position: relative;
+}
+
+.add-person__circle-input {
+  display: none;
+}
+
+.add-person__circle-label {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #326e5b;
+
+  transform: rotate(-35deg);
+  position: absolute;
+  display: inline-block;
+  z-index: 20;
+
+  &::before {
+    @include defaul-pseudo-element(31px);
+    border: 1px solid #326e5b;
+    background: #ffffff;
+    border-radius: 50%;
+    top: 3px;
+    right: -35px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &--no-circle {
+    &::before {
+      content: none;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.add-person__circle-input-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.add-person__circle-input-mini-avatar {
+  border-radius: 50%;
+  position: absolute;
+  left: 73%;
+  top: 4px;
+  width: 31px;
+  height: 31px;
+  z-index: 21;
+}
+
+.add-persone-circle-input-error {
+  display: none;
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #f23434;
+  margin-top: 40px;
+}
+
+.period-choose-input-container {
+  position: relative;
+}
+
+.period-choose__content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.period-choose__title {
+  margin-bottom: 20px;
+}
+
+.period-choose {
+  opacity: 0;
+
+  &--shown {
+    opacity: 1;
+    transition: $default-menu-transition;
+  }
 }

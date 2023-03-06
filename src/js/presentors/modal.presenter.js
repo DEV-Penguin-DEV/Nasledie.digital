@@ -2,9 +2,11 @@ import { render, RenderPosition } from '../render';
 
 export default class ModalPresenter {
   #circleMainContainer = null;
+  #nextStep = null;
 
-  constructor(circleMainContainer) {
+  constructor(circleMainContainer, nextStep = null) {
     this.#circleMainContainer = circleMainContainer;
+    this.#nextStep = nextStep;
   }
 
   init() {
@@ -22,8 +24,14 @@ export default class ModalPresenter {
     });
   }
 
-  closeModalWindowStep = (removeElement) => {
+  closeModalWindowStep = (removeElement, contents = null) => {
     const backButtonElement = this.#circleMainContainer.querySelector('.modal__back-button');
+    if (contents !== null) {
+      contents.forEach((content) => {
+        content.pop();
+      });
+    }
+
     backButtonElement.addEventListener('click', (evt) => {
       evt.preventDefault();
       document.querySelector(removeElement).remove();
@@ -48,12 +56,28 @@ export default class ModalPresenter {
     });
   };
 
+  startNextStep = (validation = null, view, allFormContent = []) => {
+    if (this.#nextStep !== null) {
+      const nextButtons = this.#circleMainContainer.querySelectorAll('.modal__form');
+      const nextButtonElement = nextButtons[nextButtons.length - 1];
 
-  onModalClick = (evt, ModalView) => {
+      nextButtonElement.addEventListener('submit', (evt) => {
+        evt.preventDefault();
+        if (validation !== null) {
+          allFormContent.push(validation(evt));
+        }
+        console.log(allFormContent);
+        this.#nextStep.cb(evt, ModalPresenter, view, this.#nextStep.content, this.#nextStep.validation, allFormContent);
+      });
+    }
+  };
+
+
+  onModalClick = (evt, ModalView, content) => {
     evt.preventDefault();
-    this.#openModalWindow(new ModalView());
+    this.#openModalWindow(new ModalView(content));
 
-    this.#modalDefaultListener();
+    this.init();
   };
 }
 

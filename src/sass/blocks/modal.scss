@@ -169,3 +169,45 @@
 .modal__input-container {
   position: relative;
 }
+
+.modal__radio-button {
+  display: none;
+
+  &:checked + .modal__radio-button-label {
+    &::before {
+      border: 2px solid #326e5b;
+    }
+
+    &::after {
+      @include defaul-pseudo-element(10px);
+      background: #326e5b;
+      border-radius: 50%;
+      @include centering-hight-pseudo-element;
+      left: 5px;
+    }
+  }
+}
+
+.modal__radio-button-label {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  /* identical to box height */
+
+  /* Black */
+
+  color: #444444;
+  padding-left: 32px;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    @include defaul-pseudo-element(16px);
+    border: 2px solid #444444;
+    border-radius: 50%;
+    @include centering-hight-pseudo-element;
+    left: 0;
+  }
+}
