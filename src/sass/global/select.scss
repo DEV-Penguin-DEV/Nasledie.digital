@@ -49,24 +49,26 @@
 }
 
 .select-list {
-  z-index: 2;
-  transition: $default-menu-transition;
-  width: 100%;
-  background: #ffffff;
-  border: 1px solid #f0f4f7;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-  box-sizing: border-box;
-  position: absolute;
-  top: 55px;
-
+  position: relative;
   &--closed {
     height: 0;
     opacity: 0;
+    z-index: -2;
+    transition: $default-menu-transition;
   }
 
   &--opened {
+    transition: $default-menu-transition;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #f0f4f7;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 55px;
     // height: max-content;
     opacity: 1;
+    z-index: 10 !important;
   }
 }

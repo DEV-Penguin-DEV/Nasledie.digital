@@ -25,7 +25,7 @@ export default class ModalPresenter {
   }
 
   closeModalWindowStep = (removeElement, contents = null) => {
-    const backButtonElement = this.#circleMainContainer.querySelector('.modal__back-button');
+    const backButtonElement = document.querySelector(removeElement).querySelector('.modal__back-button');
     if (contents !== null) {
       contents.forEach((content) => {
         content.pop();
@@ -38,9 +38,14 @@ export default class ModalPresenter {
     });
   };
 
-  #saveModalWindow = (evt) => {
+  #saveModalWindow = (evt, succesfulView = null, succesfulContainer = null, allFormContent = null) => {
     //TODO SEND UPDATE TO SERVER
     this.#closeModalWindow(evt);
+
+    if (succesfulView !== null && succesfulContainer !== null && allFormContent !== null) {
+      console.log(allFormContent);
+      render(succesfulView, succesfulContainer);
+    }
   };
 
   #modalDefaultListener = () => {
@@ -56,18 +61,23 @@ export default class ModalPresenter {
     });
   };
 
-  startNextStep = (validation = null, view, allFormContent = []) => {
-    if (this.#nextStep !== null) {
+  startNextStep = (validation, allFormContent, isLast = false, succesfulView = null, succesfulContainer = null) => {
+    if (this.#nextStep !== null || isLast) {
       const nextButtons = this.#circleMainContainer.querySelectorAll('.modal__form');
       const nextButtonElement = nextButtons[nextButtons.length - 1];
-
+      console.log(allFormContent);
       nextButtonElement.addEventListener('submit', (evt) => {
         evt.preventDefault();
         if (validation !== null) {
-          allFormContent.push(validation(evt));
+          if (isLast) {
+            this.#saveModalWindow(evt, succesfulView, succesfulContainer, allFormContent);
+          } else {
+            allFormContent(validation(evt));
+          }
         }
-        console.log(allFormContent);
-        this.#nextStep.cb(evt, ModalPresenter, view, this.#nextStep.content, this.#nextStep.validation, allFormContent);
+        if (!isLast) {
+          this.#nextStep.cb(evt, ModalPresenter, this.#nextStep.view, this.#nextStep.content, this.#nextStep.validation, allFormContent);
+        }
       });
     }
   };

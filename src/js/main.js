@@ -6,3 +6,5 @@ const mainContainer = document.querySelector('.root');
 const appPresenter = new AppPresenter(mainContainer);
 
 appPresenter.init();
+
+

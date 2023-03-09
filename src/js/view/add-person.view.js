@@ -1,6 +1,6 @@
 import AbstractView from './abstract.view.js';
 
-const addPersonTemplate = () => (`
+const addPersonTemplate = () => `
 <div class="modal-container">
   <div class="modal add-person">
     <div class="add-person__top-content modal__top-content">
@@ -88,7 +88,7 @@ const addPersonTemplate = () => (`
           <div class="add-person__right-top-part">
             <!-- General Info -->
             <div class="add-person__general-info">
-              <p class="add-person__title modal__content-title">Введите ФИО</p>
+              <p class="add-person__content-title modal__content-title">Введите ФИО</p>
 
               <div class="add-person__right-top-part__input-container">
 
@@ -117,7 +117,7 @@ const addPersonTemplate = () => (`
 
             <!-- Relationship -->
             <div class="add-person__relationship-info">
-              <p class="add-person__title modal__content-title">Кем приходится автору</p>
+              <p class="add-person__content-title modal__content-title">Кем приходится автору</p>
 
               <div class="add-person__input-container modal__input-container">
                 <input id="person_group-id" type="text" name="person_group"
@@ -133,7 +133,7 @@ const addPersonTemplate = () => (`
     </div>
   </div>
 </div>
-`);
+`;
 
 export default class AddPersonView extends AbstractView {
   constructor() {

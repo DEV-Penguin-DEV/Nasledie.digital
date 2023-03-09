@@ -1,17 +1,69 @@
 import ModalPresenter from './modal.presenter.js';
 import AddPersonView from '../view/add-person.view.js';
 import AddPerson2View from '../view/add-person-2.view.js';
+import AddPerson3View from '../view/add-person-3.view.js';
+import AddPersonSuccesfulView from '../view/add-person-succesful.view.js';
 import { findAncestor } from '../utils.js';
+import { startSelects } from '../functions/selects.js';
+
+const startThirdStep = (event, ModalPresenter3, view, content, validation, allFormContent) => {
+  const modalPresenter = new ModalPresenter3(document.querySelector('.modal-container'));
+  modalPresenter.onModalClick(event, view, content);
+  modalPresenter.init();
+  modalPresenter.closeModalWindowStep('.add-person--step-3', [allFormContent]);
+
+  startSelects();
+
+  const step3Inputs = document.querySelectorAll('.add-person__all-periods__input');
+
+  const isEveryInputNoChecked = (inputs) => {
+    let isAllUnChecked = true;
+    inputs.forEach((input) => {
+      if (input.checked) {
+        isAllUnChecked = false;
+      }
+    });
+    const buttonNext = document.querySelector('.add-person__button-next--3');
+    if (isAllUnChecked) {
+      buttonNext.textContent = 'Пропустить';
+      buttonNext.classList.add('add-person__button-next--3-skip');
+    }
+  };
+
+  step3Inputs.forEach((input) => {
+    isEveryInputNoChecked(step3Inputs);
+    // Checking is input checked to do opacity style for select
+    input.addEventListener('change', () => {
+      const select = findAncestor(input, 'add-person__all-periods-item').querySelector('.add-person__all-periods__filers');
+      const buttonNext = document.querySelector('.add-person__button-next--3');
+
+      if (!input.checked) {
+        select.classList.add('add-person__all-periods__filers--unchecked');
+        isEveryInputNoChecked(step3Inputs);
+      } else {
+        select.classList.remove('add-person__all-periods__filers--unchecked');
+        if (buttonNext.classList.contains('add-person__button-next--3-skip')) {
+          buttonNext.textContent = 'Далее';
+          buttonNext.classList.remove('add-person__button-next--3-skip');
+        }
+      }
+    });
+
+    modalPresenter.startNextStep(validation, allFormContent, true, new AddPersonSuccesfulView(), document.querySelector('.root'));
+  });
+};
+
+const validationStep3 = (evt) => {
+  evt.preventDefault();
+};
 
 const startSecondStep = (event, ModalPresenter2, view, content, validation, allFormContent) => {
   const nextStep =
     {
-      view: null,
-      cb: null,
-      validation: null,
-      content: {
-        avatarPath: 'img', // TODO
-      }
+      view: AddPerson3View,
+      cb: startThirdStep,
+      validation: validationStep3,
+      content: null
     };
   const modalPresenter = new ModalPresenter2(document.querySelector('.modal-container'), nextStep);
   modalPresenter.onModalClick(event, view, content);
@@ -41,7 +93,7 @@ const startSecondStep = (event, ModalPresenter2, view, content, validation, allF
       inputContainer.append(miniAvatar);
     });
   });
-  modalPresenter.startNextStep(validation, view, allFormContent);
+  modalPresenter.startNextStep(validation, allFormContent);
 };
 
 const validationStep2 = (evt) => {
@@ -67,8 +119,18 @@ export default class AddPersonPresenter {
       }
     };
 
+  #allFormContent = [];
+
   constructor(circleMainContainer) {
     this.#modalPresenter = new ModalPresenter(circleMainContainer, this.nextStep);
+  }
+
+  get allFormContent() {
+    return this.#allFormContent;
+  }
+
+  set allFormContent(newformData) {
+    this.#allFormContent.push(newformData);
   }
 
   init() {
@@ -103,7 +165,7 @@ export default class AddPersonPresenter {
   };
 
   #onNextStep = () => {
-    this.#modalPresenter.startNextStep(this.validationStep1, AddPerson2View);
+    this.#modalPresenter.startNextStep(this.validationStep1, this.allFormContent);
   };
 
   validationStep1 = (evt) => {
@@ -115,5 +177,3 @@ export default class AddPersonPresenter {
     return formData;
   };
 }
-
-
