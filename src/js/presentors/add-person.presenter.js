@@ -5,16 +5,26 @@ import AddPerson3View from '../view/add-person-3.view.js';
 import AddPersonSuccesfulView from '../view/add-person-succesful.view.js';
 import { findAncestor } from '../utils.js';
 import { startSelects } from '../functions/selects.js';
+import { DEFAULT_AVATAR_PATH } from '../const.js';
 
-const startThirdStep = (event, ModalPresenter3, view, content, validation, allFormContent) => {
-  const modalPresenter = new ModalPresenter3(document.querySelector('.modal-container'));
-  modalPresenter.onModalClick(event, view, content);
-  modalPresenter.init();
+const startThirdStep = (
+  event,
+  ModalPresenter3,
+  view,
+  validation,
+  allFormContent
+) => {
+  const modalPresenter = new ModalPresenter3(
+    document.querySelector('.modal-container')
+  );
+  modalPresenter.onModalClick(event, view);
   modalPresenter.closeModalWindowStep('.add-person--step-3', [allFormContent]);
 
   startSelects();
 
-  const step3Inputs = document.querySelectorAll('.add-person__all-periods__input');
+  const step3Inputs = document.querySelectorAll(
+    '.add-person__all-periods__input'
+  );
 
   const isEveryInputNoChecked = (inputs) => {
     let isAllUnChecked = true;
@@ -34,7 +44,10 @@ const startThirdStep = (event, ModalPresenter3, view, content, validation, allFo
     isEveryInputNoChecked(step3Inputs);
     // Checking is input checked to do opacity style for select
     input.addEventListener('change', () => {
-      const select = findAncestor(input, 'add-person__all-periods-item').querySelector('.add-person__all-periods__filers');
+      const select = findAncestor(
+        input,
+        'add-person__all-periods-item'
+      ).querySelector('.add-person__all-periods__filers');
       const buttonNext = document.querySelector('.add-person__button-next--3');
 
       if (!input.checked) {
@@ -49,46 +62,81 @@ const startThirdStep = (event, ModalPresenter3, view, content, validation, allFo
       }
     });
 
-    modalPresenter.startNextStep(validation, allFormContent, true, new AddPersonSuccesfulView(), document.querySelector('.root'));
+    modalPresenter.startNextStep(
+      validation,
+      allFormContent,
+      true,
+      AddPersonSuccesfulView,
+      document.querySelector('#circles')
+    );
   });
 };
 
 const validationStep3 = (evt) => {
   evt.preventDefault();
+
+  return new FormData(evt.target);
 };
 
-const startSecondStep = (event, ModalPresenter2, view, content, validation, allFormContent) => {
-  const nextStep =
-    {
-      view: AddPerson3View,
-      cb: startThirdStep,
-      validation: validationStep3,
-      content: null
-    };
-  const modalPresenter = new ModalPresenter2(document.querySelector('.modal-container'), nextStep);
-  modalPresenter.onModalClick(event, view, content);
-  modalPresenter.init();
+
+// 2 STEP CallBack
+const startSecondStep = (
+  event,
+  ModalPresenter2,
+  view,
+  validation,
+  allFormContent
+) => {
+  const nextStep = {
+    view: AddPerson3View,
+    cb: startThirdStep,
+    validation: validationStep3,
+  };
+  const modalPresenter = new ModalPresenter2(
+    document.querySelector('.modal-container'),
+    nextStep
+  );
+  modalPresenter.onModalClick(event, view);
+  const avatarFile = allFormContent[0].get('avatar');
+  const avatarImg = document.querySelector('.add-person__circle-img');
+  const fileReader = new FileReader();
+  fileReader.onload = (evt) => {
+    avatarImg.src = evt.target.result === 'data:' ? DEFAULT_AVATAR_PATH : evt.target.result;
+  };
+  fileReader.readAsDataURL(avatarFile);
   modalPresenter.closeModalWindowStep('.add-person--step-2', [allFormContent]);
   const inputs = document.querySelectorAll('.add-person__circle-input');
-  const form2Container = document.querySelector('.add-person__circle-container');
+  const form2Container = document.querySelector(
+    '.add-person__circle-container'
+  );
   const periodChoose = document.querySelector('.period-choose');
 
   inputs.forEach((input) => {
     input.addEventListener('change', (evt) => {
-      if (document.querySelector('.add-person__circle-label--no-circle' ) !== null) {
-        document.querySelector('.add-person__circle-label--no-circle').classList.remove('add-person__circle-label--no-circle');
+      if (
+        document.querySelector('.add-person__circle-label--no-circle') !== null
+      ) {
+        document
+          .querySelector('.add-person__circle-label--no-circle')
+          .classList.remove('add-person__circle-label--no-circle');
       }
 
       form2Container.classList.remove('add-person__circle-container--required');
       periodChoose.classList.add('period-choose--shown');
-      document.querySelectorAll('.add-person__circle-input-mini-avatar')
+      document
+        .querySelectorAll('.add-person__circle-input-mini-avatar')
         .forEach((miniAvatarElm) => {
           miniAvatarElm.remove();
         });
-      const inputContainer = findAncestor(evt.target, 'add-person__circle-input-container');
-      inputContainer.querySelector('.add-person__circle-label').classList.add('add-person__circle-label--no-circle');
+      const inputContainer = findAncestor(
+        evt.target,
+        'add-person__circle-input-container'
+      );
+      inputContainer
+        .querySelector('.add-person__circle-label')
+        .classList.add('add-person__circle-label--no-circle');
       const miniAvatar = document.createElement('img');
-      miniAvatar.src = content.avatarPath.name === '' ? 'img/avatar-default.png' : content.avatarPath.name;
+      miniAvatar.src = avatarImg.src;
       miniAvatar.classList.add('add-person__circle-input-mini-avatar');
       inputContainer.append(miniAvatar);
     });
@@ -97,40 +145,37 @@ const startSecondStep = (event, ModalPresenter2, view, content, validation, allF
 };
 
 const validationStep2 = (evt) => {
+
   evt.preventDefault();
 
-  const form2Container = document.querySelector('.add-person__circle-container');
+  const form2Container = document.querySelector(
+    '.add-person__circle-container'
+  );
   const content = evt.target;
   const formData = new FormData(content);
   if (formData.getAll('person_circle').length <= 0) {
     form2Container.classList.add('add-person__circle-container--required');
+    return false;
+  } else {
+    return formData;
   }
 };
 
 export default class AddPersonPresenter {
   #modalPresenter = null;
-  nextStep =
-    {
-      view: AddPerson2View,
-      cb: startSecondStep,
-      validation: validationStep2,
-      content: {
-        avatarPath: 'img', // TODO
-      }
-    };
+  nextStep = {
+    view: AddPerson2View,
+    cb: startSecondStep,
+    validation: validationStep2,
+  };
 
-  #allFormContent = [];
+  allFormContent = [];
 
   constructor(circleMainContainer) {
-    this.#modalPresenter = new ModalPresenter(circleMainContainer, this.nextStep);
-  }
-
-  get allFormContent() {
-    return this.#allFormContent;
-  }
-
-  set allFormContent(newformData) {
-    this.#allFormContent.push(newformData);
+    this.#modalPresenter = new ModalPresenter(
+      circleMainContainer,
+      this.nextStep
+    );
   }
 
   init() {
@@ -140,7 +185,7 @@ export default class AddPersonPresenter {
 
   onAddPersonClick = (evt) => {
     evt.preventDefault();
-    this.#modalPresenter.onModalClick(evt, AddPersonView, this.nextStep);
+    this.#modalPresenter.onModalClick(evt, AddPersonView, this.nextStep.content) ;
     this.#modalPresenter.init();
     this.init();
   };
@@ -165,15 +210,18 @@ export default class AddPersonPresenter {
   };
 
   #onNextStep = () => {
-    this.#modalPresenter.startNextStep(this.validationStep1, this.allFormContent);
+    this.#modalPresenter.startNextStep(
+      this.validationStep1,
+      this.allFormContent
+    );
   };
 
   validationStep1 = (evt) => {
     evt.preventDefault();
 
-    const content = evt.target;
-    const formData = new FormData(content);
-    this.nextStep.content.avatarPath = formData.get('avatar');
+    const formContent = evt.target;
+    const formData = new FormData(formContent);
+
     return formData;
   };
 }

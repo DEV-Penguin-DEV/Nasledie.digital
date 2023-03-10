@@ -4,3 +4,5 @@ export const View = {
 };
 
 export const MEDIA_MOBILE_SIZE = window.matchMedia('(max-width: 750px)');
+
+export const DEFAULT_AVATAR_PATH = '/img/avatar-default.png';

@@ -10,6 +10,14 @@ module.exports = {
     clean: true,
   },
   devtool: 'source-map',
+  devServer: {
+        historyApiFallback: true,
+        static: path.resolve(__dirname, 'build'),
+        open: true,
+        compress: true,
+        hot: true,
+        port: 8080,
+    },
   plugins: [
     new CopyPlugin({
       patterns: [{ from: 'public' }],

@@ -1,4 +1,5 @@
 import AbstractView from './abstract.view.js';
+import { DEFAULT_AVATAR_PATH } from '../const.js';
 
 const addPersonTemplate = () => `
 <div class="modal-container">
@@ -17,7 +18,7 @@ const addPersonTemplate = () => `
           <div class="male-and-avatar__container male-and-avatar">
             <!-- Avatar -->
             <div class="add-person__avatar-container">
-              <img src="img/avatar-default.png" alt="" class="add-person__avatar-img">
+              <img src="${DEFAULT_AVATAR_PATH}" alt="" class="add-person__avatar-img">
               <input id="avatar-input-id" type="file" class="add-person__avatar-input" name="avatar">
               <label for="avatar-input-id" class="add-person__avatar-label">
                 <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">

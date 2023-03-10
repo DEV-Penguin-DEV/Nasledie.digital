@@ -9,7 +9,7 @@ const circleMobileEditorTemplate = () => (`
 </style>
 <header class="content-header">
   <div class="content-header__container container">
-    <img src="img/logo-mobile.svg" alt="Nasledie.digital капсулы времени." class="content-header__logo" />
+    <img src="/img/logo-mobile.svg" alt="Nasledie.digital капсулы времени." class="content-header__logo" />
 
     <button class="content-header__mobile-menu-button">
       <span class="visually-hidden">Открыть меню</span>
@@ -56,22 +56,22 @@ const circleMobileEditorTemplate = () => (`
 
       <ul class="persons__list">
         <li class="persons__item person">
-          <img src="img/avatar.png" width="60" height="60" alt="" class="person__avatar" />
+          <img src="/img/avatar.png" width="60" height="60" alt="" class="person__avatar" />
           <p class="person__text">Юрий Иванович Иванов</p>
         </li>
 
         <li class="persons__item person">
-          <img src="img/avatar.png" width="60" height="60" alt="" class="person__avatar" />
+          <img src="/img/avatar.png" width="60" height="60" alt="" class="person__avatar" />
           <p class="person__text">Юрий Иванович Иванов</p>
         </li>
 
         <li class="persons__item person">
-          <img src="img/avatar.png" width="60" height="60" alt="" class="person__avatar" />
+          <img src="/img/avatar.png" width="60" height="60" alt="" class="person__avatar" />
           <p class="person__text">Юрий Иванович Иванов</p>
         </li>
 
         <li class="persons__item person">
-          <img src="img/avatar.png" width="60" height="60" alt="" class="person__avatar" />
+          <img src="/img/avatar.png" width="60" height="60" alt="" class="person__avatar" />
           <p class="person__text">Юрий Иванович Иванов</p>
         </li>
       </ul>
@@ -88,7 +88,7 @@ const circleMobileEditorTemplate = () => (`
 
     <div class="editing-modal__content-container">
       <div class="editing-modal__person-info">
-        <img src="img/avatar.png" alt="" width="60" height="60" class="editing-modal__avatar" />
+        <img src="/img/avatar.png" alt="" width="60" height="60" class="editing-modal__avatar" />
         <p class="editing-modal__person-description">
           Юрий Иванович Иванов
         </p>
