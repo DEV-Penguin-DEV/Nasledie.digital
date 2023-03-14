@@ -2,6 +2,7 @@ import AbstractView from './abstract.view.js';
 
 const addPerson2Template = (content) => {
   const avatar = content;
+
   return (`
       <div class="modal add-person add-person--step-2">
         <div class="add-person__top-content modal__top-content">

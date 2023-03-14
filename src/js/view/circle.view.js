@@ -1,5 +1,6 @@
 import AbstractView from './abstract.view.js';
 import { MEDIA_MOBILE_SIZE } from '../const.js';
+import { PATH_BASE } from '../const.js';
 
 const periods = ['1978 - 1982', '1937-1955', '1937-1955', '1937-1955'];
 
@@ -36,7 +37,7 @@ const generateUserAvatar = () => {
   if (MEDIA_MOBILE_SIZE.matches) {
     return `
     <div class="circles-main__user-avatar-container">
-      <img src="/img/user-avatar.png" alt="Name." width="100" height="100" class="circles-main__user-avatar">
+      <img src="${PATH_BASE}/user-avatar.png" alt="Name." width="100" height="100" class="circles-main__user-avatar">
       <button class="circles-main__user-avatar-plus button--green button--green--icon" type="button">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="12" y="5" width="2" height="12" rx="1" transform="rotate(90 12 5)" fill="white" />
@@ -48,7 +49,7 @@ const generateUserAvatar = () => {
     </div>
     `;
   } else {
-    return '<img src="/img/user-avatar.png" alt="Name." width="100" height="100" class="circles-main__user-avatar">';
+    return `<img src="${PATH_BASE}/user-avatar.png" alt="Name." width="100" height="100" class="circles-main__user-avatar">`;
   }
 };
 
@@ -58,115 +59,149 @@ const circleTemplate = (isEditing, currentPeriodId) => (`
   <div class="circles-main__circles-container">
     <div class="circles-main__circle circle circle--4 circles-main__ceil--content">
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--4">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--4" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--5">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--5" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--6">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--6" data-name="Юрий Овчинников">
       </div>
     </div>
 
     <div class="circles-main__circle circle circle--3 circles-main__ceil--content">
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--4">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--4" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--5">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--5" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--6">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--6" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--7">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--7" data-name="Юрий Овчинников">
       </div>
     </div>
 
     <div class="circles-main__circle circle circle--2 circles-main__ceil--content">
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--4">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--4" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--5">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--5" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--6">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--6" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--7">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--7" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--8">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--8" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--9">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--9" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--10">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--10" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--11">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--11" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--12">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--12" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--13">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--13" data-name="Юрий Овчинников">
       </div>
     </div>
 
     <div class="circles-main__circle circle circle--1 circles-main__ceil--content">
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--1" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--2" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--3" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--4">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--4" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--5">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--5" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--6">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--6" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--7">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--7" data-name="Юрий Овчинников">
       </div>
       <div class="circle__img-container">
-        <img src="/img/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--8">
+
+        <img src="${PATH_BASE}/person-avatar.png" width="31" height="31" alt="Name." class="circle__img circle__img--8" data-name="Юрий Овчинников">
       </div>
     </div>
 
