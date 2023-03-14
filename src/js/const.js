@@ -5,7 +5,7 @@ export const View = {
   TABLE: 'TABLE',
 };
 
-export const PATH_BASE = START_MODE === 'product' ? '/wp-content/plugins/nasledie-circles/build/imag/' : '/img/';
+export const PATH_BASE = START_MODE === 'product' ? '/wp-content/plugins/nasledie-circles/build/imag/' : 'img/';
 
 export const MEDIA_MOBILE_SIZE = window.matchMedia('(max-width: 750px)');
 
