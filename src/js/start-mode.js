@@ -1,1 +1,1 @@
-export const START_MODE = 'dev';
+export const START_MODE = 'product';

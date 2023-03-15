@@ -6,10 +6,10 @@ const addPerson2Template = (content) => {
   return (`
       <div class="modal add-person add-person--step-2">
         <div class="add-person__top-content modal__top-content">
-        <button class="person-group-edit__button modal__back-button button--back-button"><span class="visually-hidden">Вернуться
+        <button class="person-group-edit__button modal__back-button button button--back-button"><span class="visually-hidden">Вернуться
                 назад</span></button>
           <p class="add-person__title modal__title">Добавление персоны</p>
-          <button class="add-person__button button--closed-button modal__closed-button"><span
+          <button class="add-person__button button button--closed-button modal__closed-button"><span
               class="visually-hidden">Закрыть</span></button>
         </div>
 
@@ -99,7 +99,7 @@ const addPerson2Template = (content) => {
                 </div>
               </div>
               <button type="submit"
-                class="add-person__button-next add-person__button-next--2 modal__next button button--green">Далее</button>
+                class="add-person__button-next add-person__button-next--2 modal__next button button button--green">Далее</button>
             </div>
           </form>
         </div>

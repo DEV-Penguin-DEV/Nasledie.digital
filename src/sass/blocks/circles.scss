@@ -62,7 +62,7 @@
       &::before {
         width: 19px;
         height: 19px;
-        background-image: url("./../../public/img/editor--table.svg");
+        background-image: url($path + "/editor--table.svg");
         background-size: contain;
         top: 11px;
       }

@@ -321,8 +321,7 @@
   width: 167px;
   &::before {
     @include defaul-pseudo-element(167px);
-    background: url(./../../public/img/add-person-circle.svg) no-repeat bottom
-      left;
+    background: url($path + "/add-person-circle.svg") no-repeat bottom left;
     background-size: contain;
     bottom: -27px;
   }
@@ -365,7 +364,7 @@
     &::before {
       @include defaul-pseudo-element(302px);
       bottom: -66px;
-      background-image: url(./../../public/img/add-person-circle-4.svg);
+      background-image: url($path + "/add-person-circle-4.svg");
     }
 
     & .add-person__circle-label {

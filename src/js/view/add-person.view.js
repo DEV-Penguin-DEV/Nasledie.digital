@@ -6,7 +6,7 @@ const addPersonTemplate = () => `
   <div class="modal add-person">
     <div class="add-person__top-content modal__top-content">
       <p class="add-person__title modal__title">Добавление персоны</p>
-      <button class="add-person__button button--closed-button modal__closed-button"><span
+      <button class="add-person__button button button--closed-button modal__closed-button"><span
           class="visually-hidden">Закрыть</span></button>
     </div>
 
@@ -128,7 +128,7 @@ const addPersonTemplate = () => `
             </div>
           </div>
 
-          <button class="add-person__button-next modal__next button button--green">Далее</button>
+          <button class="add-person__button-next modal__next button button button--green">Далее</button>
         </div>
       </form>
     </div>

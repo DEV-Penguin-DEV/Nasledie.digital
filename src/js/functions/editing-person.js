@@ -1,11 +1,12 @@
 import { render, createElement } from '../render';
 import { startSelects } from './selects.js';
+import { PATH_BASE } from '../const.js';
 
 const personInfoEditingTemplate = () => (
   `
 <div class="editing-modal__person-info-container">
   <div class="editing-modal__avatar-input-container">
-    <img src="/img/input-file.png" alt="" width="93" height="93" class="editing-modal__avatar" />
+    <img src="${PATH_BASE}}input-file.png" alt="" width="93" height="93" class="editing-modal__avatar" />
     <input type="file" class="editing-modal__avatar-input" id="editing-avatar" multiple />
     <label class="editing-modal__avatar-label" for="editing-avatar"><span class="visually-hidden">Изминить
         аватар</span></label>

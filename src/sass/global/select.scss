@@ -14,8 +14,7 @@
 
   &::before {
     @include defaul-pseudo-element(16px);
-    background: url("./../../public/img/select-icon.svg") no-repeat center
-      center;
+    background: url($path + "/select-icon.svg") no-repeat center center;
     right: 10px;
     z-index: 2;
     top: 50%;

@@ -8,8 +8,7 @@
 
   .periods-slider__controler {
     position: absolute;
-    background: url("./../../public/img/select-icon.svg") no-repeat center
-      center;
+    background: url($path + "/select-icon.svg") no-repeat center center;
     width: 16px;
     height: 16px;
     background-size: contain;

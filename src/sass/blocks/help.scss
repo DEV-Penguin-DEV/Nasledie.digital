@@ -48,7 +48,7 @@
   right: 10px;
   width: 32px;
   height: 32px;
-  background: url("./../../public/img/Close_icon.svg");
+  background: url($path + "/Close_icon.svg");
   cursor: pointer;
   transition: $default-menu-transition;
 }

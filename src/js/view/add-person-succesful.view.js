@@ -14,7 +14,7 @@ const addPersonSuccesfulTemplate = (content) => {
       </p>
     </div>
 
-    <button class="add-person--succesful__button button modal__succesful-button button--green">Хорошо</button>
+    <button class="add-person--succesful__button button modal__succesful-button button button--green">Хорошо</button>
   </div>
 </div>
 `);};

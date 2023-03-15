@@ -118,12 +118,12 @@
   width: 40px;
   min-height: 100%;
   min-width: 0;
-  background-image: url("./../../public/img/arrow-good.svg");
+  background-image: url($path + "/arrow-good.svg");
   border: 1px solid rgba(183, 189, 206, 0.3);
   border-radius: 0px 8px 8px 0px;
 
   &:hover {
-    background-image: url("./../../public/img/arrow-good--hover.svg");
+    background-image: url($path + "/arrow-good--hover.svg");
   }
 }
 

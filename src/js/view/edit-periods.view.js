@@ -6,7 +6,7 @@ const editPeriodsTemplate = () => (`
     <div class="modal__inner-wrapper">
       <div class="person-group-edit__top-content modal__top-content">
         <p class="person-group-edit__title modal__title">Периоды</p>
-        <button class="person-group-edit__button button--closed-button modal__closed-button"><span
+        <button class="person-group-edit__button button button--closed-button modal__closed-button"><span
             class="visually-hidden">Закрыть</span></button>
       </div>
 
@@ -17,7 +17,7 @@ const editPeriodsTemplate = () => (`
             class="edit-periods-form__input edit-periods-form__input--with-value modal__add-input"
             placeholder="Название периода">
           <button type="submit"
-            class="edit-periods-form__button modal__add-button  button button--icon button--green">
+            class="edit-periods-form__button modal__add-button  button button button--icon button button--green">
             <span class="visually-hidden">Добавить новый период</span>
           </button>
         </form>
@@ -32,7 +32,7 @@ const editPeriodsTemplate = () => (`
                   <p class="added-period__label modal__label">Период 1</p>
                   <p class="added-period__title">Детство</p>
                 </div>
-                <button class="added-period__delete added-period__button button button--icon">
+                <button class="added-period__delete added-period__button button button button--icon">
                   <span class="visually-hidden">Удалить период</span>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -57,7 +57,7 @@ const editPeriodsTemplate = () => (`
                   <p class="added-period__label modal__label">Период 2</p>
                   <p class="added-period__title">Юность</p>
                 </div>
-                <button class="added-period__delete added-period__button button button--icon">
+                <button class="added-period__delete added-period__button button button button--icon">
                   <span class="visually-hidden">Удалить период</span>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -83,7 +83,7 @@ const editPeriodsTemplate = () => (`
                   <p class="added-period__label modal__label">Период 3</p>
                   <p class="added-period__title">Зрелость</p>
                 </div>
-                <button class="added-period__delete added-period__button button button--icon">
+                <button class="added-period__delete added-period__button button button button--icon">
                   <span class="visually-hidden">Удалить период</span>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -106,7 +106,7 @@ const editPeriodsTemplate = () => (`
       </div>
     </div>
 
-    <button class="modal__save-button button button--green">Сохранить</button>
+    <button class="modal__save-button button button button--green">Сохранить</button>
   </div>
 </div>
 `);

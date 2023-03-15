@@ -6,7 +6,7 @@ const addPersoneGroupTemplate = () => (`
     <div class="modal__inner-wrapper">
       <div class="person-group__top-content modal__top-content">
         <p class="person-group__title modal__title">Группы персон</p>
-        <button class="person-group__button modal__closed-button button--closed-button"><span
+        <button class="person-group__button modal__closed-button button button--closed-button"><span
             class="visually-hidden">Закрыть</span></button>
       </div>
 
@@ -15,7 +15,7 @@ const addPersoneGroupTemplate = () => (`
         <form class=" add-new-group-form modal__add-form" action="#" method="post">
           <input type="text" class="add-new-group-form__input modal__add-input" placeholder="Название группы">
           <button type="submit"
-            class="add-new-group-form__button modal__add-button  button button--icon button--green">
+            class="add-new-group-form__button modal__add-button  button button button--icon button button--green">
             <span class="visually-hidden">Добавить новую группу</span>
           </button>
         </form>
@@ -28,7 +28,7 @@ const addPersoneGroupTemplate = () => (`
               <div class="added-group__container">
                 <p class="added-group__title">Родственники</p>
                 <div class="added-group__button-container">
-                  <button class="added-group__edit added-group__button button button--icon">
+                  <button class="added-group__edit added-group__button button button button--icon">
                     <span class="visually-hidden">Изменить группу</span>
                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd"
@@ -43,7 +43,7 @@ const addPersoneGroupTemplate = () => (`
                     </svg>
 
                   </button>
-                  <button class="added-group__delete added-group__button button button--icon">
+                  <button class="added-group__delete added-group__button button button button--icon">
                     <span class="visually-hidden">Удалить группу</span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd"
@@ -67,7 +67,7 @@ const addPersoneGroupTemplate = () => (`
               <div class="added-group__container">
                 <p class="added-group__title">Тренеры</p>
                 <div class="added-group__button-container">
-                  <button class="added-group__edit added-group__button button button--icon">
+                  <button class="added-group__edit added-group__button button button button--icon">
                     <span class="visually-hidden">Изменить группу</span>
                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd"
@@ -82,7 +82,7 @@ const addPersoneGroupTemplate = () => (`
                     </svg>
 
                   </button>
-                  <button class="added-group__delete added-group__button button button--icon">
+                  <button class="added-group__delete added-group__button button button button--icon">
                     <span class="visually-hidden">Удалить группу</span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd"
@@ -106,7 +106,7 @@ const addPersoneGroupTemplate = () => (`
               <div class="added-group__container">
                 <p class="added-group__title">Братья</p>
                 <div class="added-group__button-container">
-                  <button class="added-group__edit added-group__button button button--icon">
+                  <button class="added-group__edit added-group__button button button button--icon">
                     <span class="visually-hidden">Изменить группу</span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd"
@@ -121,7 +121,7 @@ const addPersoneGroupTemplate = () => (`
                     </svg>
 
                   </button>
-                  <button class="added-group__delete added-group__button button button--icon">
+                  <button class="added-group__delete added-group__button button button button--icon">
                     <span class="visually-hidden">Удалить группу</span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd"
@@ -145,7 +145,7 @@ const addPersoneGroupTemplate = () => (`
       </div>
     </div>
 
-    <button class="person-group__button modal__save-button button button--green">Сохранить</button>
+    <button class="person-group__button modal__save-button button button button--green">Сохранить</button>
 
   </div>
 </div>

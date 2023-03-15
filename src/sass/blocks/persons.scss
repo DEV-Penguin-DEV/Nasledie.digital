@@ -45,7 +45,7 @@
     box-sizing: border-box;
     transition: $default-menu-transition;
     position: relative;
-    background: url("./../../public/img/search-icon.svg") no-repeat center right;
+    background: url($path + "/search-icon.svg") no-repeat center right;
     background-size: 24px 24px;
     background-position: right 10px center;
     &::placeholder {

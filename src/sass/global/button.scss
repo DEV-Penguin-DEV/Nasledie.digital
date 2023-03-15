@@ -4,6 +4,11 @@ button {
 }
 
 .button {
+  transition: $default-menu-transition;
+
+  &:hover {
+    transition: $default-menu-transition;
+  }
   &--white {
     background: #ffffff;
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
@@ -11,7 +16,7 @@ button {
     height: 40px;
     position: relative;
     border-radius: 50%;
-    transition: $default-menu-transition;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,11 +37,6 @@ button {
     }
 
     &--icon {
-      transition: $default-menu-transition;
-      & svg path {
-        transition: $default-menu-transition;
-      }
-
       &:hover {
         background-color: #326e5b !important;
 
@@ -48,12 +48,8 @@ button {
   }
 
   &--icon {
-    transition: $default-menu-transition;
     background-position: center center;
     background-repeat: no-repeat;
-    & svg path {
-      transition: $default-menu-transition;
-    }
 
     &:hover {
       & svg path {
@@ -69,7 +65,7 @@ button {
     font-size: 16px;
     line-height: 16px;
     text-align: center;
-    transition: $default-menu-transition;
+
     color: #ffffff;
     background-color: #326e5b;
     border-radius: 100px;
@@ -88,12 +84,45 @@ button {
       background: #2c6050;
     }
 
-    & svg rect {
-      transition: $default-menu-transition;
+    &--icon {
+      &:hover {
+        background-color: #ffffff;
+
+        & svg rect {
+          fill: #326e5b;
+        }
+      }
+    }
+  }
+
+  &--red {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+
+    color: #ffffff;
+    background-color: $error-color;
+    border-radius: 100px;
+    min-width: max-content;
+    display: block;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
+
+    &:hover {
+      color: #326e5b;
+      background-color: #ffffff;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      background: #2c6050;
     }
 
     &--icon {
-      transition: $default-menu-transition;
       &:hover {
         background-color: #ffffff;
 
@@ -133,7 +162,7 @@ button {
     &::before {
       width: 25px;
       height: 25px;
-      background-image: url("./../../public/img/circle-view-icon.svg");
+      background-image: url($path + "/circle-view-icon.svg");
     }
   }
 
@@ -141,7 +170,7 @@ button {
     &::before {
       width: 24px;
       height: 24px;
-      background-image: url("./../../public/img/more.svg");
+      background-image: url($path + "/more.svg");
     }
   }
 
@@ -151,14 +180,16 @@ button {
     right: 10px;
     width: 32px;
     height: 32px;
-    background-image: url("./../../public/img/Close_icon.svg");
+    background-image: url($path + "/Close_icon.svg");
     background-size: contain;
     cursor: pointer;
-    transition: $default-menu-transition;
 
     &:hover {
-      transition: $default-menu-transition;
-      background-image: url("./../../public/img/Close_icon--hover.svg");
+      background-image: url($path + "/Close_icon--hover.svg");
+    }
+
+    &-svg {
+      background: none !important;
     }
   }
 
@@ -168,15 +199,29 @@ button {
     left: 10px;
     width: 32px;
     height: 32px;
-    background-image: url("./../../public/img/back-button_icon.svg");
+    background-image: url($path + "/back-button_icon.svg");
     background-size: contain;
     cursor: pointer;
-    transition: $default-menu-transition;
 
     &:hover {
-      transition: $default-menu-transition;
-      background-image: url("./../../public/img/back-button_icon--hover.svg");
+      background-image: url($path + "/back-button_icon--hover.svg");
       background-size: contain;
+    }
+  }
+
+  &--green-text {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    width: fit-content;
+
+    color: #326e5b;
+    display: block;
+
+    &:hover {
+      scale: 1.1;
     }
   }
 }

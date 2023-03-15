@@ -3,7 +3,7 @@
 
   &::after {
     @include defaul-pseudo-element(16.5px);
-    background: url("./../../public/img/Profile.svg") no-repeat center center;
+    background: url($path + "/Profile.svg") no-repeat center center;
     background-size: contain;
     top: 11px;
     left: 10px;

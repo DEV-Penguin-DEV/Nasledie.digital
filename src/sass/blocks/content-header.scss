@@ -21,7 +21,6 @@
   .content-header__mobile-menu-button {
     width: 30px;
     height: 14px;
-    background: url("./../../public/img/mobile-menu-button.svg") no-repeat
-      center center;
+    background: url($path + "/mobile-menu-button.svg") no-repeat center center;
   }
 }

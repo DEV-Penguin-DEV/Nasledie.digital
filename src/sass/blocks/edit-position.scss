@@ -1,0 +1,71 @@
+.edit-position {
+  &.error {
+    & .error-text {
+      opacity: 1;
+      transition: $default-menu-transition;
+      margin-bottom: 10px;
+    }
+
+    & .edit-position__save {
+      display: none;
+    }
+
+    & .edit-position__delete {
+      display: block;
+    }
+  }
+}
+
+.edit-position__avatar {
+  width: 80px;
+  height: 80px;
+}
+
+.edit-position__top-block {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.edit-position__text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-position__name {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  /* identical to box height */
+
+  color: $more-info-modal-text;
+}
+
+.edit-position__status {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: #b7bdce;
+}
+
+.error-text {
+  transition: $default-menu-transition;
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #f23434;
+  opacity: 0;
+}
+
+.edit-position__delete {
+  display: none;
+}

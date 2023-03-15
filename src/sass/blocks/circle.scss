@@ -17,7 +17,7 @@
     &::before {
       @include defaul-pseudo-element(100%);
 
-      background: url("./../../public/img/circle--1.svg") no-repeat center top;
+      background: url($path + "/circle--1.svg") no-repeat center top;
       background-size: contain;
     }
 
@@ -39,7 +39,7 @@
       order: 4;
 
       &::before {
-        background-image: url("./../../public/img/circle-line--mobile.svg") !important;
+        background-image: url($path + "/circle-line--mobile.svg") !important;
       }
     }
   }
@@ -53,7 +53,7 @@
 
     &::before {
       @include defaul-pseudo-element(100%);
-      background: url("./../../public/img/circle--2.svg") no-repeat center top;
+      background: url($path + "/circle--2.svg") no-repeat center top;
       background-size: contain;
     }
 
@@ -86,7 +86,7 @@
 
     &::before {
       @include defaul-pseudo-element(100%);
-      background: url("./../../public/img/circle--3.svg") no-repeat center top;
+      background: url($path + "/circle--3.svg") no-repeat center top;
       background-size: contain;
     }
 
@@ -119,7 +119,7 @@
 
     &::before {
       @include defaul-pseudo-element(100%);
-      background: url("./../../public/img/circle--4.svg") no-repeat center top;
+      background: url($path + "/circle--4.svg") no-repeat center top;
       background-size: contain;
     }
 
@@ -159,8 +159,8 @@
       @include defaul-pseudo-element(100vw, 34px);
       border-radius: 50%;
       left: -10%;
-      background: url("./../../public/img/circle-line--mobile-normal.svg")
-        no-repeat center top;
+      background: url($path + "/circle-line--mobile-normal.svg") no-repeat
+        center top;
       top: -34px;
       background-size: cover;
     }
@@ -189,39 +189,40 @@
 .circle__img {
   position: absolute;
   cursor: pointer;
-  transition: $default-menu-transition;
+  transition: $slow-menu-transition;
   z-index: 100;
+  border: 1px solid #b7bdce;
+  border-radius: 50%;
+
+  &--active {
+    transition: $slow-menu-transition;
+    border-color: $active-default-color;
+  }
 }
 
 .circle__img-text {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  text-align: center;
+
+  color: #5b5b5b;
   transition: $default-menu-transition;
   position: fixed;
-  animation: circle__img-text 0.6s forwards;
+  animation: opacity 0.6s forwards;
   z-index: 1000;
-  background: #ffffff;
   border-radius: 6px;
   padding: 6px 14px;
   box-sizing: border-box;
+  display: block;
+  height: 40px;
+  background: url($path + "/text-bg.svg") no-repeat center center;
+  background-size: auto;
 
   &.hide {
-    animation: circle__img-text--out 0.4s forwards;
-  }
-}
-
-@keyframes circle__img-text {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes circle__img-text--out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
+    animation: opacity--out 0.4s forwards;
   }
 }

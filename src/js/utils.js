@@ -5,3 +5,10 @@ export const findAncestor = (el, cls) => {
 };
 
 export const dublicateDeep = (obj) => JSON.parse( JSON.stringify(obj) );
+
+export const removeWithHide = (el) => {
+  el.classList.add('hide');
+  setTimeout(() => {
+    el.remove();
+  }, 200);
+};

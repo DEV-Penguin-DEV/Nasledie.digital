@@ -25,7 +25,7 @@ const circleMobileEditorTemplate = () => (`
         Режим <br />редактирования
       </h2>
 
-      <button class="top-menu__cansel-button button--white button--white--icon button--cansel">
+      <button class="top-menu__cansel-button button button--white button button--white--icon button button--cansel">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
             d="M8.39052 8.39052C8.91122 7.86983 9.75544 7.86983 10.2761 8.39052L16 14.1144L21.7239 8.39052C22.2446 7.86983 23.0888 7.86983 23.6095 8.39052C24.1302 8.91122 24.1302 9.75544 23.6095 10.2761L17.8856 16L23.6095 21.7239C24.1302 22.2446 24.1302 23.0888 23.6095 23.6095C23.0888 24.1302 22.2446 24.1302 21.7239 23.6095L16 17.8856L10.2761 23.6095C9.75544 24.1302 8.91122 24.1302 8.39052 23.6095C7.86983 23.0888 7.86983 22.2446 8.39052 21.7239L14.1144 16L8.39052 10.2761C7.86983 9.75544 7.86983 8.91122 8.39052 8.39052Z"
@@ -33,13 +33,13 @@ const circleMobileEditorTemplate = () => (`
         </svg>
       </button>
 
-      <button class="top-menu__save button--green">Сохранить</button>
+      <button class="top-menu__save button button--green">Сохранить</button>
     </div>
     <div class="under-menu__down-menu down-menu">
-      <button class="down-menu__button button--default-mobile-button">
+      <button class="down-menu__button button button--default-mobile-button">
         Редактировать периоды
       </button>
-      <button class="down-menu__button button--default-mobile-button">
+      <button class="down-menu__button button button--default-mobile-button">
         Редактировать группы персон
       </button>
     </div>
@@ -82,7 +82,7 @@ const circleMobileEditorTemplate = () => (`
   <div class="editing-modal editing-modal--open">
     <div class="editing-modal__title-container">
       <h2 class="editing-modal__title">Редактирование</h2>
-      <button class="button--closed-button">
+      <button class="button button--closed-button">
         <span class="visually-hidden">Закрыть</span>
       </button>
     </div>
@@ -132,7 +132,7 @@ const circleMobileEditorTemplate = () => (`
 
         <div class="editing-modal__input-js-container"></div>
 
-        <button class="editing-modal__submit button--green" type="submit">
+        <button class="editing-modal__submit button button--green" type="submit">
           Сохранить
         </button>
       </form>

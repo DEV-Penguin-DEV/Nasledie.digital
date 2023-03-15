@@ -1,0 +1,228 @@
+.more-info-modal {
+  position: fixed;
+  top: 50px;
+  right: 200px;
+  background: #ffffff;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  width: 306px;
+  height: 421px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  animation: opacity 1s forwards;
+
+  &.hide {
+    animation: opacity--out 0.4s forwards;
+  }
+}
+
+.more-info-modal__part {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  &--top {
+    background: $active-default-color;
+    border-radius: 15px 15px 0px 0px;
+    height: 185px;
+    padding: 0 23px 15px 23px;
+
+    justify-content: flex-end;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &--bottom {
+    padding: 15px;
+    flex-grow: 1;
+  }
+}
+
+.more-info-modal__button {
+  &:hover {
+    & .more-info-modal__button-svg path {
+      transition: $default-menu-transition;
+      fill: $main-bg-color;
+    }
+  }
+
+  &--closed {
+    width: 24px;
+    height: 24px;
+    top: 12px;
+    cursor: pointer;
+  }
+}
+
+.more-info-modal__button-svg {
+  width: 24px;
+  height: 24px;
+  top: 12px;
+
+  & path {
+    transition: $default-menu-transition;
+  }
+}
+
+.more-info-modal__avatar {
+  width: 80px;
+  height: 80px;
+}
+
+.more-info-modal__name {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.more-info-modal__description {
+  max-height: 92px;
+  overflow-y: scroll;
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  display: block;
+
+  color: $more-info-modal-text;
+
+  &::-webkit-scrollbar {
+    width: 4px; /* ширина для вертикального скролла */
+    height: 92px; /* высота для горизонтального скролла */
+    background: rgba(183, 189, 206, 0.2);
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #b7bdce;
+    border-radius: 100px;
+  }
+}
+
+.more-info-modal__menu {
+  display: flex;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.more-info-modal__menu-item {
+  padding: 0 14px 8px 14px;
+  cursor: pointer;
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  transition: $default-menu-transition;
+  position: relative;
+  color: #b7bdce;
+
+  &::before {
+    transition: $default-menu-transition;
+    @include defaul-pseudo-element(100%, 1px);
+    background: rgba(183, 189, 206, 0.3);
+    bottom: 0;
+    left: 0;
+  }
+
+  &--active {
+    transition: $default-menu-transition;
+    color: $active-default-color;
+
+    &::before {
+      background: $active-default-color;
+      transition: $default-menu-transition;
+    }
+  }
+}
+
+.more-info-modal__status {
+  margin-bottom: 8px;
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: #b7bdce;
+}
+
+.more-info-modal__button {
+  margin-top: auto;
+}
+
+.more-info-modal__windows {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.more-info-modal__window {
+  display: none;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &--active {
+    display: flex;
+  }
+}
+
+.more-info-modal__circle-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 110px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 4px; /* ширина для вертикального скролла */
+    height: 92px; /* высота для горизонтального скролла */
+    background: rgba(183, 189, 206, 0.2);
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #b7bdce;
+    border-radius: 100px;
+  }
+}
+
+.more-info-modal__circle {
+  display: flex;
+  align-items: flex-end;
+  padding: 8px 16px;
+  background: #ffffff;
+  /* gray */
+
+  border: 1px solid #b7bdce;
+  border-radius: 100px;
+  width: fit-content;
+
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: $more-info-modal-text;
+  gap: 8px;
+}
+
+.more-info-modal__circle-number {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #b7bdce;
+}

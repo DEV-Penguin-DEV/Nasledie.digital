@@ -3,11 +3,11 @@ import AbstractView from './abstract.view.js';
 const addPerson3Template = () => (`
 <div class="modal add-person add-person--step-3">
   <div class="add-person__top-content modal__top-content">
-    <button class="person-group-edit__button modal__back-button button--back-button"><span
+    <button class="person-group-edit__button modal__back-button button button--back-button"><span
         class="visually-hidden">Вернуться
         назад</span></button>
     <p class="add-person__title modal__title">Добавление персоны</p>
-    <button class="add-person__button button--closed-button modal__closed-button"><span
+    <button class="add-person__button button button--closed-button modal__closed-button"><span
         class="visually-hidden">Закрыть</span></button>
   </div>
 
@@ -106,7 +106,7 @@ const addPerson3Template = () => (`
       <!-- Add person right part -->
       <div class="add-person__part add-person__part--right">
         <button type="submit"
-          class="add-person__button-next add-person__button-next--3 add-person__button-next--2 modal__next button button--green">Далее</button>
+          class="add-person__button-next add-person__button-next--3 add-person__button-next--2 modal__next button button button--green">Далее</button>
       </div>
     </form>
   </div>

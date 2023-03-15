@@ -1,3 +1,6 @@
+// Settings
+$START_MODE: "product";
+
 // Sizes
 $mobile-max-width: 750px;
 
@@ -13,7 +16,17 @@ $modal-top-bg: #f5f2f3;
 $added-group-text-color: #b7bdce;
 $added-period-text-color: #b7bdce;
 $input-button-default-color: #ececec;
+$active-default-color: #326e5b;
+$more-info-modal-text: #444444;
+$error-color: #f23434;
 
 //Transitions
 $default-menu-transition: 0.65s;
 $slow-menu-transition: 1s;
+
+$path: "./../../public/imag";
+
+// Paths
+@if (START_MODE == "product") {
+  $path: "/wp-content/plugins/nasledie-circles/build/imag";
+}

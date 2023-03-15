@@ -5,10 +5,10 @@ const editPersoneGroupTemplate = () => (`
   <div class="modal person-group-edit">
     <div class="modal__inner-wrapper">
       <div class="person-group-edit__top-content modal__top-content">
-        <button class="person-group-edit__button modal__back-button button--back-button"><span class="visually-hidden">Вернуться
+        <button class="person-group-edit__button modal__back-button button button--back-button"><span class="visually-hidden">Вернуться
             назад</span></button>
         <p class="person-group-edit__title modal__title">Редактирование группы</p>
-        <button class="person-group-edit__button modal__closed-button button--closed-button"><span
+        <button class="person-group-edit__button modal__closed-button button button--closed-button"><span
             class="visually-hidden">Закрыть</span></button>
       </div>
 
@@ -32,19 +32,19 @@ const editPersoneGroupTemplate = () => (`
           <ul class="person-in-group__list">
             <li class="person-in-group__item">
               <p class="person-in-group__text">Иван Иванович</p>
-              <button class="person-in-group__button button--closed-button"><span
+              <button class="person-in-group__button button button--closed-button"><span
                   class="visually-hidden">Удалить</span></button>
             </li>
 
             <li class="person-in-group__item">
               <p class="person-in-group__text">Дмитрий Александрович</p>
-              <button class="person-in-group__button button--closed-button"><span
+              <button class="person-in-group__button button button--closed-button"><span
                   class="visually-hidden">Удалить</span></button>
             </li>
 
             <li class="person-in-group__item">
               <p class="person-in-group__text">Дмитрий Александрович</p>
-              <button class="person-in-group__button button--closed-button"><span
+              <button class="person-in-group__button button button--closed-button"><span
                   class="visually-hidden">Удалить</span></button>
             </li>
           </ul>
@@ -52,7 +52,7 @@ const editPersoneGroupTemplate = () => (`
       </div>
     </div>
 
-    <button class="person-in-group__button-submit modal__save-button button button--green">Сохранить</button>
+    <button class="person-in-group__button-submit modal__save-button button button button--green">Сохранить</button>
   </div>
 </div>
 `);

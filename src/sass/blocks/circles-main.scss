@@ -29,7 +29,7 @@
       &:last-child {
         &::before {
           @include defaul-pseudo-element(100%, 1px);
-          background: url("./../../public/img/border-dashed.svg") repeat-x;
+          background: url($path + "/border-dashed.svg") repeat-x;
         }
       }
 
@@ -155,8 +155,7 @@
 
       &::before {
         @include defaul-pseudo-element(100%);
-        background: url("./../../public/img/editor--table.svg") no-repeat center
-          center;
+        background: url($path + "/editor--table.svg") no-repeat center center;
         background-size: contain;
         @include centering-pseudo-element;
       }
