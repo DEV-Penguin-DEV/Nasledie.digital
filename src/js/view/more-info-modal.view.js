@@ -42,7 +42,7 @@ const moreInfoModalTemplate = (name, avatarPath, description) => (`
           </div>
         </div>
 
-        <button class="button button--green-text more-info-modal__button">Редактировать расположение</button>
+        <button class="button button--green-text more-info-modal__edit more-info-modal__button">Редактировать расположение</button>
       </li>
     </ul>
 

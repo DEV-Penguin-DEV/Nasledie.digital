@@ -1,8 +1,8 @@
 import '../sass/style.scss';
 import AppPresenter from './presentors/presentor.js';
-import { startSelects } from './functions/selects';
-startSelects();
-const mainContainer = document.querySelector('#circles');
+import { ROOT_ELEMENT } from './const';
+
+const mainContainer = ROOT_ELEMENT;
 
 const appPresenter = new AppPresenter(mainContainer);
 

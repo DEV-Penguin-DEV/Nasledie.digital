@@ -1,4 +1,4 @@
-.edit-position {
+.edit-position__form {
   &.error {
     & .error-text {
       opacity: 1;
@@ -68,4 +68,78 @@
 
 .edit-position__delete {
   display: none;
+}
+
+.edit-position__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-position__save-window {
+  width: 51.71vw;
+  min-height: 270px;
+  top: 31.25vh;
+  padding: 34px 68px 31px;
+  box-sizing: border-box;
+}
+
+.edit-position__save-window-button-close {
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  background-size: 32px 32px;
+  top: 24px;
+  right: 24px;
+  position: absolute;
+}
+
+.edit-position__save-window-title {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+
+  color: #444444;
+  margin-bottom: 35px;
+}
+
+.edit-position__save-window-text {
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+
+  color: #444444;
+  margin-bottom: 45px;
+}
+
+.edit-position__save-window-button {
+  width: 191px;
+
+  &--cancel {
+    border: 1px solid #b7bdce;
+    border-radius: 100px;
+    background-color: #ffffff;
+    color: $help-text-color;
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    color: #444444;
+  }
+}
+
+.edit-position__save-window-buttons {
+  display: flex;
+  gap: 15px;
 }

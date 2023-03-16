@@ -9,7 +9,7 @@
   height: 421px;
   display: flex;
   flex-direction: column;
-  z-index: 1000;
+  z-index: 100;
   animation: opacity 1s forwards;
 
   &.hide {

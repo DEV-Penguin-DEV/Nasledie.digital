@@ -5,6 +5,9 @@ button {
 
 .button {
   transition: $default-menu-transition;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
 
   &:hover {
     transition: $default-menu-transition;
@@ -20,24 +23,28 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: $default-menu-transition;
 
     &::before {
+      transition: $default-menu-transition;
       @include defaul-pseudo-element(100%);
-      background-size: contain;
-      @include centering-pseudo-element;
       background-size: contain;
     }
 
     &:hover {
+      transition: $default-menu-transition;
       border: 1px solid #326e5b !important;
     }
 
     &:active {
+      transition: $default-menu-transition;
       border: 1px solid #326e5b !important;
     }
 
     &--icon {
+      transition: $default-menu-transition;
       &:hover {
+        transition: $default-menu-transition;
         background-color: #326e5b !important;
 
         & svg path {
@@ -50,9 +57,11 @@ button {
   &--icon {
     background-position: center center;
     background-repeat: no-repeat;
-
+    transition: $default-menu-transition;
     &:hover {
+      transition: $default-menu-transition;
       & svg path {
+        transition: $default-menu-transition;
         fill: $hover-button-color;
       }
     }
@@ -82,13 +91,17 @@ button {
     &:disabled {
       opacity: 0.5;
       background: #2c6050;
+      transition: $default-menu-transition;
     }
 
     &--icon {
+      transition: $default-menu-transition;
       &:hover {
+        transition: $default-menu-transition;
         background-color: #ffffff;
 
         & svg rect {
+          transition: $default-menu-transition;
           fill: #326e5b;
         }
       }
@@ -151,6 +164,10 @@ button {
       border: 1px solid #326e5b !important;
       background-color: #326e5b !important;
       color: #ffffff;
+    }
+
+    &:hover path {
+      fill: #ffffff;
     }
 
     &:active {

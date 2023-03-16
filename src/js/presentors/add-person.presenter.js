@@ -5,7 +5,8 @@ import AddPerson3View from '../view/add-person-3.view.js';
 import AddPersonSuccesfulView from '../view/add-person-succesful.view.js';
 import { findAncestor } from '../utils.js';
 import { startSelects } from '../functions/selects.js';
-import { DEFAULT_AVATAR_PATH } from '../const.js';
+import { DEFAULT_AVATAR_PATH, ROOT_ELEMENT } from '../const.js';
+import { render } from '../render.js';
 
 const startThirdStep = (
   event,
@@ -17,7 +18,7 @@ const startThirdStep = (
   const modalPresenter = new ModalPresenter3(
     document.querySelector('.modal-container')
   );
-  modalPresenter.onModalClick(event, view);
+  modalPresenter.onModalClick(event, view, null);
   modalPresenter.closeModalWindowStep('.add-person--step-3', [allFormContent]);
 
   startSelects();
@@ -66,8 +67,17 @@ const startThirdStep = (
       validation,
       allFormContent,
       true,
-      AddPersonSuccesfulView,
-      document.querySelector('#circles')
+      (eventMain, closeModalWindow) => {
+        render(new AddPersonSuccesfulView(allFormContent[0]), ROOT_ELEMENT);
+        const avatarFile = allFormContent[0].get('avatar');
+        const avatarImg = document.querySelector('.add-person--succesful__img');
+        const fileReader = new FileReader();
+        fileReader.onload = (evt) => {
+          avatarImg.src = evt.target.result === 'data:' ? DEFAULT_AVATAR_PATH : event.target.result;
+        };
+        fileReader.readAsDataURL(avatarFile);
+        document.querySelector('.modal__succesful-button').addEventListener('click', () => closeModalWindow(eventMain));
+      }
     );
   });
 };

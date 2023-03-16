@@ -10,3 +10,5 @@ export const PATH_BASE = START_MODE === 'product' ? '/wp-content/plugins/nasledi
 export const MEDIA_MOBILE_SIZE = window.matchMedia('(max-width: 750px)');
 
 export const DEFAULT_AVATAR_PATH = `${PATH_BASE}/avatar-default.png`;
+
+export const ROOT_ELEMENT = document.querySelector('#circles');
