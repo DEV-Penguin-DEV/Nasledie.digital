@@ -17,6 +17,7 @@ export default class PeriodsPresenter {
   onPeriodsClick = () => {
     const periodsButtonElements = document.querySelectorAll('.periods-menu__button');
 
+
     periodsButtonElements.forEach((periodButton, i) => {
       periodButton.addEventListener('click', () => {
         if (!periodButton.classList.contains('periods-menu__button--active')) {

@@ -26,7 +26,8 @@ const editPersoneGroupTemplate = () => (`
 
           <form class="person-in-group-form modal__add-form" action="#" method="post">
             <input id="person-in-group-form__group-name" type="text"
-              class="edit-group-form__input modal__add-input" placeholder="Имя персоны">
+              class="edit-group-form__input modal__add-input">
+              <label for="edit-periods-form__group-name" class="modal__add-label">Имя персоны</label>
           </form>
 
           <ul class="person-in-group__list">

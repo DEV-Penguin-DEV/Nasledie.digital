@@ -13,9 +13,10 @@ const addPersoneGroupTemplate = () => (`
       <div class="person-group__main-content modal__main-content">
         <p class="person-group__content-title modal__content-title">Добавьте группу</p>
         <form class=" add-new-group-form modal__add-form" action="#" method="post">
-          <input type="text" class="add-new-group-form__input modal__add-input" placeholder="Название группы">
+          <input id="add-new-group-form__inputId" type="text" class="add-new-group-form__input modal__add-input">
+          <label for="add-new-group-form__inputId" class="modal__add-label">Название группы</label>
           <button type="submit"
-            class="add-new-group-form__button modal__add-button  button button button--icon button button--green">
+            class="add-new-group-form__button modal__add-button  button button--icon button--green">
             <span class="visually-hidden">Добавить новую группу</span>
           </button>
         </form>
@@ -28,7 +29,7 @@ const addPersoneGroupTemplate = () => (`
               <div class="added-group__container">
                 <p class="added-group__title">Родственники</p>
                 <div class="added-group__button-container">
-                  <button class="added-group__edit added-group__button button button button--icon">
+                  <button class="added-group__edit added-group__button button button--icon">
                     <span class="visually-hidden">Изменить группу</span>
                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd"

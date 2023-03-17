@@ -7,7 +7,7 @@ const headerTemplate = () => !mediaQueryMobile.matches ? `
     <div class="navigation__container">
       <ul class="circles-header__view-list view-list circles-header__list navigation__item">
         <li class="view-list__item">
-          <button class="view-list__button view-list__button button--circle">
+          <button class="view-list__button view-list__button--circle">
             <svg class="view-list__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="12" cy="12" r="4.25" stroke="#B7BDCE" stroke-width="1.5"/>
               <circle cx="12" cy="12" r="8.25" stroke="#B7BDCE" stroke-width="1.5"/>
@@ -16,7 +16,7 @@ const headerTemplate = () => !mediaQueryMobile.matches ? `
         </li>
 
         <li class="view-list__item">
-          <button class="view-list__button view-list__button button--table">
+          <button class="view-list__button view-list__button--table">
             <svg class="view-list__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M21.2308 4H2.76923C2.56522 4 2.36956 4.08429 2.2253 4.23431C2.08104 4.38434 2 4.58783 2 4.8V18.4C2 18.8243 2.16209 19.2313 2.4506 19.5314C2.73912 19.8314 3.13044 20 3.53846 20H20.4615C20.8696 20 21.2609 19.8314 21.5494 19.5314C21.8379 19.2313 22 18.8243 22 18.4V4.8C22 4.58783 21.919 4.38434 21.7747 4.23431C21.6304 4.08429 21.4348 4 21.2308 4ZM3.53846 10.4H7.38462V13.6H3.53846V10.4ZM8.92308 10.4H20.4615V13.6H8.92308V10.4ZM20.4615 5.6V8.8H3.53846V5.6H20.4615ZM3.53846 15.2H7.38462V18.4H3.53846V15.2ZM20.4615 18.4H8.92308V15.2H20.4615V18.4Z" fill="#B7BDCE"/>
             </svg>

@@ -95,21 +95,21 @@ const addPersonTemplate = () => `
 
                 <div class="add-person__input-container modal__input-container">
                   <input id="person_name-id" type="text" name="person_name"
-                    class="add-person__input modal__add-input" required>
+                    class="add-person__input add-person__input--fio add-person__input--name modal__add-input" required>
                   <label for="person_name-id" class="modal__add-label">Имя</label>
                 </div>
 
 
                 <div class="add-person__input-container modal__input-container">
                   <input id="person_father_name-id" type="text" name="person_father_name"
-                    class="add-person__input modal__add-input" required>
+                    class="add-person__input add-person__input--fio add-person__input--father-name modal__add-input" required>
                   <label for="person_father_name-id" class="modal__add-label">Отчество</label>
                 </div>
 
 
                 <div class="add-person__input-container modal__input-container">
                   <input id="person_surname-id" type="text" name="person_surname"
-                    class="add-person__input modal__add-input" required>
+                    class="add-person__input add-person__input--fio add-person__input--surname modal__add-input" required>
                   <label for="person_surname-id" class="modal__add-label">Фамилия</label>
                 </div>
 

@@ -5,8 +5,10 @@ import AddPerson3View from '../view/add-person-3.view.js';
 import AddPersonSuccesfulView from '../view/add-person-succesful.view.js';
 import { findAncestor } from '../utils.js';
 import { startSelects } from '../functions/selects.js';
-import { DEFAULT_AVATAR_PATH, ROOT_ELEMENT } from '../const.js';
+import { DEFAULT_AVATAR_PATH, ROOT_ELEMENT, TEST_SEARCHING_PERSON_LIST } from '../const.js';
 import { render } from '../render.js';
+import SearchingListView from '../view/searching-list.view.js';
+import AddCreatedPersonView from '../view/add-created-person.view.js';
 
 const startThirdStep = (
   event,
@@ -73,7 +75,7 @@ const startThirdStep = (
         const avatarImg = document.querySelector('.add-person--succesful__img');
         const fileReader = new FileReader();
         fileReader.onload = (evt) => {
-          avatarImg.src = evt.target.result === 'data:' ? DEFAULT_AVATAR_PATH : event.target.result;
+          avatarImg.src = evt.target.result === 'data:' ? DEFAULT_AVATAR_PATH : evt.target.result;
         };
         fileReader.readAsDataURL(avatarFile);
         document.querySelector('.modal__succesful-button').addEventListener('click', () => closeModalWindow(eventMain));
@@ -186,10 +188,12 @@ export default class AddPersonPresenter {
       circleMainContainer,
       this.nextStep
     );
+    this.circleMainContainer = circleMainContainer;
   }
 
   init() {
     this.#onAvatarChange();
+    this.#onNameChange();
     this.#onNextStep();
   }
 
@@ -218,6 +222,100 @@ export default class AddPersonPresenter {
       avatarLabelElement.classList.add('add-person__avatar-label--active');
     });
   };
+
+  #onNameChange = () => {
+    const fioInputElements = document.querySelectorAll('.add-person__input--fio');
+    const users = TEST_SEARCHING_PERSON_LIST;
+
+    fioInputElements.forEach((inputElement) => {
+      inputElement.addEventListener('input', () => {
+        setTimeout(() => {
+          if (inputElement.value.length >= 2) {
+            const value = inputElement.value;
+            if (value.length > 0) {
+              const sortedUsers = [];
+              users.forEach((elem, index) => {
+                const regex = new RegExp(`^${value}`, 'i');
+                // eslint-disable-next-line no-nested-ternary
+                const elemText = inputElement.classList.contains('add-person__input--name') ? elem.name : inputElement.classList.contains('add-person__input--surname') ? elem.surname : elem.fatherName;
+                if (elemText.match(regex)) {
+                  sortedUsers.push(users[index]);
+                }
+              });
+              const searchingElementOld = document.querySelector('.added-person');
+              searchingElementOld.remove();
+
+              const searchingElementNew = new SearchingListView(sortedUsers).element;
+              searchingElementNew.style.zIndex = 105;
+              searchingElementNew.classList.add('added-person--active');
+              findAncestor(inputElement, 'add-person__input-container').append(searchingElementNew);
+            }
+          } else {
+            const searchingElementOld = document.querySelector('.added-person');
+            searchingElementOld.remove();
+
+            const searchingElementNew = new SearchingListView(users).element;
+            searchingElementNew.style.zIndex = 105;
+            searchingElementNew.classList.add('added-person--active');
+            findAncestor(inputElement, 'add-person__input-container').append(searchingElementNew);
+          }
+        }, 150);
+      });
+
+      inputElement.addEventListener('focus', () => {
+        const searchingElement = new SearchingListView(users).element;
+        findAncestor(inputElement, 'add-person__input-container').append(searchingElement);
+
+        searchingElement.style.zIndex = 105;
+        setTimeout(() => {
+          searchingElement.classList.add('added-person--active');
+        }, 150);
+        searchingElement.addEventListener('click', (evt) => {
+          const clickedElement = evt.target.classList.contains('added-person__person') ? evt.target : findAncestor(evt.target, 'added-person__person');
+
+
+          if (clickedElement !== null) {
+            const name = clickedElement.querySelector('.name').textContent;
+            const surname = clickedElement.querySelector('.surname').textContent;
+            const fatherName = clickedElement.querySelector('.father-name').textContent;
+            const image = clickedElement.querySelector('.added-person__person-avatar').src;
+
+            document.querySelector('.add-person__input--name').value = name;
+            document.querySelector('.add-person__input--surname').value = surname;
+            document.querySelector('.add-person__input--father-name').value = fatherName;
+            document.querySelector('.add-person__avatar-img').value = image;
+
+            const formData = new FormData(document.querySelector('.add-person--step-1__form'));
+
+            const AddedPersonNextStep = {
+              view: AddPerson2View,
+              cb: startSecondStep,
+              validation: validationStep2,
+            };
+            const addedPersonModalPresenter = new ModalPresenter(
+              document.querySelector('.modal-container'),
+              AddedPersonNextStep
+            );
+            addedPersonModalPresenter.onModalClick(evt, AddCreatedPersonView, null);
+            addedPersonModalPresenter.closeModalWindowStep('.add-created-person--step-1', [formData]);
+            addedPersonModalPresenter.startNextStep(this.validationStep1, [formData]);
+          }
+        });
+      });
+
+      inputElement.addEventListener('blur', () => {
+        const searchingElement = document.querySelector('.added-person');
+        searchingElement.classList.remove('added-person--active');
+
+        setTimeout(() => {
+          searchingElement.remove();
+        }, 1000);
+      });
+    });
+
+
+  };
+
 
   #onNextStep = () => {
     this.#modalPresenter.startNextStep(

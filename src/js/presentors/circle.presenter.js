@@ -107,9 +107,9 @@ export default class CirclePresenter {
 
   //On view change
   #onViewClick = (evt) => {
+
     const viewButton = evt.target.classList.contains('view-list__button') ? evt.target : findAncestor(evt.target, 'view-list__button');
     const circleContainerElement = document.querySelector('.circles');
-
     if (viewButton.classList.contains('view-list__button--circle') && this.selectedView !== View.CIRCLES) {
       this.selectedView = View.CIRCLES;
       document.querySelector('.circles-main').remove();

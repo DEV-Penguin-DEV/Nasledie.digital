@@ -81,23 +81,61 @@
 
   <main class="main-content">
     <div class="modal-container">
-      <div class="modal edit-position__save-window">
-        <button class="edit-position__save-window-button-close button button--white--icon">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M8.39052 8.39052C8.91122 7.86983 9.75544 7.86983 10.2761 8.39052L16 14.1144L21.7239 8.39052C22.2446 7.86983 23.0888 7.86983 23.6095 8.39052C24.1302 8.91122 24.1302 9.75544 23.6095 10.2761L17.8856 16L23.6095 21.7239C24.1302 22.2446 24.1302 23.0888 23.6095 23.6095C23.0888 24.1302 22.2446 24.1302 21.7239 23.6095L16 17.8856L10.2761 23.6095C9.75544 24.1302 8.91122 24.1302 8.39052 23.6095C7.86983 23.0888 7.86983 22.2446 8.39052 21.7239L14.1144 16L8.39052 10.2761C7.86983 9.75544 7.86983 8.91122 8.39052 8.39052Z"
-              fill="#B7BDCE" />
-          </svg>
-          <span class="visually-hidden">Закрыть окно</span></button>
-        <p class="edit-position__save-window-title">Хотите убрать персону с Кругов общения?</p>
-        <p class="edit-position__save-window-text">Персона будет убрана с Кругов общения, но профиль не удалиться</p>
-        <div class="edit-position__save-window-buttons">
-          <div
-            class="edit-position__save-window-button button button--white edit-position__save-window-button--cancel modal__succesful-button--cancel">
-            Отменить</div>
-          <button
-            class="edit-position__save-window-button edit-position__save-window-button--delete error button button--red">Убрать
-            с Кругов общения</button>
+      <div class="modal add-created-person add-created-person--step-3">
+        <div class="add-person__top-content modal__top-content">
+          <p class="add-person__title modal__title">Добавление персоны</p>
+          <button class="add-person__button button button--closed-button modal__closed-button"><span
+              class="visually-hidden">Закрыть</span></button>
+        </div>
+
+        <div class="created-person-card">
+          <button class="created-person-card__button-back modal__back-button button"><span
+              class="visually-hidden">Вернуться
+              назад</span></button>
+          <div class="created-person-card__part created-person-card__part--top">
+
+            <img src="imag/user-avatar.svg" alt="" class="created-person-card__avatar">
+            <div class="created-person-card__text-content">
+              <p class="created-person-card__name">Сергей Александрович Сергеев</p>
+              <p class="created-person-card__status">Двоюродный брат</p>
+            </div>
+          </div>
+          <div class="created-person-card__part created-person-card__part--bottom">
+            <p class="created-person-card__part-title">Описание / Воспоминание</p>
+
+            <p class="created-person-card__description">Мой двоюродный брат был лучшим братом. В детстве мы очень любили
+              ходить к бабушке и дедушке на дачу. Он был старше меня
+              на 2 года, поэтому я всегда прислушивался к нему. Мой двоюродный брат был лучшим братом. В детстве мы
+              очень любили
+              ходить к бабушке и дедушке на дачу. Он был</p>
+          </div>
+        </div>
+
+        <div class="modal__main-content add-person__main-content">
+          <form action="#" class="add-person__form add-person--step-3__form modal__form" method="post">
+            <!-- Add person left part -->
+            <div class="add-person__part add-person__part--left">
+              <!-- Add person steps -->
+              <ul class="add-person__steps-list">
+                <li class="add-person__steps-item add-person__steps-item--active">1</li>
+                <li class="add-person__steps-item">2</li>
+                <li class="add-person__steps-item">3</li>
+                <li class="add-person__steps-item add-person__steps-item--finish">
+                  <svg width="18" height="25" viewBox="0 0 18 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M17.2166 14.1855C16.9923 14.5484 16.5962 14.7692 16.1696 14.7692L2.63116 14.7692L2.63116 23.3846C2.63116 24.0643 2.08012 24.6154 1.40039 24.6154C0.720652 24.6154 0.169619 24.0643 0.169619 23.3846L0.169619 1.23077C0.169619 0.551033 0.720652 -7.29095e-07 1.40039 -6.99382e-07C2.08012 -6.6967e-07 2.63116 0.551033 2.63116 1.23077L2.63116 2.46154L16.1696 2.46154C16.5962 2.46154 16.9923 2.6824 17.2166 3.04525C17.4408 3.4081 17.4612 3.8612 17.2705 4.24272L15.0841 8.61538L17.2705 12.988C17.4612 13.3696 17.4408 13.8227 17.2166 14.1855ZM2.63116 4.92308L2.63116 12.3077L14.1782 12.3077L12.6072 9.1658C12.434 8.8193 12.434 8.41146 12.6072 8.06497L14.1782 4.92308L2.63116 4.92308Z"
+                      fill="#326E5B" />
+                  </svg>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Add person right part -->
+            <div class="add-person__part add-person__part--right">
+              <button type="submit"
+                class="add-person__button-next add-person__button-next--3 add-person__button-next--2 modal__next button button button--green">Далее</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
